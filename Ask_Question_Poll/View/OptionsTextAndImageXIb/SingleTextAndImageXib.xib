@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="OptionNumberTitle" destination="T9S-Or-TDj" id="8Eu-b2-aHV"/>
                 <outlet property="optionCharacterLimit" destination="CTr-r9-ASK" id="6pP-yM-ekH"/>
+                <outlet property="optiontextView" destination="i5p-9o-hfm" id="Ib8-7r-hhl"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

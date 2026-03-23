@@ -40,17 +40,17 @@ class OtpInputViewController: UIViewController {
         case .signUpOTP:
             showFields(first: true, second: false)
             setupFirstField(title: "otp", placeholder: "Enter OTP", keyboard: .numberPad, secure: false)
-            setupButton(title: "verify", action: #selector(verifySignUpOTP))
+            setupButton(title: "ok", action: #selector(verifySignUpOTP))
             
         case .forgotPasswordEmail:
             showFields(first: true, second: false)
-            setupFirstField(title: "email", placeholder: "Enter your registered email", keyboard: .emailAddress, secure: false)
-            setupButton(title: "send otp", action: #selector(verifyForgotEmail))
+            setupFirstField(title: "email", placeholder: "Enter Email", keyboard: .emailAddress, secure: false)
+            setupButton(title: "next", action: #selector(verifyForgotEmail))
             
         case .forgotPasswordOTP:
             showFields(first: true, second: false)
-            setupFirstField(title: "otp", placeholder: "Enter OTP sent to email", keyboard: .numberPad, secure: false)
-            setupButton(title: "verify", action: #selector(verifyForgotOTP))
+            setupFirstField(title: "otp", placeholder: "Enter OTP ", keyboard: .numberPad, secure: false)
+            setupButton(title: "ok", action: #selector(verifyForgotOTP))
             
         case .resetPassword:
             showFields(first: true, second: true)
@@ -188,10 +188,9 @@ class OtpInputViewController: UIViewController {
                 
                 if response?.code == 200 {
                     // Save reset token for use in reset password screen
-                    let resetToken = response?.data?.token ?? ""
+                    self?.resetToken = response?.data?.token ?? ""
                     self?.screenMode = .resetPassword
                     self?.configureScreen()
-//                    self?.navigateToResetPassword(email: email, resetToken: resetToken)
                 } else {
                     self?.showError(response?.message ?? "OTP Verification Failed")
                 }
