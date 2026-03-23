@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		2E24091B2F6C253600BB6BCF /* RadioXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E24091A2F6C253600BB6BCF /* RadioXib.xib */; };
 		2E24091D2F6C254500BB6BCF /* RadioXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E24091C2F6C254500BB6BCF /* RadioXib.swift */; };
+		2E2BBE672F717CC000F2BBE0 /* StoryBoardDeclaration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BBE662F717CB600F2BBE0 /* StoryBoardDeclaration.swift */; };
+		2E4E44402F7168B9008BF9B6 /* OtpInputAndPasswordStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E443F2F7168B9008BF9B6 /* OtpInputAndPasswordStoryBoard.storyboard */; };
 		2E69B2D12F6C357F00F00615 /* SignUpRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E69B2D02F6C357B00F00615 /* SignUpRequestModel.swift */; };
 		2E69B2D32F6C35AF00F00615 /* SignUpResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E69B2D22F6C35AE00F00615 /* SignUpResponseModel.swift */; };
 		2E96B18E2F71149300B8CBFA /* OptionsTextandImageXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E96B18D2F71149300B8CBFA /* OptionsTextandImageXib.xib */; };
 		2E96B1902F71152B00B8CBFA /* SingleTextAndImageXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E96B18F2F71152B00B8CBFA /* SingleTextAndImageXib.xib */; };
 		2E96B1922F71165600B8CBFA /* SingleTextAndImageXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E96B1912F71165600B8CBFA /* SingleTextAndImageXib.swift */; };
+		2E96B1952F71374200B8CBFA /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E96B1942F71374200B8CBFA /* LoginStoryboard.storyboard */; };
+		2E96B1972F7137E300B8CBFA /* SignUpStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E96B1962F7137E300B8CBFA /* SignUpStoryboard.storyboard */; };
+		2E96B1992F714CDC00B8CBFA /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E96B1982F714CDC00B8CBFA /* Label.swift */; };
 		2E9D61012F6A81F500D0FEB0 /* LinkButtonXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E9D61002F6A81F500D0FEB0 /* LinkButtonXib.xib */; };
 		2E9D61032F6A820B00D0FEB0 /* LinkButtonXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9D61022F6A820B00D0FEB0 /* LinkButtonXib.swift */; };
 		2E9D61062F6A84AE00D0FEB0 /* BackGroundViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E9D61052F6A84AE00D0FEB0 /* BackGroundViewXib.xib */; };
@@ -41,7 +46,6 @@
 		2EB63E472F6D8D1A0011B1F5 /* ForgotPasswordResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB63E462F6D8D1A0011B1F5 /* ForgotPasswordResponseModel.swift */; };
 		2EB63E4A2F6D8D410011B1F5 /* VerifyForgotOTPRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB63E492F6D8D410011B1F5 /* VerifyForgotOTPRequestModel.swift */; };
 		2EB63E4C2F6D8D520011B1F5 /* VerifyForgotOTPResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB63E4B2F6D8D520011B1F5 /* VerifyForgotOTPResponseModel.swift */; };
-		2EB63E4E2F6D92780011B1F5 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB63E4D2F6D92780011B1F5 /* ResetPasswordViewController.swift */; };
 		2EB63E512F6D9A810011B1F5 /* ResetPasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB63E502F6D9A7F0011B1F5 /* ResetPasswordRequestModel.swift */; };
 		2EB63E532F6D9A920011B1F5 /* ResetPasswordResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB63E522F6D9A920011B1F5 /* ResetPasswordResponseModel.swift */; };
 		2EC686442F70F1E1001BC76F /* SelectFromPickerXIb.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EC686432F70F1E1001BC76F /* SelectFromPickerXIb.xib */; };
@@ -65,11 +69,16 @@
 /* Begin PBXFileReference section */
 		2E24091A2F6C253600BB6BCF /* RadioXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RadioXib.xib; sourceTree = "<group>"; };
 		2E24091C2F6C254500BB6BCF /* RadioXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioXib.swift; sourceTree = "<group>"; };
+		2E2BBE662F717CB600F2BBE0 /* StoryBoardDeclaration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardDeclaration.swift; sourceTree = "<group>"; };
+		2E4E443F2F7168B9008BF9B6 /* OtpInputAndPasswordStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OtpInputAndPasswordStoryBoard.storyboard; sourceTree = "<group>"; };
 		2E69B2D02F6C357B00F00615 /* SignUpRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequestModel.swift; sourceTree = "<group>"; };
 		2E69B2D22F6C35AE00F00615 /* SignUpResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponseModel.swift; sourceTree = "<group>"; };
 		2E96B18D2F71149300B8CBFA /* OptionsTextandImageXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsTextandImageXib.xib; sourceTree = "<group>"; };
 		2E96B18F2F71152B00B8CBFA /* SingleTextAndImageXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleTextAndImageXib.xib; sourceTree = "<group>"; };
 		2E96B1912F71165600B8CBFA /* SingleTextAndImageXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextAndImageXib.swift; sourceTree = "<group>"; };
+		2E96B1942F71374200B8CBFA /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		2E96B1962F7137E300B8CBFA /* SignUpStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpStoryboard.storyboard; sourceTree = "<group>"; };
+		2E96B1982F714CDC00B8CBFA /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		2E9D61002F6A81F500D0FEB0 /* LinkButtonXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinkButtonXib.xib; sourceTree = "<group>"; };
 		2E9D61022F6A820B00D0FEB0 /* LinkButtonXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButtonXib.swift; sourceTree = "<group>"; };
 		2E9D61052F6A84AE00D0FEB0 /* BackGroundViewXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackGroundViewXib.xib; sourceTree = "<group>"; };
@@ -97,7 +106,6 @@
 		2EB63E462F6D8D1A0011B1F5 /* ForgotPasswordResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResponseModel.swift; sourceTree = "<group>"; };
 		2EB63E492F6D8D410011B1F5 /* VerifyForgotOTPRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyForgotOTPRequestModel.swift; sourceTree = "<group>"; };
 		2EB63E4B2F6D8D520011B1F5 /* VerifyForgotOTPResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyForgotOTPResponseModel.swift; sourceTree = "<group>"; };
-		2EB63E4D2F6D92780011B1F5 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResetPasswordViewController.swift; path = Ask_Question_Poll/Controllers/ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		2EB63E502F6D9A7F0011B1F5 /* ResetPasswordRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordRequestModel.swift; sourceTree = "<group>"; };
 		2EB63E522F6D9A920011B1F5 /* ResetPasswordResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordResponseModel.swift; sourceTree = "<group>"; };
 		2EC686432F70F1E1001BC76F /* SelectFromPickerXIb.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectFromPickerXIb.xib; sourceTree = "<group>"; };
@@ -168,6 +176,17 @@
 				2E96B1912F71165600B8CBFA /* SingleTextAndImageXib.swift */,
 			);
 			path = OptionsTextAndImageXIb;
+			sourceTree = "<group>";
+		};
+		2E96B1932F71372100B8CBFA /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				2ED109E32F6A66640033DA96 /* Main.storyboard */,
+				2E96B1942F71374200B8CBFA /* LoginStoryboard.storyboard */,
+				2E96B1962F7137E300B8CBFA /* SignUpStoryboard.storyboard */,
+				2E4E443F2F7168B9008BF9B6 /* OtpInputAndPasswordStoryBoard.storyboard */,
+			);
+			path = StoryBoards;
 			sourceTree = "<group>";
 		};
 		2E9D60FF2F6A81B900D0FEB0 /* LinkButtonXIB */ = {
@@ -297,7 +316,6 @@
 		2ED109B82F6A654A0033DA96 = {
 			isa = PBXGroup;
 			children = (
-				2EB63E4D2F6D92780011B1F5 /* ResetPasswordViewController.swift */,
 				2ED109E62F6A66640033DA96 /* Ask_Question_Poll */,
 				2ED109C22F6A654A0033DA96 /* Products */,
 				86441650B770DD490145A1DC /* Pods */,
@@ -316,6 +334,7 @@
 		2ED109E62F6A66640033DA96 /* Ask_Question_Poll */ = {
 			isa = PBXGroup;
 			children = (
+				2E96B1932F71372100B8CBFA /* StoryBoards */,
 				2ED109F72F6A66F50033DA96 /* Extension */,
 				2ED109F52F6A66C90033DA96 /* View */,
 				2ED109F42F6A66BE0033DA96 /* Models */,
@@ -327,7 +346,6 @@
 				2ED109DE2F6A66640033DA96 /* Assets.xcassets */,
 				2ED109DF2F6A66640033DA96 /* Info.plist */,
 				2ED109E12F6A66640033DA96 /* LaunchScreen.storyboard */,
-				2ED109E32F6A66640033DA96 /* Main.storyboard */,
 			);
 			path = Ask_Question_Poll;
 			sourceTree = "<group>";
@@ -344,6 +362,7 @@
 		2ED109F12F6A668C0033DA96 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				2E2BBE662F717CB600F2BBE0 /* StoryBoardDeclaration.swift */,
 				2EAD4E492F6BC015007C2B3C /* APIManager.swift */,
 			);
 			path = Helper;
@@ -403,6 +422,7 @@
 		2ED109F72F6A66F50033DA96 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				2E96B1982F714CDC00B8CBFA /* Label.swift */,
 				2EAD4E5D2F6BFCD3007C2B3C /* NavExtension.swift */,
 				2EAD4E5B2F6BFBAE007C2B3C /* NIBExtension.swift */,
 				2EAD4E522F6BDF0C007C2B3C /* Colour.swift */,
@@ -512,6 +532,8 @@
 				2E96B1902F71152B00B8CBFA /* SingleTextAndImageXib.xib in Resources */,
 				2E9D612B2F6AD99600D0FEB0 /* ButtonXib.xib in Resources */,
 				2ED10A212F6A67890033DA96 /* Contents.json in Resources */,
+				2E96B1972F7137E300B8CBFA /* SignUpStoryboard.storyboard in Resources */,
+				2E96B1952F71374200B8CBFA /* LoginStoryboard.storyboard in Resources */,
 				2EAD4E512F6BD793007C2B3C /* ClearNavBarXib.xib in Resources */,
 				2EAD4E582F6BF506007C2B3C /* ImagePickerXib.xib in Resources */,
 				2E9D61062F6A84AE00D0FEB0 /* BackGroundViewXib.xib in Resources */,
@@ -520,6 +542,7 @@
 				2ED109EA2F6A66640033DA96 /* LaunchScreen.storyboard in Resources */,
 				2ED109EB2F6A66640033DA96 /* Main.storyboard in Resources */,
 				2ED10A312F6A70CA0033DA96 /* countryNames.json in Resources */,
+				2E4E44402F7168B9008BF9B6 /* OtpInputAndPasswordStoryBoard.storyboard in Resources */,
 				2ED10A322F6A70CA0033DA96 /* category.json in Resources */,
 				2ED10A332F6A70CA0033DA96 /* SF Atarian System Extended Bold.ttf in Resources */,
 				2EC686442F70F1E1001BC76F /* SelectFromPickerXIb.xib in Resources */,
@@ -596,8 +619,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EAD4E5E2F6BFCDB007C2B3C /* NavExtension.swift in Sources */,
+				2E2BBE672F717CC000F2BBE0 /* StoryBoardDeclaration.swift in Sources */,
 				2EAD4E482F6BBFB9007C2B3C /* LoginResponseModel.swift in Sources */,
-				2EB63E4E2F6D92780011B1F5 /* ResetPasswordViewController.swift in Sources */,
 				2EB63E4C2F6D8D520011B1F5 /* VerifyForgotOTPResponseModel.swift in Sources */,
 				2EB63E472F6D8D1A0011B1F5 /* ForgotPasswordResponseModel.swift in Sources */,
 				2ED109EC2F6A66640033DA96 /* AppDelegate.swift in Sources */,
@@ -625,6 +648,7 @@
 				2EB63E452F6D8D010011B1F5 /* ForgotPasswordRequestModel.swift in Sources */,
 				2ED109EE2F6A66640033DA96 /* SceneDelegate.swift in Sources */,
 				2ED10A382F6A72DD0033DA96 /* LoginViewController.swift in Sources */,
+				2E96B1992F714CDC00B8CBFA /* Label.swift in Sources */,
 				2EC6864D2F70FCBE001BC76F /* HomeViewController.swift in Sources */,
 				2E69B2D32F6C35AF00F00615 /* SignUpResponseModel.swift in Sources */,
 				2EB63E532F6D9A920011B1F5 /* ResetPasswordResponseModel.swift in Sources */,

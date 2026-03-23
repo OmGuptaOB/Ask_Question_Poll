@@ -101,14 +101,14 @@ class SignUpViewController: UIViewController {
     func setupEmailtextField(){
         emailTextFieldView.textFieldTitle.text = "email"
         emailTextFieldView.textField.placeholder = "Enter Email"
-        emailTextFieldView.textField.text = "hahig22182@onbap.com"
+        emailTextFieldView.textField.text = "vaferam713@onbap.com"
         emailTextFieldView.textFieldTitleImage.isHidden = true
         emailTextFieldView.textField.keyboardType = .emailAddress
     }
     
     func setupPasswordTextField(){
         passwordTextFieldView.textFieldTitle.text = "password"
-        passwordTextFieldView.textField.text = "123456"
+        passwordTextFieldView.textField.text = "123456789@Ob"
         passwordTextFieldView.textFieldTitleImage.isHidden = true
         passwordTextFieldView.textField.placeholder = "Enter Password"
         passwordTextFieldView.textField.isSecureTextEntry = true
@@ -116,7 +116,7 @@ class SignUpViewController: UIViewController {
         
         confirmPasswordTextFieldView.textFieldTitle.text = "confirm password"
 //        confirmPasswordTextFieldView.textField.text = confirmPasswordTextFieldView.textField.text
-        confirmPasswordTextFieldView.textField.text = "123456"
+        confirmPasswordTextFieldView.textField.text = "123456789@Ob"
         confirmPasswordTextFieldView.textFieldTitleImage.isHidden = true
         confirmPasswordTextFieldView.textField.placeholder = "Enter Confirm Password"
         confirmPasswordTextFieldView.textField.isSecureTextEntry = true
@@ -276,7 +276,7 @@ class SignUpViewController: UIViewController {
           }
     }
      func navigateToOTP(tempId: Int) {
-        let otpVC = storyboard?.instantiateViewController(withIdentifier: "OtpInputViewController") as! OtpInputViewController
+         let otpVC = OtpInputAndPasswordStoryBoard.instantiateViewController(withIdentifier: "OtpInputViewController") as! OtpInputViewController
          otpVC.userRegTempId = tempId
         navigationController?.pushViewController(otpVC, animated: true)
     }
@@ -416,7 +416,6 @@ extension SignUpViewController : UITextFieldDelegate,UIPickerViewDelegate, UIPic
     
     @objc func signUpTapped(){
         print("sign up Tapped")
-//        navigateToOTP()
         validateAndCallAPI()
     }
     

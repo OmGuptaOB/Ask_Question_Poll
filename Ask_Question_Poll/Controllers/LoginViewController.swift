@@ -12,15 +12,12 @@ import SCLAlertView
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextFieldView: TextFieldXib!
-    
     @IBOutlet weak var passwordTextFieldView: TextFieldXib!
-    
-    @IBOutlet weak var forgotPasswordView: LinkButtonXib!
-    
+    @IBOutlet weak var forgotPasswordView: UIView!
     @IBOutlet weak var btnLoginview: ButtonXib!
-    
-    @IBOutlet weak var signUpBtnView: LinkButtonXib!
-    
+    @IBOutlet weak var signUpBtnView: UIView!
+    @IBOutlet weak var labelForgotPassword: UILabel!
+    @IBOutlet weak var lblSignUp: UILabel!
     var loader: SCLAlertViewResponder?
     
     override func viewDidLoad() {
@@ -48,14 +45,14 @@ class LoginViewController: UIViewController {
     
     
     func setupforgotPassword(){
-        forgotPasswordView.btnForgotPassword.addTarget(self, action: #selector(forgotTapped), for: .touchUpInside)
+        labelForgotPassword.setupTitle(size: 20,underline: true)
     }
     
     func setupSignUp(){
-        signUpBtnView.btnForgotPassword.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
-        
-        signUpBtnView.lblLinkText.text = "SIGNUP"
-        signUpBtnView.lblLinkText.textAlignment = .center
+        lblSignUp.setupTitle(size: 20,underline: true)
+//        
+//        signUpBtnView.lblLinkText.text = "SIGNUP"
+//        signUpBtnView.lblLinkText.textAlignment = .center
     }
     func setupNav(){
         self.navigationItem.backButtonTitle = ""
@@ -68,7 +65,7 @@ class LoginViewController: UIViewController {
     
     func setupEmailtextField(){
         emailTextFieldView.textFieldTitle.text = "email"
-        emailTextFieldView.textField.placeholder = "Enter email"
+        emailTextFieldView.textField.placeholder = "Enter Email"
         emailTextFieldView.textField.text = "joya.tevbst@grr.la"
         emailTextFieldView.textFieldTitleImage.image = UIImage(named: "email_icon")
         emailTextFieldView.textField.keyboardType = .emailAddress
@@ -80,7 +77,7 @@ class LoginViewController: UIViewController {
         
         passwordTextFieldView.textField.text = "demo"
         passwordTextFieldView.textFieldTitleImage.image = UIImage(named: "password_icon")
-        passwordTextFieldView.textField.placeholder = "Enter password"
+        passwordTextFieldView.textField.placeholder = "Enter Password"
         
         passwordTextFieldView.textField.isSecureTextEntry = true
     }
@@ -135,12 +132,22 @@ class LoginViewController: UIViewController {
         
     }
     
+    
+    @IBAction func BtnForgotPassword(_ sender: Any) {
+        forgotTapped()
+    }
+    
+    
+    @IBAction func btnSignUp(_ sender: Any) {
+        signUpTapped()
+    }
+    
 }
 
 extension LoginViewController : UITextFieldDelegate{
-    @objc func forgotTapped(){
-        print("forgot password")
-        let vc = storyboard?.instantiateViewController(withIdentifier: "OtpInputViewController") as! OtpInputViewController
+    func forgotTapped(){
+        let OtpInputAndPasswordStoryBoard = UIStoryboard(name: "OtpInputAndPasswordStoryBoard", bundle: nil)
+        let vc = OtpInputAndPasswordStoryBoard.instantiateViewController(withIdentifier: "OtpInputViewController") as! OtpInputViewController
         vc.screenMode = .forgotPasswordEmail
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -150,9 +157,10 @@ extension LoginViewController : UITextFieldDelegate{
         validateAndCallAPI()
     }
     
-    @objc func signUpTapped(){
+    func signUpTapped(){
         print("sign up tapped")
-        let vc = storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        let SignUpStoryboard = UIStoryboard(name: "SignUpStoryboard", bundle: nil)
+        let vc = SignUpStoryboard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

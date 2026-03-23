@@ -36,7 +36,7 @@ class TextFieldXib: NibView {
       }
       
     func setupTextField() {
-        textField.layer.cornerRadius = 2
+        textField.layer.cornerRadius = 4
         textField.clipsToBounds = true
         
         textField.layer.borderWidth = 2.0
