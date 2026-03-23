@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.11.1)
+  - ObjectMapper (4.4.2)
+  - SCLAlertView (0.8)
+
+DEPENDENCIES:
+  - Alamofire
+  - ObjectMapper
+  - SCLAlertView
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - ObjectMapper
+    - SCLAlertView
+
+SPEC CHECKSUMS:
+  Alamofire: eec6cd8f73b242b59e34153a606a909eb9864b14
+  ObjectMapper: e6e4d91ff7f2861df7aecc536c92d8363f4c9677
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
+
+PODFILE CHECKSUM: 4055ca697fe67b9ac50a318a987936a28a0109ce
+
+COCOAPODS: 1.16.2

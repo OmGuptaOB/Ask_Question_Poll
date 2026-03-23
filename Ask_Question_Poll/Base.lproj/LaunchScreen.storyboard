@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gkl-68-4rb">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ask_question_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="SnI-Ig-42k">
+                                <rect key="frame" x="121" y="339" width="151" height="174"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ask Your Friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.84999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="G7J-ng-cMJ">
+                                <rect key="frame" x="60" y="533" width="273" height="39.666666666666629"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="33"/>
+                                <color key="textColor" red="0.98903578520000002" green="0.81314891580000004" blue="0.10995005820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="33"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="57"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0(1)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMk-oU-dFf" userLabel="APP_VERSION">
+                                <rect key="frame" x="336" y="763" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SnI-Ig-42k" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4D7-p2-aAu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SnI-Ig-42k" secondAttribute="trailing" constant="121" id="4W4-WF-LEd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HMk-oU-dFf" secondAttribute="trailing" constant="16" id="ERW-jG-RJM"/>
+                            <constraint firstItem="SnI-Ig-42k" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="J0o-NF-Wzn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G7J-ng-cMJ" secondAttribute="trailing" constant="60" id="LK9-Xy-NKa"/>
+                            <constraint firstItem="G7J-ng-cMJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="RXb-Lv-o0Z"/>
+                            <constraint firstItem="SnI-Ig-42k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="121" id="Xrb-QF-V0J"/>
+                            <constraint firstItem="gkl-68-4rb" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ZOI-Ye-xz5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HMk-oU-dFf" secondAttribute="bottom" constant="34" id="irc-pH-3oK"/>
+                            <constraint firstItem="SnI-Ig-42k" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="280" id="leN-gj-mU9">
+                                <variation key="heightClass=regular-widthClass=regular" constant="550"/>
+                            </constraint>
+                            <constraint firstItem="G7J-ng-cMJ" firstAttribute="top" secondItem="SnI-Ig-42k" secondAttribute="bottom" constant="20" id="m5F-Wq-t1b"/>
+                            <constraint firstItem="gkl-68-4rb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="msI-T5-wcI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gkl-68-4rb" secondAttribute="trailing" id="ttK-aw-xHf"/>
+                            <constraint firstItem="G7J-ng-cMJ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="x8o-J8-32i"/>
+                            <constraint firstAttribute="bottom" secondItem="gkl-68-4rb" secondAttribute="bottom" id="ygx-MC-aE8"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ask_question_logo.png" width="120" height="120"/>
+        <image name="bg.jpg" width="1080" height="1920"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,6 @@
+framework module Pods_Ask_Question_Poll {
+  umbrella header "Pods-Ask_Question_Poll-umbrella.h"
+
+  export *
+  module * { export * }
+}

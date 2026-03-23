@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RadioXib" customModule="Ask_Question_Poll" customModuleProvider="target">
+            <connections>
+                <outlet property="radioClickToCheckUnCheck" destination="Wde-Hy-8QG" id="i9o-VO-pdU"/>
+                <outlet property="radioFillimage" destination="qQT-nr-e36" id="070-xm-Q6r"/>
+                <outlet property="radioTitle" destination="dAX-yM-n57" id="cEc-0x-h29"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="83" height="30"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="female" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="dAX-yM-n57">
+                    <rect key="frame" x="25.000000000000004" y="5" width="54.333333333333343" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.98823529409999999" green="0.81176470590000005" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wde-Hy-8QG">
+                    <rect key="frame" x="0.0" y="0.0" width="83" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain"/>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qQT-nr-e36">
+                    <rect key="frame" x="3" y="6.6666666666666661" width="18" height="16.666666666666671"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="18" id="LeF-eX-Wdy"/>
+                        <constraint firstAttribute="height" constant="17.999999999999993" id="zYY-YA-h3b"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="qQT-nr-e36" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="3" id="19V-Fq-49L"/>
+                <constraint firstItem="qQT-nr-e36" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="9Bm-uF-Equ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dAX-yM-n57" secondAttribute="trailing" constant="3.6699999999999999" id="E76-u4-jky"/>
+                <constraint firstItem="dAX-yM-n57" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="Myi-jI-vUq"/>
+                <constraint firstItem="Wde-Hy-8QG" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="QaC-Or-FYh"/>
+                <constraint firstItem="Wde-Hy-8QG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SH9-C8-OOf"/>
+                <constraint firstItem="Wde-Hy-8QG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="V5v-UG-316"/>
+                <constraint firstAttribute="bottom" secondItem="dAX-yM-n57" secondAttribute="bottom" constant="4" id="VXU-dn-3Al"/>
+                <constraint firstItem="dAX-yM-n57" firstAttribute="leading" secondItem="qQT-nr-e36" secondAttribute="trailing" constant="4" id="l34-YQ-efO"/>
+                <constraint firstAttribute="bottom" secondItem="qQT-nr-e36" secondAttribute="bottom" constant="6" id="no9-xi-Uqn"/>
+                <constraint firstItem="Wde-Hy-8QG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="vCw-yD-sYb"/>
+                <constraint firstAttribute="trailing" secondItem="Wde-Hy-8QG" secondAttribute="trailing" id="zN4-3W-zLf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="116.79389312977099" y="246.47887323943664"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="circle" catalog="system" width="128" height="123"/>
+    </resources>
+</document>
