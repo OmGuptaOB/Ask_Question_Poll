@@ -11,16 +11,13 @@ class TextFieldXib: NibView {
     
     
 @IBOutlet weak var textFieldTitle: UILabel!
-
 @IBOutlet weak var textFieldTitleImage: UIImageView!
-
 @IBOutlet weak var textFieldView: UIView!
-
 @IBOutlet weak var textField: UITextField!
-
 @IBOutlet weak var textFieldInsideImage: UIImageView!
     
-
+//@IBOutlet weak var titleImageAspectConstraint: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -29,10 +26,11 @@ class TextFieldXib: NibView {
         super.layoutSubviews()
         setupTitle()
         setupTextField()
+//        setAspect()
     }
     
     func setupTitle(){
-          textFieldTitle.font = UIFont(name: "SFAtarianSystemExtended", size: 24)
+          textFieldTitle.font = UIFont(name: "SFAtarianSystemExtended", size: 26)
       }
       
     func setupTextField() {
@@ -50,6 +48,24 @@ class TextFieldXib: NibView {
             textField.leftViewMode = .always
 
     }
+    
+//    func setAspect() {
+//        guard let image = textFieldTitleImage.image else { return }
+//        
+//        // Remove existing aspect constraint
+//        titleImageAspectConstraint.isActive = false
+//        
+//        let aspectRatio = image.size.width / image.size.height
+//        
+//        // Create new constraint based on image's actual aspect ratio
+//        titleImageAspectConstraint = textFieldTitleImage.widthAnchor.constraint(
+//            equalTo: textFieldTitleImage.heightAnchor,
+//            multiplier: aspectRatio
+//        )
+//        titleImageAspectConstraint.isActive = true
+//        
+//        layoutIfNeeded()
+//    }
     
     
 }

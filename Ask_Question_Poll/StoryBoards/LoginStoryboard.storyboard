@@ -20,10 +20,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mco-fB-GJq">
-                                <rect key="frame" x="10" y="609" width="382" height="231"/>
+                                <rect key="frame" x="10" y="618.33333333333337" width="382" height="221.66666666666663"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMg-30-7ex" customClass="UIControl">
-                                        <rect key="frame" x="150.33333333333334" y="93" width="81.666666666666657" height="45"/>
+                                        <rect key="frame" x="150.33333333333334" y="88.333333333333258" width="81.666666666666657" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGNUP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbA-Uo-nnH">
                                                 <rect key="frame" x="9.9999999999999964" y="7.9999999999999982" width="61.666666666666657" height="25.333333333333329"/>
@@ -52,27 +52,24 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcP-nr-cnm" customClass="BackGroundViewXib" customModule="Ask_Question_Poll">
-                                <rect key="frame" x="10" y="265" width="382" height="344"/>
+                                <rect key="frame" x="10" y="255.66666666666666" width="382" height="362.66666666666674"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dd3-7i-jho" customClass="TextFieldXib" customModule="Ask_Question_Poll" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="20" width="366" height="73"/>
+                                        <rect key="frame" x="8" y="20.000000000000028" width="366" height="80"/>
                                         <color key="backgroundColor" systemColor="tintColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="73" id="N6K-tx-sEl"/>
+                                            <constraint firstAttribute="height" constant="80" id="N6K-tx-sEl"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDi-XN-yAN" customClass="TextFieldXib" customModule="Ask_Question_Poll" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="113" width="366" height="73"/>
+                                        <rect key="frame" x="8" y="120.00000000000003" width="366" height="80"/>
                                         <color key="backgroundColor" systemColor="tintColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="73" id="kL3-1N-rPp"/>
-                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEw-51-pqd" customClass="UIControl">
-                                        <rect key="frame" x="8" y="206" width="250" height="50"/>
+                                        <rect key="frame" x="8" y="220.00000000000003" width="366" height="54.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FORGOT PASSWORD ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12B-Qv-Jig">
-                                                <rect key="frame" x="9" y="15" width="176.66666666666666" height="21"/>
+                                                <rect key="frame" x="9" y="15.000000000000002" width="176.66666666666666" height="25.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -80,7 +77,6 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="tintColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="LJ1-cy-yiP"/>
                                             <constraint firstItem="12B-Qv-Jig" firstAttribute="top" secondItem="qEw-51-pqd" secondAttribute="top" constant="15" id="UZA-sq-qcb"/>
                                             <constraint firstItem="12B-Qv-Jig" firstAttribute="leading" secondItem="qEw-51-pqd" secondAttribute="leading" constant="9" id="gTN-58-IsV"/>
                                             <constraint firstAttribute="bottom" secondItem="12B-Qv-Jig" secondAttribute="bottom" constant="14" id="jwb-tT-BiU"/>
@@ -90,7 +86,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fwo-2D-3Td" customClass="ButtonXib" customModule="Ask_Question_Poll" customModuleProvider="target">
-                                        <rect key="frame" x="101" y="281" width="180" height="45"/>
+                                        <rect key="frame" x="101" y="299.66666666666674" width="180" height="45"/>
                                         <color key="backgroundColor" systemColor="tintColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="180" id="sJt-HO-2Ua"/>
@@ -104,6 +100,7 @@
                                     <constraint firstAttribute="bottom" secondItem="Fwo-2D-3Td" secondAttribute="bottom" constant="18" id="319-NB-kug"/>
                                     <constraint firstItem="qEw-51-pqd" firstAttribute="leading" secondItem="kDi-XN-yAN" secondAttribute="leading" id="7Yk-fI-vfn"/>
                                     <constraint firstItem="Fwo-2D-3Td" firstAttribute="centerX" secondItem="XcP-nr-cnm" secondAttribute="centerX" id="Gl5-rP-pvh"/>
+                                    <constraint firstItem="qEw-51-pqd" firstAttribute="trailing" secondItem="kDi-XN-yAN" secondAttribute="trailing" id="R9c-XF-PvP"/>
                                     <constraint firstItem="kDi-XN-yAN" firstAttribute="trailing" secondItem="dd3-7i-jho" secondAttribute="trailing" id="UX7-8e-DC8"/>
                                     <constraint firstItem="qEw-51-pqd" firstAttribute="height" secondItem="kDi-XN-yAN" secondAttribute="height" multiplier="0.684932" id="WFG-oS-9en"/>
                                     <constraint firstItem="kDi-XN-yAN" firstAttribute="top" secondItem="dd3-7i-jho" secondAttribute="bottom" constant="20" id="ac1-ev-Gni"/>
@@ -116,7 +113,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Z1E-mY-ziD">
-                                <rect key="frame" x="10" y="181.33333333333334" width="382" height="33.666666666666657"/>
+                                <rect key="frame" x="10" y="172" width="382" height="33.666666666666657"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3U-mZ-XmM">
                                         <rect key="frame" x="0.0" y="0.0" width="181" height="33.666666666666664"/>
@@ -198,7 +195,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

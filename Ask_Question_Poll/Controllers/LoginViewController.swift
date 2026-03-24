@@ -66,8 +66,9 @@ class LoginViewController: UIViewController {
     func setupEmailtextField(){
         emailTextFieldView.textFieldTitle.text = "email"
         emailTextFieldView.textField.placeholder = "Enter Email"
-        emailTextFieldView.textField.text = "joya.tevbst@grr.la"
+        emailTextFieldView.textField.text = "vaferam713@onbap.com"
         emailTextFieldView.textFieldTitleImage.image = UIImage(named: "email_icon")
+//        emailTextFieldView.setAspect()
         emailTextFieldView.textField.keyboardType = .emailAddress
         
     }
@@ -75,8 +76,9 @@ class LoginViewController: UIViewController {
     func setupPasswordTextField(){
         passwordTextFieldView.textFieldTitle.text = "password"
         
-        passwordTextFieldView.textField.text = "demo"
+        passwordTextFieldView.textField.text = "123456789!Om"
         passwordTextFieldView.textFieldTitleImage.image = UIImage(named: "password_icon")
+//        passwordTextFieldView.setAspect()
         passwordTextFieldView.textField.placeholder = "Enter Password"
         
         passwordTextFieldView.textField.isSecureTextEntry = true
@@ -115,6 +117,7 @@ class LoginViewController: UIViewController {
                 
                 if response?.code == 200 {
                     self?.showSuccess()
+                    self?.navigateToHome()
                 } else {
                     self?.showError(response?.message ?? "Login Failed")
                 }
@@ -157,9 +160,14 @@ extension LoginViewController : UITextFieldDelegate{
         validateAndCallAPI()
     }
     
+    func navigateToHome(){
+        let vc = storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func signUpTapped(){
         print("sign up tapped")
-        let SignUpStoryboard = UIStoryboard(name: "SignUpStoryboard", bundle: nil)
         let vc = SignUpStoryboard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }

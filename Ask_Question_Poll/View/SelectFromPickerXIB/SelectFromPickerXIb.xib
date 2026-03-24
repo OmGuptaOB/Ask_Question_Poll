@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -38,7 +37,7 @@
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gec-Qk-7iO" userLabel="line view">
                             <rect key="frame" x="0.0" y="32.666666666666664" width="336" height="1.3333333333333357"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1.5" id="4xg-ST-pk9"/>
                             </constraints>
@@ -60,7 +59,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOTE: YOUR QUESTION WILL BE VISIBLE AT ONLY SELECTED LOCATION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="som-yJ-7he">
-                    <rect key="frame" x="20" y="37" width="296" height="11"/>
+                    <rect key="frame" x="20" y="37" width="296" height="13"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,7 +70,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="som-yJ-7he" secondAttribute="bottom" constant="2" id="KmJ-Rq-o38"/>
+                <constraint firstAttribute="bottom" secondItem="som-yJ-7he" secondAttribute="bottom" id="KmJ-Rq-o38"/>
                 <constraint firstItem="som-yJ-7he" firstAttribute="leading" secondItem="lc7-fd-U58" secondAttribute="leading" constant="20" id="LVF-1t-0VO"/>
                 <constraint firstItem="lc7-fd-U58" firstAttribute="trailing" secondItem="som-yJ-7he" secondAttribute="trailing" constant="20" id="Yay-a0-FKq"/>
                 <constraint firstItem="pvD-v4-oby" firstAttribute="trailing" secondItem="lc7-fd-U58" secondAttribute="trailing" id="jBa-zw-WTF"/>
@@ -85,8 +84,5 @@
     </objects>
     <resources>
         <image name="dropdown_icon" width="135" height="74"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

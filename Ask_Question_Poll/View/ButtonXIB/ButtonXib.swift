@@ -32,7 +32,7 @@ class ButtonXib: NibView {
             string: btnCustomLabel.text ?? "",
             attributes: [
                 .font: font,   // 🔥 THIS IS THE FIX
-                .underlineStyle: NSUnderlineStyle.single.rawValue
+                
             ]
         )
 

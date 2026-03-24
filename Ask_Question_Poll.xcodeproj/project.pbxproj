@@ -11,6 +11,10 @@
 		2E24091D2F6C254500BB6BCF /* RadioXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E24091C2F6C254500BB6BCF /* RadioXib.swift */; };
 		2E2BBE672F717CC000F2BBE0 /* StoryBoardDeclaration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2BBE662F717CB600F2BBE0 /* StoryBoardDeclaration.swift */; };
 		2E4E44402F7168B9008BF9B6 /* OtpInputAndPasswordStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E443F2F7168B9008BF9B6 /* OtpInputAndPasswordStoryBoard.storyboard */; };
+		2E6231492F7285D500C3EE26 /* OptionsTextandImageXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6231482F7285D500C3EE26 /* OptionsTextandImageXib.swift */; };
+		2E62314B2F72BF3F00C3EE26 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62314A2F72BF3500C3EE26 /* TextField.swift */; };
+		2E62314E2F72D4A500C3EE26 /* AddQuestionRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62314D2F72D4A200C3EE26 /* AddQuestionRequestModel.swift */; };
+		2E6231502F72D4CC00C3EE26 /* AddQuestionResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62314F2F72D4CB00C3EE26 /* AddQuestionResponseModel.swift */; };
 		2E69B2D12F6C357F00F00615 /* SignUpRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E69B2D02F6C357B00F00615 /* SignUpRequestModel.swift */; };
 		2E69B2D32F6C35AF00F00615 /* SignUpResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E69B2D22F6C35AE00F00615 /* SignUpResponseModel.swift */; };
 		2E96B18E2F71149300B8CBFA /* OptionsTextandImageXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E96B18D2F71149300B8CBFA /* OptionsTextandImageXib.xib */; };
@@ -71,6 +75,10 @@
 		2E24091C2F6C254500BB6BCF /* RadioXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioXib.swift; sourceTree = "<group>"; };
 		2E2BBE662F717CB600F2BBE0 /* StoryBoardDeclaration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardDeclaration.swift; sourceTree = "<group>"; };
 		2E4E443F2F7168B9008BF9B6 /* OtpInputAndPasswordStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OtpInputAndPasswordStoryBoard.storyboard; sourceTree = "<group>"; };
+		2E6231482F7285D500C3EE26 /* OptionsTextandImageXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTextandImageXib.swift; sourceTree = "<group>"; };
+		2E62314A2F72BF3500C3EE26 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		2E62314D2F72D4A200C3EE26 /* AddQuestionRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionRequestModel.swift; sourceTree = "<group>"; };
+		2E62314F2F72D4CB00C3EE26 /* AddQuestionResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionResponseModel.swift; sourceTree = "<group>"; };
 		2E69B2D02F6C357B00F00615 /* SignUpRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequestModel.swift; sourceTree = "<group>"; };
 		2E69B2D22F6C35AE00F00615 /* SignUpResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponseModel.swift; sourceTree = "<group>"; };
 		2E96B18D2F71149300B8CBFA /* OptionsTextandImageXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsTextandImageXib.xib; sourceTree = "<group>"; };
@@ -159,6 +167,15 @@
 			path = RadioXIB;
 			sourceTree = "<group>";
 		};
+		2E62314C2F72D48800C3EE26 /* AddQuestionModel */ = {
+			isa = PBXGroup;
+			children = (
+				2E62314F2F72D4CB00C3EE26 /* AddQuestionResponseModel.swift */,
+				2E62314D2F72D4A200C3EE26 /* AddQuestionRequestModel.swift */,
+			);
+			path = AddQuestionModel;
+			sourceTree = "<group>";
+		};
 		2E69B2CF2F6C357200F00615 /* SignUpModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +191,7 @@
 				2E96B18D2F71149300B8CBFA /* OptionsTextandImageXib.xib */,
 				2E96B18F2F71152B00B8CBFA /* SingleTextAndImageXib.xib */,
 				2E96B1912F71165600B8CBFA /* SingleTextAndImageXib.swift */,
+				2E6231482F7285D500C3EE26 /* OptionsTextandImageXib.swift */,
 			);
 			path = OptionsTextAndImageXIb;
 			sourceTree = "<group>";
@@ -392,6 +410,7 @@
 		2ED109F42F6A66BE0033DA96 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2E62314C2F72D48800C3EE26 /* AddQuestionModel */,
 				2EB63E4F2F6D9A6B0011B1F5 /* ResetPasswordModels */,
 				2EB63E482F6D8D280011B1F5 /* VerifyForgotPasswordRequstModels */,
 				2EB63E432F6D8CE00011B1F5 /* ForgotPasswordModels */,
@@ -422,6 +441,7 @@
 		2ED109F72F6A66F50033DA96 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				2E62314A2F72BF3500C3EE26 /* TextField.swift */,
 				2E96B1982F714CDC00B8CBFA /* Label.swift */,
 				2EAD4E5D2F6BFCD3007C2B3C /* NavExtension.swift */,
 				2EAD4E5B2F6BFBAE007C2B3C /* NIBExtension.swift */,
@@ -625,6 +645,7 @@
 				2EB63E472F6D8D1A0011B1F5 /* ForgotPasswordResponseModel.swift in Sources */,
 				2ED109EC2F6A66640033DA96 /* AppDelegate.swift in Sources */,
 				2EB63E512F6D9A810011B1F5 /* ResetPasswordRequestModel.swift in Sources */,
+				2E62314E2F72D4A500C3EE26 /* AddQuestionRequestModel.swift in Sources */,
 				2E9D612F2F6AD9AE00D0FEB0 /* ButtonXib.swift in Sources */,
 				2E69B2D12F6C357F00F00615 /* SignUpRequestModel.swift in Sources */,
 				2EC6864A2F70F805001BC76F /* SelectFromPickerXIb.swift in Sources */,
@@ -639,10 +660,13 @@
 				2EB63E422F6D5FD70011B1F5 /* OTPResponseModel.swift in Sources */,
 				2E9D61082F6A84EB00D0FEB0 /* BackGroundViewXib.swift in Sources */,
 				2EB63E3F2F6D5E530011B1F5 /* OTPRequestModel.swift in Sources */,
+				2E6231492F7285D500C3EE26 /* OptionsTextandImageXib.swift in Sources */,
 				2EAD4E4C2F6BCF3C007C2B3C /* SignUpViewController.swift in Sources */,
 				2EB63E4A2F6D8D410011B1F5 /* VerifyForgotOTPRequestModel.swift in Sources */,
 				2EB63E3B2F6D45E30011B1F5 /* CountryModel.swift in Sources */,
 				2EB63E3D2F6D50950011B1F5 /* OtpInputViewController.swift in Sources */,
+				2E62314B2F72BF3F00C3EE26 /* TextField.swift in Sources */,
+				2E6231502F72D4CC00C3EE26 /* AddQuestionResponseModel.swift in Sources */,
 				2EAD4E5A2F6BF512007C2B3C /* ImagePickerXib.swift in Sources */,
 				2EAD4E462F6BBF77007C2B3C /* LoginRequestModel.swift in Sources */,
 				2EB63E452F6D8D010011B1F5 /* ForgotPasswordRequestModel.swift in Sources */,

@@ -233,5 +233,64 @@ class APIManager{
                 }
             }
     }
+    
+    func addQuestion(request: AddQuestionRequestModel,
+                     completion: @escaping (AddQuestionResponseModel?, String?) -> Void) {
+        
+        let urlString = "\(baseURL)/api/addQuestion"
+        
+        AF.upload(multipartFormData: { multipart in
+            
+            // request_data as JSON string
+            if let jsonData   = try? JSONSerialization.data(withJSONObject: request.toRequestDataJSON()),
+               let jsonString = String(data: jsonData, encoding: .utf8),
+               let fieldData  = jsonString.data(using: .utf8) {
+                multipart.append(fieldData, withName: "request_data")
+                print("ADD QUESTION REQUEST DATA: \(jsonString)")
+            }
+            
+            // Question image (optional)
+            if let image     = request.questionImage,
+               let imageData = image.jpegData(compressionQuality: 0.8) {
+                multipart.append(imageData, withName: "question_image",
+                                 fileName: "question_image.jpg", mimeType: "image/jpeg")
+            }
+            
+            // Option images (only for image mode)
+            if request.option_type == 2 {
+                if let image     = request.optionOneImage,
+                   let imageData = image.jpegData(compressionQuality: 0.8) {
+                    multipart.append(imageData, withName: "option1",
+                                     fileName: "option1.jpg", mimeType: "image/jpeg")
+                }
+                if let image     = request.optionTwoImage,
+                   let imageData = image.jpegData(compressionQuality: 0.8) {
+                    multipart.append(imageData, withName: "option2",
+                                     fileName: "option2.jpg", mimeType: "image/jpeg")
+                }
+            }
+            
+        }, to: urlString, method: .post)
+        .responseData { response in
+            if let data = response.data, let raw = String(data: data, encoding: .utf8) {
+                print("ADD QUESTION RESPONSE: \(raw)")
+            }
+            switch response.result {
+            case .success(let data):
+                do {
+                    if let json  = try JSONSerialization.jsonObject(with: data) as? NSDictionary,
+                       let model = Mapper<AddQuestionResponseModel>().map(JSONObject: json) {
+                        completion(model, nil)
+                    } else {
+                        completion(nil, "Parsing Error")
+                    }
+                } catch {
+                    completion(nil, "Invalid server response")
+                }
+            case .failure(let error):
+                completion(nil, error.localizedDescription)
+            }
+        }
+    }
 
 }

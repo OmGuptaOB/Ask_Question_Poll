@@ -13,10 +13,12 @@ class ImagePickerXib: NibView {
     
     @IBOutlet weak var btnClickOpenPicker: UIButton!
     
-    // ✅ Parent gets notified here — just set this closure wherever you use it
+    @IBOutlet weak var cameraIconImageView: UIImageView!
+    
+    // Parent gets notified here — just set this closure wherever you use it
     var onImageSelected: ((UIImage) -> Void)?
     
-    // ✅ Each instance holds its own picker — no interference between multiple pickers
+    //  Each instance holds its own picker — no interference between multiple pickers
     private var imagePicker: UIImagePickerController?
     private(set) var isImageSelected: Bool = false
     
@@ -26,17 +28,10 @@ class ImagePickerXib: NibView {
     }
     
     func pickerSetup(){
-        // ✅ Button tap wired here — no need to do it anywhere else
         btnClickOpenPicker.addTarget(self, action: #selector(openPickerTapped), for: .touchUpInside)
-        
-        // Optional: make image circular
-        imagePickerImage.layer.cornerRadius = imagePickerImage.frame.height / 2
-        imagePickerImage.clipsToBounds = true
-        imagePickerImage.contentMode = .scaleAspectFill
-        imagePickerImage.image = UIImage(named: "profile_avtar") // your placeholder image name
-                isImageSelected = false
+        isImageSelected = false
     }
-    // ✅ Finds the top-most VC automatically — works from any screen
+    // Finds the top-most VC automatically — works from any screen
     private func topViewController() -> UIViewController? {
         var topVC = UIApplication.shared.keyWindow?.rootViewController
         while let presented = topVC?.presentedViewController {
@@ -84,7 +79,7 @@ class ImagePickerXib: NibView {
     }
 }
 
-// ✅ Delegate lives inside the XIB — nothing leaks to the parent VC
+//  Delegate lives inside the XIB — nothing leaks to the parent VC
 extension ImagePickerXib: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController,
@@ -96,10 +91,10 @@ extension ImagePickerXib: UIImagePickerControllerDelegate, UINavigationControlle
         picker.dismiss(animated: true) { [weak self] in
             guard let self = self, let image = selectedImage else { return }
             
-            // ✅ Update image view directly
+            //  Update image view directly
             self.imagePickerImage.image = image
             self.isImageSelected = true
-            // ✅ Notify parent with selected image
+            //  Notify parent with selected image
             self.onImageSelected?(image)
             
             // Clear picker reference

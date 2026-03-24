@@ -18,11 +18,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="336" height="75"/>
+            <rect key="frame" x="0.0" y="0.0" width="336" height="80"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5S-7U-LZd">
-                    <rect key="frame" x="0.0" y="27.666666666666668" width="336" height="47.333333333333329"/>
+                    <rect key="frame" x="0.0" y="32.666666666666657" width="336" height="47.333333333333343"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sRq-O8-zdg">
                             <rect key="frame" x="0.0" y="0.0" width="336" height="47.333333333333336"/>
@@ -50,14 +50,14 @@
                         <constraint firstAttribute="height" constant="47.329999999999998" id="yGq-9c-zXX"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" image="email_icon" translatesAutoresizingMaskIntoConstraints="NO" id="nw7-mU-SuN">
-                    <rect key="frame" x="321.33333333333331" y="0.0" width="14.666666666666686" height="14.666666666666666"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" verticalHuggingPriority="251" image="password_icon" translatesAutoresizingMaskIntoConstraints="NO" id="nw7-mU-SuN">
+                    <rect key="frame" x="316" y="4.3333333333333321" width="20" height="17"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="nw7-mU-SuN" secondAttribute="height" id="e5D-W8-uAi"/>
+                        <constraint firstAttribute="width" constant="20" id="aIH-3Q-5de"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0os-Zd-0xz">
-                    <rect key="frame" x="0.0" y="0.0" width="34.666666666666664" height="14.666666666666666"/>
+                    <rect key="frame" x="0.0" y="4.3333333333333321" width="34.666666666666664" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.98823529409999999" green="0.81176470590000005" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -72,17 +72,17 @@
                 <constraint firstAttribute="trailing" secondItem="nw7-mU-SuN" secondAttribute="trailing" id="G5g-gn-Pa9"/>
                 <constraint firstItem="0os-Zd-0xz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="LTZ-ye-aWU"/>
                 <constraint firstItem="nw7-mU-SuN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0os-Zd-0xz" secondAttribute="trailing" id="Vfh-nU-m4g"/>
-                <constraint firstItem="O5S-7U-LZd" firstAttribute="top" secondItem="0os-Zd-0xz" secondAttribute="bottom" constant="13" id="crD-Ag-HfX"/>
+                <constraint firstItem="O5S-7U-LZd" firstAttribute="top" secondItem="0os-Zd-0xz" secondAttribute="bottom" constant="11.5" id="crD-Ag-HfX"/>
                 <constraint firstItem="nw7-mU-SuN" firstAttribute="bottom" secondItem="0os-Zd-0xz" secondAttribute="bottom" id="en2-mH-ISA"/>
                 <constraint firstItem="O5S-7U-LZd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="s1o-PX-F5e"/>
                 <constraint firstItem="nw7-mU-SuN" firstAttribute="top" secondItem="0os-Zd-0xz" secondAttribute="top" id="uFm-5k-axg"/>
                 <constraint firstItem="0os-Zd-0xz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" id="v4G-IJ-f5V"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-27.480916030534349" y="146.47887323943664"/>
+            <point key="canvasLocation" x="-27.480916030534349" y="143.66197183098592"/>
         </view>
     </objects>
     <resources>
-        <image name="email_icon" width="1024" height="1024"/>
+        <image name="password_icon" width="1024" height="1024"/>
     </resources>
 </document>

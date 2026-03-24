@@ -12,22 +12,14 @@ import SCLAlertView
 class SignUpViewController: UIViewController {
 //
     @IBOutlet weak var emailTextFieldView: TextFieldXib!
-    
     @IBOutlet weak var passwordTextFieldView: TextFieldXib!
-    
     @IBOutlet weak var confirmPasswordTextFieldView: TextFieldXib!
     @IBOutlet weak var countryTextFieldView: TextFieldXib!
-
     @IBOutlet weak var btnSignUpView: ButtonXib!
-    
     @IBOutlet weak var imagePickerView: ImagePickerXib!
-    
     @IBOutlet weak var lblGender: UILabel!
-    
     @IBOutlet weak var radioMaleView: RadioXib!
-    
     @IBOutlet weak var radioFemaleView: RadioXib!
-    
     @IBOutlet weak var backGroundView: BackGroundViewXib!
     
     
@@ -92,6 +84,11 @@ class SignUpViewController: UIViewController {
     
     //MARK: imagepicker setup
     func setupProfileImagePicker(){
+        imagePickerView.cameraIconImageView.isHidden = true
+        imagePickerView.imagePickerImage.layer.cornerRadius = imagePickerView.imagePickerImage.frame.height / 2
+        imagePickerView.imagePickerImage.clipsToBounds = true
+        imagePickerView.imagePickerImage.contentMode = .scaleAspectFill
+        imagePickerView.imagePickerImage.image = UIImage(named: "profile_avtar")
         imagePickerView.onImageSelected = { image in
             print("Profile image selected: \(image)")
         }
