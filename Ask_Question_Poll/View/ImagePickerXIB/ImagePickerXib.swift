@@ -44,26 +44,32 @@ class ImagePickerXib: NibView {
         
         // Camera option (only if available)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
-             if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                 self.openPicker(sourceType: .camera)
-             } else {
-                 let errorAlert = UIAlertController(
-                     title: "Camera Not Available",
-                     message: "This device does not have a camera.",
-                     preferredStyle: .alert
-                 )
-                 errorAlert.addAction(UIAlertAction(title: "Back", style: .default, handler: { _ in
-                     self.openPickerTapped()
-                 }))
-                 self.topViewController()?.present(errorAlert, animated: true)
-             }
-         }))
-         
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                self.openPicker(sourceType: .camera)
+            } else {
+                let errorAlert = UIAlertController(
+                    title: "Camera Not Available",
+                    message: "This device does not have a camera.",
+                    preferredStyle: .alert
+                )
+                errorAlert.addAction(UIAlertAction(title: "Back", style: .default, handler: { _ in
+                    self.openPickerTapped()
+                }))
+                self.topViewController()?.present(errorAlert, animated: true)
+            }
+        }))
+        
         alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
             self.openPicker(sourceType: .photoLibrary)
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        if let popover = alert.popoverPresentationController {
+            popover.sourceView = self.view
+            popover.sourceRect = CGRect(x: self.view.bounds.midX,y: self.view.bounds.midY,width: 0,height: 0)
+            popover.permittedArrowDirections = []
+        }
         
         topViewController()?.present(alert, animated: true)
     }

@@ -124,14 +124,7 @@ class HomeViewController: UIViewController{
     }
     
     func loadCountries() {
-        guard let url = Bundle.main.url(forResource: "countryNames", withExtension: "json"),
-              let jsonString = try? String(contentsOf: url, encoding: .utf8),
-              let response = CountryResponse(JSONString: jsonString)
-        else { return }
-        
-        countries = response.country_JSON
-        selectedCountry = countries.first
-        //        locationPickerSelector.textField.text = countries.first?.name
+        // Handled by CountryManager.shared
     }
     
     func setupCategoryPicker(){
@@ -149,12 +142,13 @@ class HomeViewController: UIViewController{
     // MARK: - Location Picker
     func setupLocationPicker() {
         locationPickerSelector.selectDataTextField.text = "select location"
-        let countryNames = countries.compactMap { $0.name }
+        let countryNames = CountryManager.shared.getCountryNames()
         locationPickerSelector.configure(with: countryNames, placeholder: "Select Country")
         //        locationPickerSelector.noteDescriptionLabel.isHidden = true
+        locationPickerSelector.setNoteText("Note: Your question will be visible at only selected locations")
         locationPickerSelector.onValueSelected = { [weak self] value in
             guard let self = self else { return }
-            self.selectedCountry = self.countries.first { $0.name == value }
+            self.selectedCountry = CountryManager.shared.countries.first { $0.name == value }
             print("Selected country: \(self.selectedCountry?.name ?? "") \(self.selectedCountry?.dial_code ?? "")")
         }
     }
@@ -164,6 +158,8 @@ class HomeViewController: UIViewController{
         genderPickerSelector.selectDataTextField.text = "select gender"
         genderPickerSelector.configure(with: ["Male", "Female"], placeholder: "Select Gender")
         //        genderPickerSelector.noteDescriptionLabel.isHidden = true
+        genderPickerSelector.setNoteText("Note: Your question will be visible to only selected genders")
+        
         genderPickerSelector.onValueSelected = { [weak self] value in
             self?.selectedGender = value
             print("Selected gender: \(value)")
@@ -263,7 +259,7 @@ class HomeViewController: UIViewController{
         )
         
         // ─── Show loader & call API ───────────────────────────────────
-        let loader = SCLAlertView().showWait("Please wait", subTitle: "Submitting question...", colorStyle: 0xFFD110)
+        let loader = showLoading(message: "Submitting question...")
         
         APIManager.shared.addQuestion(request: request) { [weak self] response, error in
             DispatchQueue.main.async {
@@ -275,7 +271,7 @@ class HomeViewController: UIViewController{
                 }
                 
                 if response?.code == 200 {
-                    SCLAlertView().showSuccess(response?.message ?? "Question added successfully!", subTitle: "")
+                    self?.showSuccess(response?.message ?? "Question added successfully!")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                         self?.clearForm()
                     }
@@ -314,11 +310,6 @@ class HomeViewController: UIViewController{
         optionsView.optionTwoView.optiontextView.text = ""
     }
 
-    // MARK: - Helpers
-
-    func showError(_ message: String) {
-        SCLAlertView().showError(message, subTitle: "")
-    }
 
     @objc func submitTapped() {
         validateAndSubmit()

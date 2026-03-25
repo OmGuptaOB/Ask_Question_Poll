@@ -30,7 +30,7 @@ class OtpInputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNav()
+        setupDefaultNav()
         configureScreen()
     }
     
@@ -92,11 +92,6 @@ class OtpInputViewController: UIViewController {
             btnEnterOTpView.btnCustomClick.addTarget(self, action: action, for: .touchUpInside)
         }
     
-    func setupNav(){
-        navigationController?.setupGlobalBackButton()
-        self.navigationItem.backButtonTitle = ""
-        self.navigationItem.titleView?.backgroundColor = .clear
-    }
     
     
     @objc func verifySignUpOTP() {
@@ -117,7 +112,7 @@ class OtpInputViewController: UIViewController {
             return
         }
         
-        loader = SCLAlertView().showWait("Please wait", subTitle: "Verifying OTP...", colorStyle: 0xFFD110)
+        loader = showLoading(message: "Verifying OTP...")
         
         let request = OTPRequestModel(
             user_reg_temp_id: "\(tempId)",
@@ -148,10 +143,9 @@ class OtpInputViewController: UIViewController {
         
         if email.isEmpty { showError("Please Enter Email"); return }
         
-        let emailRegex = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}")
-        if !emailRegex.evaluate(with: email) { showError("Please Enter Valid Email"); return }
+        if !email.isValidEmail { showError("Please Enter Valid Email"); return }
         
-        loader = SCLAlertView().showWait("Please wait", subTitle: "Sending OTP...", colorStyle: 0xFFD110)
+        loader = showLoading(message: "Sending OTP...")
         
         APIManager.shared.forgotPassword(email: email) { [weak self] response, error in
             DispatchQueue.main.async {
@@ -162,7 +156,7 @@ class OtpInputViewController: UIViewController {
                     self?.forgotPasswordEmail = email
                     self?.screenMode = .forgotPasswordOTP
                     self?.configureScreen()
-                    SCLAlertView().showSuccess(response?.message ?? "Check your email for the OTP", subTitle: "")
+                    self?.showSuccess(response?.message ?? "Check your email for the OTP")
                 } else {
                     self?.showError(response?.message ?? "Failed to send OTP")
                 }
@@ -179,7 +173,7 @@ class OtpInputViewController: UIViewController {
         guard let otpInt = Int(otp) else { showError("Please Enter Valid OTP"); return }
         guard let email = forgotPasswordEmail else { showError("Something went wrong."); return }
         
-        loader = SCLAlertView().showWait("Please wait", subTitle: "Verifying OTP...", colorStyle: 0xFFD110)
+        loader = showLoading(message: "Verifying OTP...")
         
         APIManager.shared.verifyForgotOTP(email: email, otp: otpInt) { [weak self] response, error in
             DispatchQueue.main.async {
@@ -213,7 +207,7 @@ class OtpInputViewController: UIViewController {
             return
         }
         
-        if !isValidPassword(password) {
+        if !password.isValidPassword {
             showError("Password must have 8+ chars, upper, lower, number & special character")
             return
         }
@@ -229,7 +223,7 @@ class OtpInputViewController: UIViewController {
             return
         }
         
-        loader = SCLAlertView().showWait("Please wait", subTitle: "Saving new password...", colorStyle: 0xFFD110)
+        loader = showLoading(message: "Saving new password...")
         
         APIManager.shared.resetPassword(email: email, token: token, password: password) { [weak self] response, error in
             DispatchQueue.main.async {
@@ -237,7 +231,7 @@ class OtpInputViewController: UIViewController {
                 if let error = error { self?.showError(error); return }
                 
                 if response?.code == 200 {
-                    SCLAlertView().showSuccess(response?.message ?? "Password Reset Successfully", subTitle: "")
+                    self?.showSuccess(response?.message ?? "Password Reset Successfully")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                         self?.navigationController?.popToRootViewController(animated: true)
                     }
@@ -248,17 +242,9 @@ class OtpInputViewController: UIViewController {
         }
     }
     
-    func isValidPassword(_ password: String) -> Bool {
-           let regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>/?]).{8,}$"
-           return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: password)
-       }
-
-       func showError(_ message: String) {
-           SCLAlertView().showError(message, subTitle: "")
-       }
     
     private func navigateToLogin() {
-        SCLAlertView().showSuccess("Success", subTitle: "Account verified! Please login.")
+        showSuccess("Success", subTitle: "Account verified! Please login.")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.navigationController?.popToRootViewController(animated: true)

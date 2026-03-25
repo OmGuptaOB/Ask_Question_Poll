@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
         setupBtnLogin()
         setupEmailtextField()
         setupPasswordTextField()
-        setupNav()
+        setupDefaultNav()
         emailTextFieldView.textField.delegate = self
         passwordTextFieldView.textField.delegate = self
         
@@ -53,10 +53,6 @@ class LoginViewController: UIViewController {
 //        
 //        signUpBtnView.lblLinkText.text = "SIGNUP"
 //        signUpBtnView.lblLinkText.textAlignment = .center
-    }
-    func setupNav(){
-        self.navigationItem.backButtonTitle = ""
-        self.navigationItem.titleView?.backgroundColor = .clear
     }
 
     func setupBtnLogin(){
@@ -93,12 +89,15 @@ class LoginViewController: UIViewController {
         } else if email.isEmpty {
             showError("Please Enter Email")
             return
-        }else if password.isEmpty {
+        } else if !email.isValidEmail {
+            showError("Please Enter Valid Email")
+            return
+        } else if password.isEmpty {
             showError("Please Enter Password")
             return
         }
         
-        loader = SCLAlertView().showWait("Please wait", subTitle: "Logging in...", colorStyle: 0xFCCF1C)
+        loader = showLoading(message: "Logging in...")
         
         
         let request = LoginRequestModel(email: email, password: password)
@@ -116,7 +115,7 @@ class LoginViewController: UIViewController {
                 }
                 
                 if response?.code == 200 {
-                    self?.showSuccess()
+                    self?.showSuccess(response?.message ?? "Login Successful")
                     self?.navigateToHome()
                 } else {
                     self?.showError(response?.message ?? "Login Failed")
@@ -127,13 +126,6 @@ class LoginViewController: UIViewController {
         
     }
     
-    func showError(_ message: String) {
-        SCLAlertView().showError(message, subTitle:"" )
-    }
-    func showSuccess() {
-        SCLAlertView().showSuccess("Login Successful", subTitle: "")
-        
-    }
     
     
     @IBAction func BtnForgotPassword(_ sender: Any) {

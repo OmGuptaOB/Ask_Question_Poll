@@ -24,7 +24,7 @@ class SelectFromPickerXIb: NibView {
         super.awakeFromNib()
         setupTitle()
         setupPicker()
-        selectDataTextField.tintColor = .clear 
+        selectDataTextField.tintColor = .clear
     }
     
     func setupTitle() {
@@ -73,6 +73,29 @@ class SelectFromPickerXIb: NibView {
             onValueSelected?(selectedValue)
         }
         selectDataTextField.resignFirstResponder()
+    }
+    
+
+    func setNoteText(_ note: String, highlightPrefix: String = "Note: ") {
+        guard note.hasPrefix(highlightPrefix) else {
+            noteDescriptionLabel.text = note
+            return
+        }
+        
+        let font = UIFont(name: "SFAtarianSystemExtended", size: 10) ?? UIFont.systemFont(ofSize: 10)
+        let attributedText = NSMutableAttributedString()
+        
+        attributedText.append(NSAttributedString(
+            string: highlightPrefix,
+            attributes: [.foregroundColor: UIColor.yellow, .font: font]
+        ))
+        
+        attributedText.append(NSAttributedString(
+            string: String(note.dropFirst(highlightPrefix.count)),
+            attributes: [.foregroundColor: UIColor.white, .font: font]
+        ))
+        
+        noteDescriptionLabel.attributedText = attributedText
     }
 }
 

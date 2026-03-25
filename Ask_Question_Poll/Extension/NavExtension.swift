@@ -14,3 +14,11 @@ extension UINavigationController {
         navigationBar.backIndicatorTransitionMaskImage = backImage
     }
 }
+
+extension UIViewController {
+    func setupDefaultNav() {
+        navigationController?.setupGlobalBackButton()
+        self.navigationItem.backButtonTitle = ""
+        self.navigationItem.titleView?.backgroundColor = .clear
+    }
+}

@@ -67,6 +67,10 @@
 		2ED10A332F6A70CA0033DA96 /* SF Atarian System Extended Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2ED10A2C2F6A70CA0033DA96 /* SF Atarian System Extended Bold.ttf */; };
 		2ED10A342F6A70CA0033DA96 /* SF Atarian System Extended.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2ED10A2B2F6A70CA0033DA96 /* SF Atarian System Extended.ttf */; };
 		2ED10A382F6A72DD0033DA96 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED10A372F6A72DD0033DA96 /* LoginViewController.swift */; };
+		2ED205042F739B9D00C4A6DE /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205022F739B9D00C4A6DE /* String+Validation.swift */; };
+		2ED205052F739B9D00C4A6DE /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205032F739B9D00C4A6DE /* UIViewController+Alert.swift */; };
+		2ED205072F739C1F00C4A6DE /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205062F739C1F00C4A6DE /* CountryManager.swift */; };
+		2ED2050A2F73A9C900C4A6DE /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205092F73A9C900C4A6DE /* TabBarViewController.swift */; };
 		728DBF079E467657D9FB15F8 /* Pods_Ask_Question_Poll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C94A5ADB093B7C933AE6D22 /* Pods_Ask_Question_Poll.framework */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +137,10 @@
 		2ED10A2E2F6A70CA0033DA96 /* category.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = category.json; sourceTree = "<group>"; };
 		2ED10A2F2F6A70CA0033DA96 /* countryNames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = countryNames.json; sourceTree = "<group>"; };
 		2ED10A372F6A72DD0033DA96 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2ED205022F739B9D00C4A6DE /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
+		2ED205032F739B9D00C4A6DE /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		2ED205062F739C1F00C4A6DE /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
+		2ED205092F73A9C900C4A6DE /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8C94A5ADB093B7C933AE6D22 /* Pods_Ask_Question_Poll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ask_Question_Poll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C83E86651D924D7A7777C63B /* Pods-Ask_Question_Poll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ask_Question_Poll.debug.xcconfig"; path = "Target Support Files/Pods-Ask_Question_Poll/Pods-Ask_Question_Poll.debug.xcconfig"; sourceTree = "<group>"; };
 		D781A0B8C9FC8031B1313EA4 /* Pods-Ask_Question_Poll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ask_Question_Poll.release.xcconfig"; path = "Target Support Files/Pods-Ask_Question_Poll/Pods-Ask_Question_Poll.release.xcconfig"; sourceTree = "<group>"; };
@@ -380,6 +388,7 @@
 		2ED109F12F6A668C0033DA96 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				2ED205062F739C1F00C4A6DE /* CountryManager.swift */,
 				2E2BBE662F717CB600F2BBE0 /* StoryBoardDeclaration.swift */,
 				2EAD4E492F6BC015007C2B3C /* APIManager.swift */,
 			);
@@ -399,10 +408,9 @@
 		2ED109F32F6A66AE0033DA96 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2ED205082F73A98F00C4A6DE /* loginandSignupAndOtp */,
 				2EC6864B2F70FC84001BC76F /* TabScreens */,
-				2ED10A372F6A72DD0033DA96 /* LoginViewController.swift */,
-				2EAD4E4B2F6BCF3C007C2B3C /* SignUpViewController.swift */,
-				2EB63E3C2F6D50950011B1F5 /* OtpInputViewController.swift */,
+				2ED205092F73A9C900C4A6DE /* TabBarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -441,6 +449,8 @@
 		2ED109F72F6A66F50033DA96 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				2ED205022F739B9D00C4A6DE /* String+Validation.swift */,
+				2ED205032F739B9D00C4A6DE /* UIViewController+Alert.swift */,
 				2E62314A2F72BF3500C3EE26 /* TextField.swift */,
 				2E96B1982F714CDC00B8CBFA /* Label.swift */,
 				2EAD4E5D2F6BFCD3007C2B3C /* NavExtension.swift */,
@@ -474,6 +484,16 @@
 				2ED10A2F2F6A70CA0033DA96 /* countryNames.json */,
 			);
 			path = Json;
+			sourceTree = "<group>";
+		};
+		2ED205082F73A98F00C4A6DE /* loginandSignupAndOtp */ = {
+			isa = PBXGroup;
+			children = (
+				2ED10A372F6A72DD0033DA96 /* LoginViewController.swift */,
+				2EAD4E4B2F6BCF3C007C2B3C /* SignUpViewController.swift */,
+				2EB63E3C2F6D50950011B1F5 /* OtpInputViewController.swift */,
+			);
+			path = loginandSignupAndOtp;
 			sourceTree = "<group>";
 		};
 		86441650B770DD490145A1DC /* Pods */ = {
@@ -642,6 +662,7 @@
 				2E2BBE672F717CC000F2BBE0 /* StoryBoardDeclaration.swift in Sources */,
 				2EAD4E482F6BBFB9007C2B3C /* LoginResponseModel.swift in Sources */,
 				2EB63E4C2F6D8D520011B1F5 /* VerifyForgotOTPResponseModel.swift in Sources */,
+				2ED2050A2F73A9C900C4A6DE /* TabBarViewController.swift in Sources */,
 				2EB63E472F6D8D1A0011B1F5 /* ForgotPasswordResponseModel.swift in Sources */,
 				2ED109EC2F6A66640033DA96 /* AppDelegate.swift in Sources */,
 				2EB63E512F6D9A810011B1F5 /* ResetPasswordRequestModel.swift in Sources */,
@@ -658,6 +679,7 @@
 				2E24091D2F6C254500BB6BCF /* RadioXib.swift in Sources */,
 				2ED109ED2F6A66640033DA96 /* Ask_Question_Poll.xcdatamodeld in Sources */,
 				2EB63E422F6D5FD70011B1F5 /* OTPResponseModel.swift in Sources */,
+				2ED205072F739C1F00C4A6DE /* CountryManager.swift in Sources */,
 				2E9D61082F6A84EB00D0FEB0 /* BackGroundViewXib.swift in Sources */,
 				2EB63E3F2F6D5E530011B1F5 /* OTPRequestModel.swift in Sources */,
 				2E6231492F7285D500C3EE26 /* OptionsTextandImageXib.swift in Sources */,
@@ -676,6 +698,8 @@
 				2EC6864D2F70FCBE001BC76F /* HomeViewController.swift in Sources */,
 				2E69B2D32F6C35AF00F00615 /* SignUpResponseModel.swift in Sources */,
 				2EB63E532F6D9A920011B1F5 /* ResetPasswordResponseModel.swift in Sources */,
+				2ED205042F739B9D00C4A6DE /* String+Validation.swift in Sources */,
+				2ED205052F739B9D00C4A6DE /* UIViewController+Alert.swift in Sources */,
 				2EAD4E552F6BEF0A007C2B3C /* ClearNavBarXib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -715,8 +739,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -743,8 +766,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

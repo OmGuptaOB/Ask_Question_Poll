@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gio-Rx-2to">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iEA-yX-X1z">
     <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -8,6 +8,67 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="OGP-Fc-aIz">
+            <objects>
+                <viewController storyboardIdentifier="TabBarViewController" id="iEA-yX-X1z" customClass="TabBarViewController" customModule="Ask_Question_Poll" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f0M-hz-LqM">
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="hMQ-5h-TuC">
+                                <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
+                            </imageView>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82J-ai-mzW">
+                                <rect key="frame" x="0.0" y="791" width="402" height="83"/>
+                                <color key="backgroundColor" red="0.99558705089999999" green="0.79914146659999996" blue="0.097800515589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <tabBarItem image="tabbar1Image" id="t3j-zg-lKQ">
+                                        <color key="badgeColor" red="0.99558705089999999" green="0.79914146659999996" blue="0.097800515589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tabBarItem>
+                                    <tabBarItem image="tabbar2Image" id="U8d-gM-8c9">
+                                        <color key="badgeColor" red="0.99558705089999999" green="0.79914146659999996" blue="0.097800515589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tabBarItem>
+                                    <tabBarItem image="tabbar3Image" id="tT3-gs-P9k">
+                                        <color key="badgeColor" red="0.99558705089999999" green="0.79914146659999996" blue="0.097800515589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tabBarItem>
+                                    <tabBarItem image="tabbar4Image" id="TRy-gd-y6h">
+                                        <color key="badgeColor" red="0.99558705089999999" green="0.79914146659999996" blue="0.097800515589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tabBarItem>
+                                </items>
+                                <color key="barTintColor" red="0.99607843139999996" green="0.80257135629999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tabBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wqf-Me-Jyi">
+                                <rect key="frame" x="0.0" y="62" width="402" height="729"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zkf-Tm-WXh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="hMQ-5h-TuC" secondAttribute="bottom" id="4Qd-Uw-JPp"/>
+                            <constraint firstItem="zkf-Tm-WXh" firstAttribute="trailing" secondItem="hMQ-5h-TuC" secondAttribute="trailing" id="88v-a6-XRk"/>
+                            <constraint firstAttribute="bottom" secondItem="82J-ai-mzW" secondAttribute="bottom" id="AH8-uA-njE"/>
+                            <constraint firstItem="hMQ-5h-TuC" firstAttribute="leading" secondItem="zkf-Tm-WXh" secondAttribute="leading" id="PKM-cs-Nz1"/>
+                            <constraint firstItem="zkf-Tm-WXh" firstAttribute="trailing" secondItem="Wqf-Me-Jyi" secondAttribute="trailing" id="Wzq-gS-xKO"/>
+                            <constraint firstItem="Wqf-Me-Jyi" firstAttribute="leading" secondItem="zkf-Tm-WXh" secondAttribute="leading" id="YpP-Wt-ZJ2"/>
+                            <constraint firstItem="hMQ-5h-TuC" firstAttribute="top" secondItem="f0M-hz-LqM" secondAttribute="top" id="hGo-Oz-gWC"/>
+                            <constraint firstItem="82J-ai-mzW" firstAttribute="leading" secondItem="zkf-Tm-WXh" secondAttribute="leading" id="lFj-BK-NwU"/>
+                            <constraint firstItem="82J-ai-mzW" firstAttribute="top" secondItem="Wqf-Me-Jyi" secondAttribute="bottom" id="rOe-bO-OXS"/>
+                            <constraint firstItem="82J-ai-mzW" firstAttribute="trailing" secondItem="zkf-Tm-WXh" secondAttribute="trailing" id="yr0-Ez-sD0"/>
+                            <constraint firstItem="Wqf-Me-Jyi" firstAttribute="top" secondItem="zkf-Tm-WXh" secondAttribute="top" id="zup-R5-VyH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerview" destination="Wqf-Me-Jyi" id="cwc-N4-j1a"/>
+                        <outlet property="tabBar" destination="82J-ai-mzW" id="ygd-oN-LDD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8WM-NL-ljY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5515" y="-52"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="xs2-Fu-jCd">
             <objects>
@@ -345,6 +406,10 @@
     </scenes>
     <resources>
         <image name="bg" width="1080" height="1920"/>
+        <image name="tabbar1Image" width="40" height="40"/>
+        <image name="tabbar2Image" width="40" height="40"/>
+        <image name="tabbar3Image" width="40" height="40"/>
+        <image name="tabbar4Image" width="40" height="40"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

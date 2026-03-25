@@ -28,7 +28,6 @@ class SignUpViewController: UIViewController {
     var selectedGender: String = "male" // default
     let pickerView = UIPickerView()
     
-    var countries: [CountryModel] = []
     var selectedCountry: CountryModel?
     
     
@@ -37,12 +36,11 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         
         //MARK: Function calls
-        loadCountries()
         setupCountrySelect()
         setupBtnSignUp()
         setupEmailtextField()
         setupPasswordTextField()
-        setupNav()
+        setupDefaultNav()
         setupProfileImagePicker()
         setupGenderRadio()
         setupCountryPicker()
@@ -75,13 +73,6 @@ class SignUpViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
-    //MARK: nav setup
-    func setupNav(){
-        navigationController?.setupGlobalBackButton()
-            self.navigationItem.backButtonTitle = ""
-            self.navigationItem.titleView?.backgroundColor = .clear
-    }
-    
     //MARK: imagepicker setup
     func setupProfileImagePicker(){
         imagePickerView.cameraIconImageView.isHidden = true
@@ -148,72 +139,9 @@ class SignUpViewController: UIViewController {
 
         let emptyCount = [emailEmpty, passwordEmpty, cpassEmpty, countryEmpty].filter { $0 }.count
 
-        // ─── Validation ───────────────────────────────────────────
-
-        // All empty
-        if emptyCount == 4 {
-            showError("Please Enter All Details")
-            return
-        }
-
-        // Any 3 empty
-        if emptyCount == 3 {
-            showError("Enter Remaining Details")
-            return
-        }
-
-        // Exactly 2 empty — specific combos
-        if emptyCount == 2 {
-            switch (emailEmpty, passwordEmpty, cpassEmpty, countryEmpty) {
-            case (true, true, false, false):
-                showError("Enter Email and Password")
-            case (true, false, true, false):
-                showError("Enter Email and ConfirmPassword")
-            case (true, false, false, true):
-                showError("Enter Email and Choose Country")
-            case (false, true, true, false):
-                showError("Enter Password and ConfirmPassword")
-            case (false, true, false, true):
-                showError("Enter Password and Choose Country")
-            case (false, false, true, true):
-                showError("Enter ConfirmPassword and Choose Country")
-            default:
-                showError("Enter Remaining Details")
-            }
-            return
-        }
-
-        // Exactly 1 empty — specific field
-        if emptyCount == 1 {
-            switch (emailEmpty, passwordEmpty, cpassEmpty, countryEmpty) {
-            case (true, false, false, false):
-                showError("Please Enter Email")
-            case (false, true, false, false):
-                showError("Please Enter Password")
-            case (false, false, true, false):
-                showError("Please Enter ConfirmPassword")
-            case (false, false, false, true):
-                showError("Please Choose Country")
-            default:
-                break
-            }
-            return
-        }
-        
-        func isValidEmail(_ email: String) -> Bool {
-            let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-            let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
-            return predicate.evaluate(with: email)
-        }
-        
-        func isValidPassword(_ password: String) -> Bool {
-            let regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>/?]).{8,}$"
-            return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: password)
-        }
-
         // ─── Format Validations (all fields filled) ────────────────
 
-        if !isValidEmail(email) {
+        if !email.isValidEmail {
             showError("Please Enter Valid Email")
             return
         }
@@ -228,7 +156,7 @@ class SignUpViewController: UIViewController {
             return
         }
         
-        if !isValidPassword(password) {
+        if !password.isValidPassword {
             showError("Password must have 8+ chars, upper, lower, number & special character")
             return
         }
@@ -240,7 +168,7 @@ class SignUpViewController: UIViewController {
 
         // ─── All Good — Show Loader & Call API ────────────────────
 
-        loader = SCLAlertView().showWait("Please wait", subTitle: "Creating account...", colorStyle: 0xFFD110)
+        loader = showLoading(message: "Creating account...")
 
           // Pass selected image from your ImagePickerXib
           let request = SignUpRequestModel(
@@ -278,13 +206,6 @@ class SignUpViewController: UIViewController {
         navigationController?.pushViewController(otpVC, animated: true)
     }
 
-    //MARK: Alert control
-    func showError(_ message: String) {
-        SCLAlertView().showError(message, subTitle:"" )
-    }
-    func showSuccess() {
-        SCLAlertView().showSuccess("", subTitle: "Login Successful")
-    }
     
     //MARK: Radio button
     func setupGenderRadio() {
@@ -340,23 +261,12 @@ class SignUpViewController: UIViewController {
         countryTextFieldView.textField.inputAccessoryView = toolbar
         
         // Set default selection
+        let countries = CountryManager.shared.countries
         countryTextFieldView.textField.text = countries.first?.name
         selectedCountry = countries.first
     }
     @objc func countryPickerDoneTapped() {
         countryTextFieldView.textField.resignFirstResponder()
-    }
-    
-    // MARK: - load json data
-    func loadCountries() {
-        guard let url = Bundle.main.url(forResource: "countryNames", withExtension: "json"),
-              let jsonString = try? String(contentsOf: url, encoding: .utf8),
-              let response = CountryResponse(JSONString: jsonString)
-        else { return }
-
-        countries = response.country_JSON
-        selectedCountry = countries.first
-        countryTextFieldView.textField.text = countries.first?.name
     }
     
     
@@ -398,14 +308,16 @@ extension SignUpViewController : UITextFieldDelegate,UIPickerViewDelegate, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return countries.count
+        return CountryManager.shared.countries.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let countries = CountryManager.shared.countries
         return "\(countries[row].name ?? "India") (\(countries[row].dial_code ?? "no code avaialabe"))"
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let countries = CountryManager.shared.countries
         selectedCountry = countries[row]
         countryTextFieldView.textField.text = "\(countries[row].name ?? "India") (\(countries[row].dial_code ?? "no code availabe"))"
     }
