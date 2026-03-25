@@ -9,47 +9,68 @@ import UIKit
 
 class TabBarViewController: UIViewController {
 
-    @IBOutlet weak var tabBar: UITabBar!
-    
+//    @IBOutlet weak var tabBar: UITabBar!
+    @IBOutlet weak var tabBar: UIView!
     @IBOutlet weak var containerview: UIView!
     
+    @IBOutlet weak var tabitem1: UIView!
+    @IBOutlet weak var tabitem2: UIView!
+    @IBOutlet weak var tabitem3: UIView!
+    @IBOutlet weak var tabitem4: UIView!
+    
+    @IBOutlet weak var tabItemButton1: UIButton!
+    @IBOutlet weak var tabItemButton2: UIButton!
+    @IBOutlet weak var tabItemButton3: UIButton!
+    @IBOutlet weak var tabItemButton4: UIButton!
+    
+    
     var currentVC: UIViewController?
-    
-    var homeVC: HomeViewController!
-    
-    
+    lazy var homeVC       = storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        homeVC = storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
-    }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
         setupTabbar()
+        setupButtons()
+    }
+    func setupTabbar() {
+        selectTab(at: 0)
+//        switchVc(homeVC)
     }
     
-    func setupTabbar() {
-        tabBar.tintColor = .black
-        tabBar.unselectedItemTintColor = .black
-        tabBar.backgroundColor = .clear
-        tabBar?.delegate = self
+    func setupButtons() {
+        tabItemButton1.tag = 0
+        tabItemButton2.tag = 1
+        tabItemButton3.tag = 2
+        tabItemButton4.tag = 3
         
-        // ✅ Generate indicator image sized to one tab item
-        let itemWidth  = UIScreen.main.bounds.width / CGFloat(tabBar.items?.count ?? 1)
-        let itemHeight = tabBar.frame.height > 0 ? tabBar.frame.height : 49
-        
-        tabBar.selectionIndicatorImage = makeImage(
-            color: .white,
-            size:  CGSize(width: itemWidth, height: itemHeight),
-            cornerRadius: 0
-        )
-        
-        tabBar.selectedItem = tabBar.items?[0]
-        
-        switchVc(homeVC)
+        [tabItemButton1, tabItemButton2, tabItemButton3, tabItemButton4].forEach {
+            $0?.addTarget(self, action: #selector(tabTapped(_:)), for: .touchUpInside)
+        }
     }
-    func switchVc(_ vc: UIViewController) {
+    
+    @objc func tabTapped(_ sender: UIButton) {
+        selectTab(at: sender.tag)
+    }
+    
+    func selectTab(at index: Int) {
+        //Update background colors
+        let tabItems = [tabitem1, tabitem2, tabitem3, tabitem4]
+        tabItems.enumerated().forEach { i, item in
+            item?.backgroundColor = i == index ? .white : .clear
+        }
+        // Switch VC
+        switch index {
+        case 0: switchVC(homeVC)
+        default: break
+        }
+    }
+
+    func switchVC(_ vc: UIViewController) {
+        
+        guard vc != currentVC else { return }
         
         if let current = currentVC {
+            current.willMove(toParent: nil)
             current.view.removeFromSuperview()
             current.removeFromParent()
         }
@@ -61,30 +82,5 @@ class TabBarViewController: UIViewController {
         
         currentVC = vc
     }
-
-    // ✅ Generates a UIImage from a color — no static views needed
-    private func makeImage(color: UIColor, size: CGSize, cornerRadius: CGFloat = 0) -> UIImage {
-        let renderer = UIGraphicsImageRenderer(size: size)
-        return renderer.image { ctx in
-            color.setFill()
-            UIBezierPath(roundedRect: CGRect(origin: .zero, size: size),
-                         cornerRadius: cornerRadius).fill()
-        }
-    }
 }
 
-
-extension TabBarViewController : UITabBarControllerDelegate,UITabBarDelegate {
-    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        
-        switch item.tag {
-            
-        case 0:
-            switchVc(homeVC)
-
-        default:
-            break
-        }
-    }
-    
-}

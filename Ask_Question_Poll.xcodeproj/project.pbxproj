@@ -71,6 +71,7 @@
 		2ED205052F739B9D00C4A6DE /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205032F739B9D00C4A6DE /* UIViewController+Alert.swift */; };
 		2ED205072F739C1F00C4A6DE /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205062F739C1F00C4A6DE /* CountryManager.swift */; };
 		2ED2050A2F73A9C900C4A6DE /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205092F73A9C900C4A6DE /* TabBarViewController.swift */; };
+		2ED2050C2F73EC9700C4A6DE /* ShowQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED2050B2F73EC9700C4A6DE /* ShowQuestionViewController.swift */; };
 		728DBF079E467657D9FB15F8 /* Pods_Ask_Question_Poll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C94A5ADB093B7C933AE6D22 /* Pods_Ask_Question_Poll.framework */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +142,7 @@
 		2ED205032F739B9D00C4A6DE /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		2ED205062F739C1F00C4A6DE /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
 		2ED205092F73A9C900C4A6DE /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		2ED2050B2F73EC9700C4A6DE /* ShowQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowQuestionViewController.swift; sourceTree = "<group>"; };
 		8C94A5ADB093B7C933AE6D22 /* Pods_Ask_Question_Poll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ask_Question_Poll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C83E86651D924D7A7777C63B /* Pods-Ask_Question_Poll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ask_Question_Poll.debug.xcconfig"; path = "Target Support Files/Pods-Ask_Question_Poll/Pods-Ask_Question_Poll.debug.xcconfig"; sourceTree = "<group>"; };
 		D781A0B8C9FC8031B1313EA4 /* Pods-Ask_Question_Poll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ask_Question_Poll.release.xcconfig"; path = "Target Support Files/Pods-Ask_Question_Poll/Pods-Ask_Question_Poll.release.xcconfig"; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 				2ED10A372F6A72DD0033DA96 /* LoginViewController.swift */,
 				2EAD4E4B2F6BCF3C007C2B3C /* SignUpViewController.swift */,
 				2EB63E3C2F6D50950011B1F5 /* OtpInputViewController.swift */,
+				2ED2050B2F73EC9700C4A6DE /* ShowQuestionViewController.swift */,
 			);
 			path = loginandSignupAndOtp;
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 				2EAD4E5C2F6BFBB5007C2B3C /* NIBExtension.swift in Sources */,
 				2E9D61032F6A820B00D0FEB0 /* LinkButtonXib.swift in Sources */,
 				2EAD4E4A2F6BC025007C2B3C /* APIManager.swift in Sources */,
+				2ED2050C2F73EC9700C4A6DE /* ShowQuestionViewController.swift in Sources */,
 				2E9D61262F6AC61D00D0FEB0 /* TextFieldXib.swift in Sources */,
 				2E96B1922F71165600B8CBFA /* SingleTextAndImageXib.swift in Sources */,
 				2EAD4E532F6BDF13007C2B3C /* Colour.swift in Sources */,
