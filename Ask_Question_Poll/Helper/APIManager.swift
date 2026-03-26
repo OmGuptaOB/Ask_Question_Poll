@@ -12,6 +12,11 @@ class APIManager{
     static let shared = APIManager()
     private init() {}
     let baseURL = "http://192.168.0.108/ask_question_poll/api/public"
+
+    func getAuthHeaders() -> HTTPHeaders {
+        let token = UserDefaultsManager.shared.token ?? ""
+        return ["Authorization": "Bearer \(token)"]
+    }
     
     func login(request: LoginRequestModel,
                completion: @escaping (LoginResponseModel?, String?) -> Void){
@@ -237,6 +242,12 @@ class APIManager{
     func addQuestion(request: AddQuestionRequestModel,
                      completion: @escaping (AddQuestionResponseModel?, String?) -> Void) {
         
+//        let token = UserDefaultsManager.shared.token ?? ""
+//
+//        let headers: HTTPHeaders = [
+//            "Authorization": "Bearer \(token)"
+//        ]
+//        
         let urlString = "\(baseURL)/api/addQuestion"
         
         AF.upload(multipartFormData: { multipart in
@@ -270,7 +281,7 @@ class APIManager{
                 }
             }
             
-        }, to: urlString, method: .post)
+        }, to: urlString, method: .post, headers: getAuthHeaders())
         .responseData { response in
             if let data = response.data, let raw = String(data: data, encoding: .utf8) {
                 print("ADD QUESTION RESPONSE: \(raw)")
@@ -293,4 +304,85 @@ class APIManager{
         }
     }
 
+    
+    func getAllQuestions(completion: @escaping (GetAllQuestionsResponseModel?, String?) -> Void) {
+        
+        let urlString = "\(baseURL)/api/getAllQuestionByUser"
+        
+        AF.request(urlString, method: .post, headers: getAuthHeaders())
+            .responseData { response in
+                if let data = response.data, let raw = String(data: data, encoding: .utf8) {
+                    print("GET ALL QUESTIONS RESPONSE: \(raw)")
+                }
+                switch response.result {
+                case .success(let data):
+                    do {
+                        if let json  = try JSONSerialization.jsonObject(with: data) as? NSDictionary,
+                           let model = Mapper<GetAllQuestionsResponseModel>().map(JSONObject: json) {
+                            completion(model, nil)
+                        } else {
+                            completion(nil, "Parsing Error")
+                        }
+                    } catch {
+                        completion(nil, "Invalid server response")
+                    }
+                case .failure(let error):
+                    completion(nil, error.localizedDescription)
+                }
+            }
+    }
+    
+    func viewQuestions(completion: @escaping (GetAllQuestionsResponseModel?, String?) -> Void) {
+        
+        let urlString = "\(baseURL)/api/viewQuestions"
+        
+        AF.request(urlString, method: .post, headers: getAuthHeaders())
+            .responseData { response in
+                if let data = response.data, let raw = String(data: data, encoding: .utf8) {
+                    print("GET ALL QUESTIONS RESPONSE: \(raw)")
+                }
+                switch response.result {
+                case .success(let data):
+                    do {
+                        if let json  = try JSONSerialization.jsonObject(with: data) as? NSDictionary,
+                           let model = Mapper<GetAllQuestionsResponseModel>().map(JSONObject: json) {
+                            completion(model, nil)
+                        } else {
+                            completion(nil, "Parsing Error")
+                        }
+                    } catch {
+                        completion(nil, "Invalid server response")
+                    }
+                case .failure(let error):
+                    completion(nil, error.localizedDescription)
+                }
+            }
+    }
+    
+    func logout(completion: @escaping (Bool, String?) -> Void) {
+        
+        let urlString = "\(baseURL)/api/logout"
+        
+        AF.request(urlString, method: .post, headers: getAuthHeaders())
+            .responseData { response in
+                if let data = response.data, let raw = String(data: data, encoding: .utf8) {
+                    print("LOGOUT RESPONSE: \(raw)")
+                }
+                switch response.result {
+                case .success(let data):
+                    do {
+                        if let json = try JSONSerialization.jsonObject(with: data) as? NSDictionary,
+                           let code = json["code"] as? Int {
+                            completion(code == 200, json["message"] as? String)
+                        } else {
+                            completion(false, "Parsing Error")
+                        }
+                    } catch {
+                        completion(false, "Invalid server response")
+                    }
+                case .failure(let error):
+                    completion(false, error.localizedDescription)
+                }
+            }
+    }
 }

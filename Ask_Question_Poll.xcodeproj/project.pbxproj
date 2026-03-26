@@ -67,11 +67,21 @@
 		2ED10A332F6A70CA0033DA96 /* SF Atarian System Extended Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2ED10A2C2F6A70CA0033DA96 /* SF Atarian System Extended Bold.ttf */; };
 		2ED10A342F6A70CA0033DA96 /* SF Atarian System Extended.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2ED10A2B2F6A70CA0033DA96 /* SF Atarian System Extended.ttf */; };
 		2ED10A382F6A72DD0033DA96 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED10A372F6A72DD0033DA96 /* LoginViewController.swift */; };
-		2ED205042F739B9D00C4A6DE /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205022F739B9D00C4A6DE /* String+Validation.swift */; };
-		2ED205052F739B9D00C4A6DE /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205032F739B9D00C4A6DE /* UIViewController+Alert.swift */; };
+		2ED205042F739B9D00C4A6DE /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205022F739B9D00C4A6DE /* Validation.swift */; };
+		2ED205052F739B9D00C4A6DE /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205032F739B9D00C4A6DE /* Alert.swift */; };
 		2ED205072F739C1F00C4A6DE /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205062F739C1F00C4A6DE /* CountryManager.swift */; };
 		2ED2050A2F73A9C900C4A6DE /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205092F73A9C900C4A6DE /* TabBarViewController.swift */; };
 		2ED2050C2F73EC9700C4A6DE /* ShowQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED2050B2F73EC9700C4A6DE /* ShowQuestionViewController.swift */; };
+		2ED205102F7411F300C4A6DE /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED2050F2F7411F300C4A6DE /* LogoutViewController.swift */; };
+		2ED205132F7414E000C4A6DE /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205122F7414DE00C4A6DE /* UserDefaultsManager.swift */; };
+		2ED3B5922F74EA6100836787 /* AllQuestionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3B5912F74EA6100836787 /* AllQuestionListViewController.swift */; };
+		2ED3B5982F74EBC900836787 /* ViewAnalysisCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3B5962F74EBC900836787 /* ViewAnalysisCell.swift */; };
+		2ED3B5992F74EBC900836787 /* ViewAnalysisCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ED3B5972F74EBC900836787 /* ViewAnalysisCell.xib */; };
+		2ED3B59B2F74F1CE00836787 /* ButtonSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3B59A2F74F1C500836787 /* ButtonSet.swift */; };
+		2ED3B59E2F75000800836787 /* GetAllQuestionsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3B59D2F75000800836787 /* GetAllQuestionsResponseModel.swift */; };
+		2ED3B5A02F750BFC00836787 /* QuestionsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3B59F2F750BFC00836787 /* QuestionsPageViewController.swift */; };
+		2ED3B5A22F753C4700836787 /* QuestionContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3B5A12F753C4700836787 /* QuestionContainerCell.swift */; };
+		2ED3B5A42F75411000836787 /* QuestionContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ED3B5A32F75411000836787 /* QuestionContainerCell.xib */; };
 		728DBF079E467657D9FB15F8 /* Pods_Ask_Question_Poll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C94A5ADB093B7C933AE6D22 /* Pods_Ask_Question_Poll.framework */; };
 /* End PBXBuildFile section */
 
@@ -138,11 +148,21 @@
 		2ED10A2E2F6A70CA0033DA96 /* category.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = category.json; sourceTree = "<group>"; };
 		2ED10A2F2F6A70CA0033DA96 /* countryNames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = countryNames.json; sourceTree = "<group>"; };
 		2ED10A372F6A72DD0033DA96 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		2ED205022F739B9D00C4A6DE /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
-		2ED205032F739B9D00C4A6DE /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		2ED205022F739B9D00C4A6DE /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		2ED205032F739B9D00C4A6DE /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		2ED205062F739C1F00C4A6DE /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
 		2ED205092F73A9C900C4A6DE /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		2ED2050B2F73EC9700C4A6DE /* ShowQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowQuestionViewController.swift; sourceTree = "<group>"; };
+		2ED2050F2F7411F300C4A6DE /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		2ED205122F7414DE00C4A6DE /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		2ED3B5912F74EA6100836787 /* AllQuestionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQuestionListViewController.swift; sourceTree = "<group>"; };
+		2ED3B5962F74EBC900836787 /* ViewAnalysisCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAnalysisCell.swift; sourceTree = "<group>"; };
+		2ED3B5972F74EBC900836787 /* ViewAnalysisCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewAnalysisCell.xib; sourceTree = "<group>"; };
+		2ED3B59A2F74F1C500836787 /* ButtonSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSet.swift; sourceTree = "<group>"; };
+		2ED3B59D2F75000800836787 /* GetAllQuestionsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllQuestionsResponseModel.swift; sourceTree = "<group>"; };
+		2ED3B59F2F750BFC00836787 /* QuestionsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsPageViewController.swift; sourceTree = "<group>"; };
+		2ED3B5A12F753C4700836787 /* QuestionContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionContainerCell.swift; sourceTree = "<group>"; };
+		2ED3B5A32F75411000836787 /* QuestionContainerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionContainerCell.xib; sourceTree = "<group>"; };
 		8C94A5ADB093B7C933AE6D22 /* Pods_Ask_Question_Poll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ask_Question_Poll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C83E86651D924D7A7777C63B /* Pods-Ask_Question_Poll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ask_Question_Poll.debug.xcconfig"; path = "Target Support Files/Pods-Ask_Question_Poll/Pods-Ask_Question_Poll.debug.xcconfig"; sourceTree = "<group>"; };
 		D781A0B8C9FC8031B1313EA4 /* Pods-Ask_Question_Poll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ask_Question_Poll.release.xcconfig"; path = "Target Support Files/Pods-Ask_Question_Poll/Pods-Ask_Question_Poll.release.xcconfig"; sourceTree = "<group>"; };
@@ -336,7 +356,12 @@
 		2EC6864B2F70FC84001BC76F /* TabScreens */ = {
 			isa = PBXGroup;
 			children = (
+				2ED205092F73A9C900C4A6DE /* TabBarViewController.swift */,
 				2EC6864C2F70FCBE001BC76F /* HomeViewController.swift */,
+				2ED2050B2F73EC9700C4A6DE /* ShowQuestionViewController.swift */,
+				2ED2050F2F7411F300C4A6DE /* LogoutViewController.swift */,
+				2ED3B5912F74EA6100836787 /* AllQuestionListViewController.swift */,
+				2ED3B59F2F750BFC00836787 /* QuestionsPageViewController.swift */,
 			);
 			path = TabScreens;
 			sourceTree = "<group>";
@@ -344,6 +369,8 @@
 		2ED109B82F6A654A0033DA96 = {
 			isa = PBXGroup;
 			children = (
+				2ED3B5A32F75411000836787 /* QuestionContainerCell.xib */,
+				2ED3B5A12F753C4700836787 /* QuestionContainerCell.swift */,
 				2ED109E62F6A66640033DA96 /* Ask_Question_Poll */,
 				2ED109C22F6A654A0033DA96 /* Products */,
 				86441650B770DD490145A1DC /* Pods */,
@@ -390,6 +417,7 @@
 		2ED109F12F6A668C0033DA96 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				2ED205122F7414DE00C4A6DE /* UserDefaultsManager.swift */,
 				2ED205062F739C1F00C4A6DE /* CountryManager.swift */,
 				2E2BBE662F717CB600F2BBE0 /* StoryBoardDeclaration.swift */,
 				2EAD4E492F6BC015007C2B3C /* APIManager.swift */,
@@ -412,7 +440,6 @@
 			children = (
 				2ED205082F73A98F00C4A6DE /* loginandSignupAndOtp */,
 				2EC6864B2F70FC84001BC76F /* TabScreens */,
-				2ED205092F73A9C900C4A6DE /* TabBarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -420,6 +447,7 @@
 		2ED109F42F6A66BE0033DA96 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2ED3B59C2F74FFF300836787 /* GetAllQuestionsModel */,
 				2E62314C2F72D48800C3EE26 /* AddQuestionModel */,
 				2EB63E4F2F6D9A6B0011B1F5 /* ResetPasswordModels */,
 				2EB63E482F6D8D280011B1F5 /* VerifyForgotPasswordRequstModels */,
@@ -435,15 +463,8 @@
 		2ED109F52F6A66C90033DA96 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2E96B18C2F71140C00B8CBFA /* OptionsTextAndImageXIb */,
-				2EC686422F70F1B3001BC76F /* SelectFromPickerXIB */,
-				2E2409192F6C252400BB6BCF /* RadioXIB */,
-				2EAD4E562F6BF4E0007C2B3C /* ImagePickerXIB */,
-				2EAD4E4F2F6BD779007C2B3C /* ClearNavBarXIB */,
-				2E9D61292F6AD97000D0FEB0 /* ButtonXIB */,
-				2E9D61202F6AC5DC00D0FEB0 /* TextFieldXIB */,
-				2E9D61042F6A846D00D0FEB0 /* BackGroundViewXIB */,
-				2E9D60FF2F6A81B900D0FEB0 /* LinkButtonXIB */,
+				2ED3B5952F74EB9D00836787 /* XIBS */,
+				2ED3B5942F74EB9300836787 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -451,8 +472,9 @@
 		2ED109F72F6A66F50033DA96 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				2ED205022F739B9D00C4A6DE /* String+Validation.swift */,
-				2ED205032F739B9D00C4A6DE /* UIViewController+Alert.swift */,
+				2ED3B59A2F74F1C500836787 /* ButtonSet.swift */,
+				2ED205022F739B9D00C4A6DE /* Validation.swift */,
+				2ED205032F739B9D00C4A6DE /* Alert.swift */,
 				2E62314A2F72BF3500C3EE26 /* TextField.swift */,
 				2E96B1982F714CDC00B8CBFA /* Label.swift */,
 				2EAD4E5D2F6BFCD3007C2B3C /* NavExtension.swift */,
@@ -494,9 +516,49 @@
 				2ED10A372F6A72DD0033DA96 /* LoginViewController.swift */,
 				2EAD4E4B2F6BCF3C007C2B3C /* SignUpViewController.swift */,
 				2EB63E3C2F6D50950011B1F5 /* OtpInputViewController.swift */,
-				2ED2050B2F73EC9700C4A6DE /* ShowQuestionViewController.swift */,
 			);
 			path = loginandSignupAndOtp;
+			sourceTree = "<group>";
+		};
+		2ED3B5932F74EB6D00836787 /* ViewAnalysisCell */ = {
+			isa = PBXGroup;
+			children = (
+				2ED3B5962F74EBC900836787 /* ViewAnalysisCell.swift */,
+				2ED3B5972F74EBC900836787 /* ViewAnalysisCell.xib */,
+			);
+			path = ViewAnalysisCell;
+			sourceTree = "<group>";
+		};
+		2ED3B5942F74EB9300836787 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2ED3B5932F74EB6D00836787 /* ViewAnalysisCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2ED3B5952F74EB9D00836787 /* XIBS */ = {
+			isa = PBXGroup;
+			children = (
+				2E96B18C2F71140C00B8CBFA /* OptionsTextAndImageXIb */,
+				2EC686422F70F1B3001BC76F /* SelectFromPickerXIB */,
+				2E2409192F6C252400BB6BCF /* RadioXIB */,
+				2EAD4E562F6BF4E0007C2B3C /* ImagePickerXIB */,
+				2EAD4E4F2F6BD779007C2B3C /* ClearNavBarXIB */,
+				2E9D61292F6AD97000D0FEB0 /* ButtonXIB */,
+				2E9D61202F6AC5DC00D0FEB0 /* TextFieldXIB */,
+				2E9D61042F6A846D00D0FEB0 /* BackGroundViewXIB */,
+				2E9D60FF2F6A81B900D0FEB0 /* LinkButtonXIB */,
+			);
+			path = XIBS;
+			sourceTree = "<group>";
+		};
+		2ED3B59C2F74FFF300836787 /* GetAllQuestionsModel */ = {
+			isa = PBXGroup;
+			children = (
+				2ED3B59D2F75000800836787 /* GetAllQuestionsResponseModel.swift */,
+			);
+			path = GetAllQuestionsModel;
 			sourceTree = "<group>";
 		};
 		86441650B770DD490145A1DC /* Pods */ = {
@@ -575,7 +637,9 @@
 				2E96B1902F71152B00B8CBFA /* SingleTextAndImageXib.xib in Resources */,
 				2E9D612B2F6AD99600D0FEB0 /* ButtonXib.xib in Resources */,
 				2ED10A212F6A67890033DA96 /* Contents.json in Resources */,
+				2ED3B5A42F75411000836787 /* QuestionContainerCell.xib in Resources */,
 				2E96B1972F7137E300B8CBFA /* SignUpStoryboard.storyboard in Resources */,
+				2ED3B5992F74EBC900836787 /* ViewAnalysisCell.xib in Resources */,
 				2E96B1952F71374200B8CBFA /* LoginStoryboard.storyboard in Resources */,
 				2EAD4E512F6BD793007C2B3C /* ClearNavBarXib.xib in Resources */,
 				2EAD4E582F6BF506007C2B3C /* ImagePickerXib.xib in Resources */,
@@ -665,11 +729,14 @@
 				2E2BBE672F717CC000F2BBE0 /* StoryBoardDeclaration.swift in Sources */,
 				2EAD4E482F6BBFB9007C2B3C /* LoginResponseModel.swift in Sources */,
 				2EB63E4C2F6D8D520011B1F5 /* VerifyForgotOTPResponseModel.swift in Sources */,
+				2ED3B5922F74EA6100836787 /* AllQuestionListViewController.swift in Sources */,
 				2ED2050A2F73A9C900C4A6DE /* TabBarViewController.swift in Sources */,
 				2EB63E472F6D8D1A0011B1F5 /* ForgotPasswordResponseModel.swift in Sources */,
 				2ED109EC2F6A66640033DA96 /* AppDelegate.swift in Sources */,
 				2EB63E512F6D9A810011B1F5 /* ResetPasswordRequestModel.swift in Sources */,
+				2ED3B5A22F753C4700836787 /* QuestionContainerCell.swift in Sources */,
 				2E62314E2F72D4A500C3EE26 /* AddQuestionRequestModel.swift in Sources */,
+				2ED3B59B2F74F1CE00836787 /* ButtonSet.swift in Sources */,
 				2E9D612F2F6AD9AE00D0FEB0 /* ButtonXib.swift in Sources */,
 				2E69B2D12F6C357F00F00615 /* SignUpRequestModel.swift in Sources */,
 				2EC6864A2F70F805001BC76F /* SelectFromPickerXIb.swift in Sources */,
@@ -678,6 +745,7 @@
 				2EAD4E4A2F6BC025007C2B3C /* APIManager.swift in Sources */,
 				2ED2050C2F73EC9700C4A6DE /* ShowQuestionViewController.swift in Sources */,
 				2E9D61262F6AC61D00D0FEB0 /* TextFieldXib.swift in Sources */,
+				2ED3B59E2F75000800836787 /* GetAllQuestionsResponseModel.swift in Sources */,
 				2E96B1922F71165600B8CBFA /* SingleTextAndImageXib.swift in Sources */,
 				2EAD4E532F6BDF13007C2B3C /* Colour.swift in Sources */,
 				2E24091D2F6C254500BB6BCF /* RadioXib.swift in Sources */,
@@ -691,9 +759,12 @@
 				2EB63E4A2F6D8D410011B1F5 /* VerifyForgotOTPRequestModel.swift in Sources */,
 				2EB63E3B2F6D45E30011B1F5 /* CountryModel.swift in Sources */,
 				2EB63E3D2F6D50950011B1F5 /* OtpInputViewController.swift in Sources */,
+				2ED205132F7414E000C4A6DE /* UserDefaultsManager.swift in Sources */,
+				2ED3B5982F74EBC900836787 /* ViewAnalysisCell.swift in Sources */,
 				2E62314B2F72BF3F00C3EE26 /* TextField.swift in Sources */,
 				2E6231502F72D4CC00C3EE26 /* AddQuestionResponseModel.swift in Sources */,
 				2EAD4E5A2F6BF512007C2B3C /* ImagePickerXib.swift in Sources */,
+				2ED3B5A02F750BFC00836787 /* QuestionsPageViewController.swift in Sources */,
 				2EAD4E462F6BBF77007C2B3C /* LoginRequestModel.swift in Sources */,
 				2EB63E452F6D8D010011B1F5 /* ForgotPasswordRequestModel.swift in Sources */,
 				2ED109EE2F6A66640033DA96 /* SceneDelegate.swift in Sources */,
@@ -702,8 +773,9 @@
 				2EC6864D2F70FCBE001BC76F /* HomeViewController.swift in Sources */,
 				2E69B2D32F6C35AF00F00615 /* SignUpResponseModel.swift in Sources */,
 				2EB63E532F6D9A920011B1F5 /* ResetPasswordResponseModel.swift in Sources */,
-				2ED205042F739B9D00C4A6DE /* String+Validation.swift in Sources */,
-				2ED205052F739B9D00C4A6DE /* UIViewController+Alert.swift in Sources */,
+				2ED205042F739B9D00C4A6DE /* Validation.swift in Sources */,
+				2ED205052F739B9D00C4A6DE /* Alert.swift in Sources */,
+				2ED205102F7411F300C4A6DE /* LogoutViewController.swift in Sources */,
 				2EAD4E552F6BEF0A007C2B3C /* ClearNavBarXib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

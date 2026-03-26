@@ -38,7 +38,8 @@ class HomeViewController: UIViewController{
     var countries: [CountryModel] = []
     var selectedCountry: CountryModel?
     var selectedGender: String?
-    
+    var loader: SCLAlertViewResponder?
+
     let categoryData: [String: Int] = [
         "World Affairs": 3,
         "Entertainment": 4,
@@ -61,30 +62,35 @@ class HomeViewController: UIViewController{
         
         writeDescriptionView.backgroundColor = .clear
         descriptionTextView.backgroundColor = .clear
+        selectQuestionImageView.backgroundColor = .clear
         descriptionTextView.delegate = self
+        
+        //MARK: Notification for Keyboard
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func setupButton() {
-        previewButtonView.btnCustomLabel.text = "preview"
-        previewButtonView.btnCustomLabel.textColor = .black
-
-        submitButtonView.btnCustomLabel.text = "submit"
-        submitButtonView.btnCustomLabel.textColor = .black
+        previewButtonView.btnCustomLabel.setupButton(title: "preview",textColour: .black)
+        previewButtonView.btnCustomClick.addTarget(self, action: #selector(previewTapped), for: .touchUpInside)
+        
+        submitButtonView.btnCustomLabel.setupButton(title: "submit",textColour: .black)
         submitButtonView.btnCustomClick.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
     }
     
     func setupFont(){
         labelPrefrences.font = UIFont(name: "SFAtarianSystemExtended", size: 17)
-        labelQuestion.font = UIFont(name: "SFAtarianSystemExtended", size: 17)
+        labelQuestion.font = UIFont(name: "SFAtarianSystemExtended", size: 20)
         optionsLabel.font = UIFont(name: "SFAtarianSystemExtended", size: 17)
         labelDescription.font = UIFont(name: "SFAtarianSystemExtended", size: 17)
         lblTextViewCharacterLimit.font = UIFont(name: "SFAtarianSystemExtended", size: 14)
     }
     func setupImagePicker(){
-        selectQuestionImageView.imagePickerImage.image = UIImage(named: "img")
+//        selectQuestionImageView.imagePickerImage.image = nil
         //selectQuestionImageView.layer.borderWidth = 2
         //selectQuestionImageView.layer.borderColor = UIColor.white.cgColor
         selectQuestionImageView.contentMode = .scaleAspectFill
+        
         selectQuestionImageView.onImageSelected = { image in
             print("Profile image selected: \(image)")
             self.selectQuestionImageView.cameraIconImageView.isHidden = true
@@ -182,6 +188,7 @@ class HomeViewController: UIViewController{
         let isTextMode = selectedOption == "text" || selectedOption == nil
         
         // ─── Empty check ──────────────────────────────────────────────
+        let imageEmpty = !(selectQuestionImageView.isImageSelected)
         let categoryEmpty = category.isEmpty || category == "select category"
         let descriptionEmpty = description.isEmpty
         let locationEmpty = location.isEmpty || location == "select location"
@@ -208,6 +215,11 @@ class HomeViewController: UIViewController{
         }
         if descriptionEmpty {
             showError("Fill Description")
+            return
+        }
+        
+        if imageEmpty {
+            showError("Select Question Image")
             return
         }
         
@@ -259,24 +271,26 @@ class HomeViewController: UIViewController{
         )
         
         // ─── Show loader & call API ───────────────────────────────────
-        let loader = showLoading(message: "Submitting question...")
+      loader = showLoading(message: "Submitting question...")
+//        loader = SCLAlertView().showWait("Please wait", subTitle: "Submitting question...", colorStyle: 0xFCCF1C)
         
         APIManager.shared.addQuestion(request: request) { [weak self] response, error in
             DispatchQueue.main.async {
-                loader.close()
+                self?.loader?.close()
                 
                 if let error = error {
-                    self?.showError(error)
+                    showError(error)
                     return
                 }
                 
                 if response?.code == 200 {
-                    self?.showSuccess(response?.message ?? "Question added successfully!")
+                    showSuccess(response?.message ?? "Question added successfully!")
+                    UserDefaultsManager.isQuestionAdded = true
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                         self?.clearForm()
                     }
                 } else {
-                    self?.showError(response?.message ?? "Failed to add question")
+                   showError(response?.message ?? "Failed to add question")
                 }
             }
         }
@@ -308,12 +322,110 @@ class HomeViewController: UIViewController{
         // Clear option text views
         optionsView.optionOneView.optiontextView.text = ""
         optionsView.optionTwoView.optiontextView.text = ""
+        
+        updateTextViewHeight(descriptionTextView,
+                             heightConstraint: descriptionTextViewHeightConstraint,
+                             maxHeight: 40)
+        
+        if optionsView.optionOneView.optiontextView.text.isEmpty{
+            optionsView.optionOneView.OptionNumberTitle.isHidden = false
+            optionsView.optionOneView.optionCharacterLimit.isHidden = false
+        }
+        if optionsView.optionTwoView.optiontextView.text.isEmpty{
+            optionsView.optionTwoView.OptionNumberTitle.isHidden = false
+            optionsView.optionTwoView.optionCharacterLimit.isHidden = false
+        }
+        
+    }
+    
+    
+    func showPreview(){
+        let isTextMode  = selectedOption == "text" || selectedOption == nil
+        
+        let previewData = AddQuestionRequestModel(
+            categoryId: categoryData[selectCategoryPickerView.selectDataTextField.text ?? ""] ?? 0,
+            country: selectedCountry?.name,
+            gender: selectedGender == "Male" ? 1 : 2,
+            description: descriptionTextView.text ?? "",
+            optionType: isTextMode ? 1 : 2,
+            option1: isTextMode ? optionsView.optionOneView.optiontextView.text : nil,
+            option2: isTextMode ? optionsView.optionTwoView.optiontextView.text : nil,
+            questionImage: selectQuestionImageView.isImageSelected ? selectQuestionImageView.imagePickerImage.image : nil,
+            optionOneImage: isTextMode ? nil : optionsView.optionOneView.option_bg_image.image,
+            optionTwoImage: isTextMode ? nil : optionsView.optionTwoView.option_bg_image.image
+        )
+        
+        let vc = storyBoard.instantiateViewController(withIdentifier: "ShowQuestionViewController") as! ShowQuestionViewController
+        vc.previewData = previewData
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 
     @objc func submitTapped() {
         validateAndSubmit()
     }
+    
+    @objc func previewTapped() {
+        guard canShowPreview() else { return }
+        showPreview()
+    }
+
+    func canShowPreview() -> Bool {
+        let description = descriptionTextView.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let isTextMode  = selectedOption == "text" || selectedOption == nil
+        let option1Text = optionsView.optionOneView.optiontextView.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let option2Text = optionsView.optionTwoView.optiontextView.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+
+        if description.isEmpty {
+            showError("Fill Description to preview")
+            return false
+        }
+
+        if isTextMode {
+            if option1Text.isEmpty {
+                showError("Fill Option 1 Data to preview")
+                return false
+            }
+            if option2Text.isEmpty {
+                showError("Fill Option 2 Data to preview")
+                return false
+            }
+        } else {
+            if !optionsView.optionOneView.isImageSelected {
+                showError("Select Option 1 Image to preview")
+                return false
+            }
+            if !optionsView.optionTwoView.isImageSelected {
+                showError("Select Option 2 Image to preview")
+                return false
+            }
+        }
+        return true
+    }
+    
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
+              let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
+        else { return }
+
+        let fieldMaxY = view.firstResponder?.convert(view.firstResponder!.bounds, to: view).maxY ?? 0
+        let overlap = fieldMaxY - (view.frame.height - keyboardFrame.height) + 16
+
+        guard overlap > 0 else { return }
+
+        UIView.animate(withDuration: duration) {
+            self.view.transform = CGAffineTransform(translationX: 0, y: -overlap)
+        }
+    }
+
+    @objc func keyboardWillHide(_ notification: Notification) {
+        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
+        UIView.animate(withDuration: duration) {
+            self.view.transform = .identity
+        }
+    }
+    
 
 }
 
@@ -322,7 +434,7 @@ extension HomeViewController: UITextViewDelegate {
         let count = textView.text.count
         if textView == descriptionTextView {
             lblTextViewCharacterLimit.text = "\(count)/200"
-            updateTextViewHeight(textView, heightConstraint: descriptionTextViewHeightConstraint, maxHeight: 150)
+            updateTextViewHeight(textView, heightConstraint: descriptionTextViewHeightConstraint, maxHeight: .infinity)
         }
     }
     
@@ -332,7 +444,11 @@ extension HomeViewController: UITextViewDelegate {
          let currentText = textView.text ?? ""
          guard let stringRange = Range(range, in: currentText) else { return false }
          let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
-         
+        if textView.text.count == 200 {
+            showError("Limit reached you can only write 200 characters")
+            textView.resignFirstResponder()
+            return updatedText.count <= 200
+        }
          return updatedText.count <= 200
      }
      

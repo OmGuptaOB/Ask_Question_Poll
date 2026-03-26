@@ -71,15 +71,15 @@ class SignUpViewController: UIViewController {
         //MARK: Notification for Keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
     }
     //MARK: imagepicker setup
     func setupProfileImagePicker(){
+//        imagePickerView.imagePickerImage.image = UIImage(named: "img")
+        imagePickerView.imagePickerImage.image = UIImage(named: "profile_avtar")
         imagePickerView.cameraIconImageView.isHidden = true
         imagePickerView.imagePickerImage.layer.cornerRadius = imagePickerView.imagePickerImage.frame.height / 2
         imagePickerView.imagePickerImage.clipsToBounds = true
         imagePickerView.imagePickerImage.contentMode = .scaleAspectFill
-        imagePickerView.imagePickerImage.image = UIImage(named: "profile_avtar")
         imagePickerView.onImageSelected = { image in
             print("Profile image selected: \(image)")
         }
@@ -121,7 +121,7 @@ class SignUpViewController: UIViewController {
     
     //MARK: Signup Button set
     func setupBtnSignUp(){
-        btnSignUpView.btnCustomLabel.text = "signup"
+        btnSignUpView.btnCustomLabel.setupButton(title: "signup")
         btnSignUpView.btnCustomClick.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
     }
     //MARK: Api call Validation
@@ -169,6 +169,7 @@ class SignUpViewController: UIViewController {
         // ─── All Good — Show Loader & Call API ────────────────────
 
         loader = showLoading(message: "Creating account...")
+//        loader = SCLAlertView().showWait("Please wait", subTitle: "Creating account...", colorStyle: 0xFCCF1C)
 
           // Pass selected image from your ImagePickerXib
           let request = SignUpRequestModel(
@@ -184,7 +185,7 @@ class SignUpViewController: UIViewController {
                   self?.loader?.close()
 
                   if let error = error {
-                      self?.showError(error)
+                      showError(error)
                       return
                   }
 
@@ -195,7 +196,7 @@ class SignUpViewController: UIViewController {
                              self?.navigateToOTP(tempId: tempId)
                          }
                   } else {
-                      self?.showError(response?.message ?? "Sign Up Failed")
+                     showError(response?.message ?? "Sign Up Failed")
                   }
               }
           }

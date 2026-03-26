@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+let storyBoard = UIStoryboard(name: "Main", bundle: nil)
 let LoginStoryboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
 let SignUpStoryboard = UIStoryboard(name: "SignUpStoryboard", bundle: nil)
 let OtpInputAndPasswordStoryBoard = UIStoryboard(name: "OtpInputAndPasswordStoryBoard", bundle: nil)

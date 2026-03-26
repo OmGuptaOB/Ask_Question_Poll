@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eft-Mv-lUh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="beI-Yq-5kM">
     <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -162,6 +162,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Lze-dY-Syj"/>
                     <connections>
+                        <outlet property="backGroundView" destination="o2x-e1-pxu" id="cRR-sR-BPu"/>
                         <outlet property="btnSignUpView" destination="F70-VB-vQR" id="syT-cV-Qxr"/>
                         <outlet property="confirmPasswordTextFieldView" destination="ETW-IX-Acj" id="SnS-zI-DuY"/>
                         <outlet property="countryTextFieldView" destination="qEC-4Z-WBA" id="pJ6-5B-bCX"/>
@@ -175,25 +176,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBW-FF-mVr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5791.6030534351139" y="-35.91549295774648"/>
+            <point key="canvasLocation" x="6710.4477611940292" y="-36.384439359267731"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="hsw-30-DGn">
+        <scene sceneID="ejQ-1r-csM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eft-Mv-lUh" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="beI-Yq-5kM" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ibc-oN-mum">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XSE-pl-gpb">
                         <rect key="frame" x="0.0" y="62" width="402" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="cAS-Xe-8yd" kind="relationship" relationship="rootViewController" id="bLS-r0-9tN"/>
+                        <segue destination="cAS-Xe-8yd" kind="relationship" relationship="rootViewController" id="47D-Ul-YhG"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lu1-vE-vaI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eEg-Sj-IZW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4864.8854961832058" y="-35.91549295774648"/>
+            <point key="canvasLocation" x="5791.0447761194027" y="-36.384439359267731"/>
         </scene>
     </scenes>
     <resources>
@@ -202,10 +203,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
-            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

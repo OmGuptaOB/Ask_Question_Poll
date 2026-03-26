@@ -88,7 +88,7 @@ class OtpInputViewController: UIViewController {
     
     func setupButton(title: String, action: Selector) {
             btnEnterOTpView.btnCustomClick.removeTarget(nil, action: nil, for: .allEvents)
-            btnEnterOTpView.btnCustomLabel.text = title
+        btnEnterOTpView.btnCustomLabel.setupButton(title: title)
             btnEnterOTpView.btnCustomClick.addTarget(self, action: action, for: .touchUpInside)
         }
     
@@ -113,6 +113,7 @@ class OtpInputViewController: UIViewController {
         }
         
         loader = showLoading(message: "Verifying OTP...")
+//        loader = SCLAlertView().showWait("Please wait", subTitle: "Verifying OTP...", colorStyle: 0xFCCF1C)
         
         let request = OTPRequestModel(
             user_reg_temp_id: "\(tempId)",
@@ -124,14 +125,14 @@ class OtpInputViewController: UIViewController {
                 self?.loader?.close()
                 
                 if let error = error {
-                    self?.showError(error)
+                    showError(error)
                     return
                 }
                 
                 if response?.code == 200 {
                     self?.navigateToLogin()
                 } else {
-                    self?.showError(response?.message ?? "OTP Verification Failed")
+                    showError(response?.message ?? "OTP Verification Failed")
                 }
             }
         }
@@ -145,20 +146,21 @@ class OtpInputViewController: UIViewController {
         
         if !email.isValidEmail { showError("Please Enter Valid Email"); return }
         
-        loader = showLoading(message: "Sending OTP...")
+//        loader = showLoading(message: "Sending OTP...")
+        loader = SCLAlertView().showWait("Please wait", subTitle: "Sending OTP...", colorStyle: 0xFCCF1C)
         
         APIManager.shared.forgotPassword(email: email) { [weak self] response, error in
             DispatchQueue.main.async {
                 self?.loader?.close()
-                if let error = error { self?.showError(error); return }
+                if let error = error { showError(error); return }
                 
                 if response?.code == 200 {
                     self?.forgotPasswordEmail = email
                     self?.screenMode = .forgotPasswordOTP
                     self?.configureScreen()
-                    self?.showSuccess(response?.message ?? "Check your email for the OTP")
+                    showSuccess(response?.message ?? "Check your email for the OTP")
                 } else {
-                    self?.showError(response?.message ?? "Failed to send OTP")
+                    showError(response?.message ?? "Failed to send OTP")
                 }
             }
         }
@@ -173,12 +175,13 @@ class OtpInputViewController: UIViewController {
         guard let otpInt = Int(otp) else { showError("Please Enter Valid OTP"); return }
         guard let email = forgotPasswordEmail else { showError("Something went wrong."); return }
         
-        loader = showLoading(message: "Verifying OTP...")
+//        loader = showLoading(message: "Verifying OTP...")
+        loader = SCLAlertView().showWait("Please wait", subTitle: "Verifying OTP...", colorStyle: 0xFCCF1C)
         
         APIManager.shared.verifyForgotOTP(email: email, otp: otpInt) { [weak self] response, error in
             DispatchQueue.main.async {
                 self?.loader?.close()
-                if let error = error { self?.showError(error); return }
+                if let error = error { showError(error); return }
                 
                 if response?.code == 200 {
                     // Save reset token for use in reset password screen
@@ -186,7 +189,7 @@ class OtpInputViewController: UIViewController {
                     self?.screenMode = .resetPassword
                     self?.configureScreen()
                 } else {
-                    self?.showError(response?.message ?? "OTP Verification Failed")
+                    showError(response?.message ?? "OTP Verification Failed")
                 }
             }
         }
@@ -224,19 +227,20 @@ class OtpInputViewController: UIViewController {
         }
         
         loader = showLoading(message: "Saving new password...")
+//        loader = SCLAlertView().showWait("Please wait", subTitle: "Saving new password...", colorStyle: 0xFCCF1C)
         
         APIManager.shared.resetPassword(email: email, token: token, password: password) { [weak self] response, error in
             DispatchQueue.main.async {
                 self?.loader?.close()
-                if let error = error { self?.showError(error); return }
+                if let error = error { showError(error); return }
                 
                 if response?.code == 200 {
-                    self?.showSuccess(response?.message ?? "Password Reset Successfully")
+                    showSuccess(response?.message ?? "Password Reset Successfully")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                         self?.navigationController?.popToRootViewController(animated: true)
                     }
                 } else {
-                    self?.showError(response?.message ?? "Reset Password Failed")
+                    showError(response?.message ?? "Reset Password Failed")
                 }
             }
         }

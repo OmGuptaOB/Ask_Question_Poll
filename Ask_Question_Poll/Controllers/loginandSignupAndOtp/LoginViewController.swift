@@ -62,7 +62,7 @@ class LoginViewController: UIViewController {
     func setupEmailtextField(){
         emailTextFieldView.textFieldTitle.text = "email"
         emailTextFieldView.textField.placeholder = "Enter Email"
-        emailTextFieldView.textField.text = "vaferam713@onbap.com"
+        emailTextFieldView.textField.text = "sifila1565@fun4k.com"
         emailTextFieldView.textFieldTitleImage.image = UIImage(named: "email_icon")
 //        emailTextFieldView.setAspect()
         emailTextFieldView.textField.keyboardType = .emailAddress
@@ -72,7 +72,7 @@ class LoginViewController: UIViewController {
     func setupPasswordTextField(){
         passwordTextFieldView.textFieldTitle.text = "password"
         
-        passwordTextFieldView.textField.text = "123456789!Om"
+        passwordTextFieldView.textField.text = "123456789@Ob"
         passwordTextFieldView.textFieldTitleImage.image = UIImage(named: "password_icon")
 //        passwordTextFieldView.setAspect()
         passwordTextFieldView.textField.placeholder = "Enter Password"
@@ -98,6 +98,7 @@ class LoginViewController: UIViewController {
         }
         
         loader = showLoading(message: "Logging in...")
+//        loader = SCLAlertView().showWait("Please wait", subTitle: "Logging in...", colorStyle: 0xFCCF1C)
         
         
         let request = LoginRequestModel(email: email, password: password)
@@ -110,15 +111,19 @@ class LoginViewController: UIViewController {
                         print("Message: \(String(describing: response?.message))") // ← what message?
                         print("Data: \(String(describing: response?.data))")
                 if let error = error {
-                    self?.showError(error)
+                    showError(error)
                     return
                 }
                 
                 if response?.code == 200 {
-                    self?.showSuccess(response?.message ?? "Login Successful")
+                    if let token = response?.data?.token {
+                            UserDefaultsManager.shared.saveLoginData(token: token)
+                            print("Token saved: \(token)")
+                        }
+                    showSuccess(response?.message ?? "Login Successful")
                     self?.navigateToHome()
                 } else {
-                    self?.showError(response?.message ?? "Login Failed")
+                   showError(response?.message ?? "Login Failed")
                 }
             }
             
@@ -153,8 +158,7 @@ extension LoginViewController : UITextFieldDelegate{
     }
     
     func navigateToHome(){
-        let vc = storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        
+        let vc = storyBoard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
