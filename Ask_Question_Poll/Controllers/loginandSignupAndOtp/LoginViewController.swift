@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
     }
     
     func setupEmailtextField(){
-        emailTextFieldView.textFieldTitle.text = "EMAIL"
+        emailTextFieldView.textFieldTitle.text = "email"
         emailTextFieldView.textField.placeholder = "Enter Email"
         emailTextFieldView.textField.text = "sifila1565@fun4k.com"
         emailTextFieldView.textFieldTitleImage.image = UIImage(named: "email_icon")
@@ -64,7 +64,7 @@ class LoginViewController: UIViewController {
     }
     
     func setupPasswordTextField(){
-        passwordTextFieldView.textFieldTitle.text = "PASSWORD"
+        passwordTextFieldView.textFieldTitle.text = "password"
         passwordTextFieldView.textField.text = "123456789@Ob"
         passwordTextFieldView.textFieldTitleImage.image = UIImage(named: "password_icon")
         passwordTextFieldView.textField.placeholder = "Enter Password"

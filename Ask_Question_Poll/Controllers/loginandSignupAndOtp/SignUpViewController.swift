@@ -10,7 +10,7 @@ import SCLAlertView
 
 
 class SignUpViewController: UIViewController {
-//
+    //
     @IBOutlet weak var emailTextFieldView: TextFieldXib!
     @IBOutlet weak var passwordTextFieldView: TextFieldXib!
     @IBOutlet weak var confirmPasswordTextFieldView: TextFieldXib!
@@ -31,7 +31,7 @@ class SignUpViewController: UIViewController {
     var selectedCountry: CountryModel?
     
     
-//MARK: ViewDidLoad
+    //MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -81,7 +81,7 @@ class SignUpViewController: UIViewController {
             print("Profile image selected: \(image)")
         }
     }
-
+    
     //MARK: textFields setup
     func setupEmailtextField(){
         emailTextFieldView.textFieldTitle.text = "email"
@@ -120,132 +120,12 @@ class SignUpViewController: UIViewController {
         btnSignUpView.btnCustomLabel.setupButtonLabel(title: "signup")
         btnSignUpView.btnCustomClick.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
     }
-    //MARK: Api call Validation
-    func validateAndCallAPI() {
-        
-        let email    = emailTextFieldView.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        let password = passwordTextFieldView.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        let cpassword = confirmPasswordTextFieldView.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        let country  = countryTextFieldView.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-
-        let emailEmpty    = email.isEmpty
-        let passwordEmpty = password.isEmpty
-        let cpassEmpty    = cpassword.isEmpty
-        let countryEmpty = country.isEmpty
-
-        let emptyCount = [emailEmpty, passwordEmpty, cpassEmpty, countryEmpty].filter { $0 }.count
-
-        if emptyCount == 4 {
-            showError("Please Enter All Details")
-            return
-        }
-
-        if emptyCount == 3 {
-            showError("Enter Remaining Details")
-            return
-        }
-
-        if emptyCount == 2 {
-            switch (emailEmpty, passwordEmpty, cpassEmpty, countryEmpty) {
-            case (true, true, false, false):
-                showError("Enter Email and Password")
-            case (true, false, true, false):
-                showError("Enter Email and ConfirmPassword")
-            case (true, false, false, true):
-                showError("Enter Email and Choose Country")
-            case (false, true, true, false):
-                showError("Enter Password and ConfirmPassword")
-            case (false, true, false, true):
-                showError("Enter Password and Choose Country")
-            case (false, false, true, true):
-                showError("Enter ConfirmPassword and Choose Country")
-            default:
-                showError("Enter Remaining Details")
-            }
-            return
-        }
-
-        if emptyCount == 1 {
-            switch (emailEmpty, passwordEmpty, cpassEmpty, countryEmpty) {
-            case (true, false, false, false):
-                showError("Please Enter Email")
-            case (false, true, false, false):
-                showError("Please Enter Password")
-            case (false, false, true, false):
-                showError("Please Enter ConfirmPassword")
-            case (false, false, false, true):
-                showError("Please Choose Country")
-            default:
-                break
-            }
-            return
-        }
-
-        if !email.isValidEmail {
-            showError("Please Enter Valid Email")
-            return
-        }
-
-        if password.count < 6 {
-            showError("Password Must Be At Least 6 Characters")
-            return
-        }
-
-        if password != cpassword {
-            showError("Password Does Not Match")
-            return
-        }
-        
-        if !password.isValidPassword {
-            showError("Password must have 8+ chars, upper, lower, number & special character")
-            return
-        }
-        
-        guard imagePickerView.isImageSelected else {
-            showError("Please Select Profile Image")
-            return
-        }
-
-        // ─── All Good — Show Loader & Call API ────────────────────
-
-        loader = showLoading(message: "Creating account...")
-
-          // Pass selected image from your ImagePickerXib
-          let request = SignUpRequestModel(email:email,password:password,country:country,gender:selectedGender,profileImg: imagePickerView.imagePickerImage.image
-          )
-
-          APIManager.shared.signUp(request: request) { [weak self] response, error in
-              DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-                  self?.loader?.close()
-
-                  if let error = error {
-                      showError(error)
-                      return
-                  }
-                  if response?.code == 200 {
-                      let tempId = response?.data?.userRegTempId ?? 0
-                      SCLAlertView().showSuccess(response?.message ?? "ThankYou from confirming your account and opt has been sent to your email", subTitle: "")
-                      DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                             self?.navigateToOTP(tempId: tempId)
-                         }
-                  } else {
-                     showError(response?.message ?? "Sign Up Failed")
-                  }
-              }
-          }
-    }
-     func navigateToOTP(tempId: Int) {
-         let otpVC = OtpInputAndPasswordStoryBoard.instantiateViewController(withIdentifier: "OtpInputViewController") as! OtpInputViewController
-         otpVC.userRegTempId = tempId
-        navigationController?.pushViewController(otpVC, animated: true)
-    }
-
     
     //MARK: Radio button
     func setupGenderRadio() {
         lblGender.font = UIFont(name: "SFAtarianSystemExtended", size: 24)
-            radioMaleView.radioTitle.font = UIFont(name: "SFAtarianSystemExtended", size: 20)
-            radioFemaleView.radioTitle.font = UIFont(name: "SFAtarianSystemExtended", size: 20)
+        radioMaleView.radioTitle.font = UIFont(name: "SFAtarianSystemExtended", size: 20)
+        radioFemaleView.radioTitle.font = UIFont(name: "SFAtarianSystemExtended", size: 20)
         radioMaleView.radioTitle.text = "male"
         radioFemaleView.radioTitle.text = "female"
         
@@ -272,11 +152,130 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    //MARK: Api call Validation
+    func validateAndCallAPI() {
+        let email    = emailTextFieldView.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let password = passwordTextFieldView.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let cpassword = confirmPasswordTextFieldView.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let country  = countryTextFieldView.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        
+        let emailEmpty    = email.isEmpty
+        let passwordEmpty = password.isEmpty
+        let cpassEmpty    = cpassword.isEmpty
+        let countryEmpty = country.isEmpty
+        
+        let emptyCount = [emailEmpty, passwordEmpty, cpassEmpty, countryEmpty].filter { $0 }.count
+        
+        if emptyCount == 4 {
+            showError("Please Enter All Details")
+            return
+        }
+        
+        if emptyCount == 3 {
+            showError("Enter Remaining Details")
+            return
+        }
+        
+        if emptyCount == 2 {
+            switch (emailEmpty, passwordEmpty, cpassEmpty, countryEmpty) {
+            case (true, true, false, false):
+                showError("Enter Email and Password")
+            case (true, false, true, false):
+                showError("Enter Email and ConfirmPassword")
+            case (true, false, false, true):
+                showError("Enter Email and Choose Country")
+            case (false, true, true, false):
+                showError("Enter Password and ConfirmPassword")
+            case (false, true, false, true):
+                showError("Enter Password and Choose Country")
+            case (false, false, true, true):
+                showError("Enter ConfirmPassword and Choose Country")
+            default:
+                showError("Enter Remaining Details")
+            }
+            return
+        }
+        
+        if emptyCount == 1 {
+            switch (emailEmpty, passwordEmpty, cpassEmpty, countryEmpty) {
+            case (true, false, false, false):
+                showError("Please Enter Email")
+            case (false, true, false, false):
+                showError("Please Enter Password")
+            case (false, false, true, false):
+                showError("Please Enter ConfirmPassword")
+            case (false, false, false, true):
+                showError("Please Choose Country")
+            default:
+                break
+            }
+            return
+        }
+        
+        if !email.isValidEmail {
+            showError("Please Enter Valid Email")
+            return
+        }
+        
+        if password.count < 6 {
+            showError("Password Must Be At Least 6 Characters")
+            return
+        }
+        
+        if password != cpassword {
+            showError("Password Does Not Match")
+            return
+        }
+        
+        if !password.isValidPassword {
+            showError("Password must have 8+ chars, upper, lower, number & special character")
+            return
+        }
+        
+        guard imagePickerView.isImageSelected else {
+            showError("Please Select Profile Image")
+            return
+        }
+        
+        // ─── All Good — Show Loader & Call API ────────────────────
+        
+        loader = showLoading(message: "Creating account...")
+        
+        // Pass selected image from your ImagePickerXib
+        let request = SignUpRequestModel(email:email,password:password,country:country,gender:selectedGender,profileImg: imagePickerView.imagePickerImage.image
+        )
+        
+        APIManager.shared.signUp(request: request) { [weak self] response, error in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                self?.loader?.close()
+                
+                if let error = error {
+                    showError(error)
+                    return
+                }
+                if response?.code == 200 {
+                    let tempId = response?.data?.userRegTempId ?? 0
+                    SCLAlertView().showSuccess(response?.message ?? "ThankYou from confirming your account and opt has been sent to your email", subTitle: "")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        self?.navigateToOTP(tempId: tempId)
+                    }
+                } else {
+                    showError(response?.message ?? "Sign Up Failed")
+                }
+            }
+        }
+    }
+    
+    func navigateToOTP(tempId: Int) {
+        let otpVC = OtpInputAndPasswordStoryBoard.instantiateViewController(withIdentifier: "OtpInputViewController") as! OtpInputViewController
+        otpVC.userRegTempId = tempId
+        navigationController?.pushViewController(otpVC, animated: true)
+    }
+    
     //MARK: picker handlr
     func openCountryPicker() {
         countryTextFieldView.textField.becomeFirstResponder()
     }
-    
     
     func setupCountryPicker() {
         // Attach picker as input view to the text field
@@ -299,6 +298,7 @@ class SignUpViewController: UIViewController {
         countryTextFieldView.textField.text = countries.first?.name
         selectedCountry = countries.first
     }
+    
     @objc func countryPickerDoneTapped() {
         countryTextFieldView.textField.resignFirstResponder()
     }
@@ -309,24 +309,24 @@ class SignUpViewController: UIViewController {
         guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
               let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
         else { return }
-
+        
         let fieldMaxY = view.firstResponder?.convert(view.firstResponder!.bounds, to: view).maxY ?? 0
         let overlap = fieldMaxY - (view.frame.height - keyboardFrame.height) + 16
-
+        
         guard overlap > 0 else { return }
-
+        
         UIView.animate(withDuration: duration) {
             self.view.transform = CGAffineTransform(translationX: 0, y: -overlap)
         }
     }
-
+    
     @objc func keyboardWillHide(_ notification: Notification) {
         guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
         UIView.animate(withDuration: duration) {
             self.view.transform = .identity
         }
     }
-
+    
     // MARK: - Cleanup
     deinit {
         NotificationCenter.default.removeObserver(self)

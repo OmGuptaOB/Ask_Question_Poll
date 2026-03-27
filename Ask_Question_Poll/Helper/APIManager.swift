@@ -51,16 +51,7 @@ class APIManager{
                 completion: @escaping (SignUpResponseModel?, String?) -> Void) {
         let urlString = "\(baseURL)/api/signup"
         AF.upload(multipartFormData: { multipart in
-            // Append each field individually so the server receives them as separate form fields
-            
-            //let params = request.toJSON()
-            
-            //for (key, value) in params {
-            //       if let strVal = "\(value)".data(using: .utf8) {
-            //        multipart.append(strVal, withName: key)
-            //     }
-            //}
-            
+
             // Build request_data dict exactly as server expects
             var requestData: [String: Any] = [
                 "email_id": request.email_id ?? "",

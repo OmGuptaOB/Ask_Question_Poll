@@ -25,7 +25,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXn-jO-Nyd">
                     <rect key="frame" x="0.0" y="0.0" width="192" height="110"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="option_button" translatesAutoresizingMaskIntoConstraints="NO" id="izD-pI-arK" userLabel="option_bg_image">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="option_button" translatesAutoresizingMaskIntoConstraints="NO" id="izD-pI-arK" userLabel="option_bg_image">
                             <rect key="frame" x="0.0" y="0.0" width="192" height="110"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </imageView>

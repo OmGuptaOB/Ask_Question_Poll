@@ -25,19 +25,19 @@ class GetAllQuestionsResponseModel: Mappable {
 }
 
 class AllQuestionsData: Mappable {
-    var result: [QuestionModel] = []  // ✅ flat array directly
+    var result: [QuestionModel] = []  // flat array directly
         
         required init?(map: Map) {}
         
         func mapping(map: Map) {
-            // ✅ Manually unwrap [[Any]] → flat [QuestionModel]
+            //  Manually unwrap [[Any]] → flat [QuestionModel]
             if let outerArray = map["result"].currentValue as? [[Any]] {
                 result = outerArray.flatMap { innerArray in
                     Mapper<QuestionModel>().mapArray(JSONObject: innerArray) ?? []
                 }
                 print("Parsed questions count: \(result.count)")
             } else if let outerArray = map["result"].currentValue as? [Any] {
-                // ✅ Fallback — if server returns flat array
+                // Fallback — if server returns flat array
                 result = Mapper<QuestionModel>().mapArray(JSONObject: outerArray) ?? []
                 print("Parsed questions count (flat): \(result.count)")
             }

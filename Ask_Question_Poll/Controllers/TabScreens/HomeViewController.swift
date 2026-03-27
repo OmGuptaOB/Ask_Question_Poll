@@ -32,7 +32,7 @@ class HomeViewController: UIViewController{
     @IBOutlet weak var descriptionTextViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var previewButtonView: ButtonXib!
     @IBOutlet weak var submitButtonView: ButtonXib!
-    
+
     
     var selectedOption: String?
     var countries: [CountryModel] = []
@@ -54,7 +54,6 @@ class HomeViewController: UIViewController{
         setupFont()
         setupImagePicker()
         setupRadioButtons()
-        loadCountries()
         setupCategoryPicker()
         setupLocationPicker()
         setupGenderPicker()
@@ -127,10 +126,6 @@ class HomeViewController: UIViewController{
             self.optionsView.optionOneView.setupForImageMode()
             self.optionsView.optionTwoView.setupForImageMode()
         }
-    }
-    
-    func loadCountries() {
-        // Handled by CountryManager.shared
     }
     
     func setupCategoryPicker(){
@@ -257,10 +252,7 @@ class HomeViewController: UIViewController{
         let genderInt  = gender == "Male" ? 1 : 2
         let optionType = isTextMode ? 1 : 2
         
-        let request = AddQuestionRequestModel(
-            categoryId: categoryId,
-            country: selectedCountry?.name,
-            gender: genderInt,
+        let request = AddQuestionRequestModel(categoryId: categoryId,country: selectedCountry?.name,gender: genderInt,
             description: description,
             optionType: optionType,
             option1: isTextMode ? option1Text : nil,
@@ -272,7 +264,6 @@ class HomeViewController: UIViewController{
         
         // ─── Show loader & call API ───────────────────────────────────
       loader = showLoading(message: "Submitting question...")
-//        loader = SCLAlertView().showWait("Please wait", subTitle: "Submitting question...", colorStyle: 0xFCCF1C)
         
         APIManager.shared.addQuestion(request: request) { [weak self] response, error in
             DispatchQueue.main.async {
@@ -297,7 +288,6 @@ class HomeViewController: UIViewController{
     }
 
     // MARK: - Clear Form
-
     func clearForm() {
         // Text fields
         descriptionTextView.text = ""
@@ -316,6 +306,8 @@ class HomeViewController: UIViewController{
         radioTextOption.setSelected(true)
         radioImageOption.setSelected(false)
         selectedOption = "text"
+        optionsView.optionOneView.selectedImage = nil
+        optionsView.optionTwoView.selectedImage = nil
         optionsView.optionOneView.setupForTextMode()
         optionsView.optionTwoView.setupForTextMode()
 
@@ -327,6 +319,7 @@ class HomeViewController: UIViewController{
                              heightConstraint: descriptionTextViewHeightConstraint,
                              maxHeight: 40)
         
+        
         if optionsView.optionOneView.optiontextView.text.isEmpty{
             optionsView.optionOneView.OptionNumberTitle.isHidden = false
             optionsView.optionOneView.optionCharacterLimit.isHidden = false
@@ -337,7 +330,6 @@ class HomeViewController: UIViewController{
         }
         
     }
-    
     
     func showPreview(){
         let isTextMode  = selectedOption == "text" || selectedOption == nil
@@ -426,7 +418,9 @@ class HomeViewController: UIViewController{
         }
     }
     
-
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
 extension HomeViewController: UITextViewDelegate {

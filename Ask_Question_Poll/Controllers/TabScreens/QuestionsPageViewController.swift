@@ -26,17 +26,7 @@ class QuestionsPageViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
             super.viewDidLayoutSubviews()
-            // ✅ Recalculate cell size after layout — critical for full screen cells
             collectionView.collectionViewLayout.invalidateLayout()
-            
-            // ✅ Scroll to current index after layout
-            if questions.count > currentIndex {
-                collectionView.scrollToItem(
-                    at: IndexPath(item: currentIndex, section: 0),
-                    at: .centeredHorizontally,
-                    animated: false
-                )
-            }
         }
     
     func setupCollectionView() {
@@ -51,9 +41,6 @@ class QuestionsPageViewController: UIViewController {
             layout.scrollDirection = .horizontal
             layout.minimumLineSpacing = 0
             layout.minimumInteritemSpacing = 0
-            layout.sectionInset = .zero
-            layout.headerReferenceSize = .zero  // ✅ no header
-            layout.footerReferenceSize = .zero  // ✅ no footer
         }
         collectionView.contentInset = .zero
         collectionView.scrollIndicatorInsets = .zero
@@ -101,17 +88,7 @@ extension QuestionsPageViewController: UICollectionViewDelegateFlowLayout ,UICol
                         numberOfItemsInSection section: Int) -> Int {
         return questions.count
     }
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        insetForSectionAt section: Int) -> UIEdgeInsets {
-//        
-//        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
-//    }
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .zero  // ✅ no padding at start or end
-    }
+
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -16,7 +16,6 @@ enum OTPScreenMode {
 }
 
 class OtpInputViewController: UIViewController {
-    
     @IBOutlet weak var firstTextField: TextFieldXib!
     @IBOutlet weak var btnEnterOTpView: ButtonXib!
     @IBOutlet weak var secondTextField: TextFieldXib!
@@ -49,7 +48,7 @@ class OtpInputViewController: UIViewController {
             
         case .forgotPasswordOTP:
             showFields(first: true, second: false)
-            setupFirstField(title: "otp", placeholder: "Enter OTP ", keyboard: .numberPad, secure: false)
+            setupFirstField(title: "otp", placeholder: "Enter OTP", keyboard: .numberPad, secure: false)
             setupButton(title: "ok", action: #selector(verifyForgotOTP))
             
         case .resetPassword:
@@ -61,38 +60,36 @@ class OtpInputViewController: UIViewController {
     }
     
     func showFields(first: Bool, second: Bool) {
-          firstTextField.isHidden  = !first
-          secondTextField.isHidden = !second
-          stackView.layoutIfNeeded()
-      }
+        firstTextField.isHidden  = !first
+        secondTextField.isHidden = !second
+        stackView.layoutIfNeeded()
+    }
     
     func setupFirstField(title: String, placeholder: String, keyboard: UIKeyboardType, secure: Bool) {
-            firstTextField.textFieldTitle.text = title
-            firstTextField.textFieldTitleImage.isHidden = true
-            firstTextField.textField.placeholder = placeholder
-            firstTextField.textField.keyboardType = keyboard
-            firstTextField.textField.isSecureTextEntry = secure
-            firstTextField.textField.text = ""
-            firstTextField.textField.delegate = self
-        }
-
-        func setupSecondField(title: String, placeholder: String, keyboard: UIKeyboardType, secure: Bool) {
-            secondTextField.textFieldTitle.text  = title
-            secondTextField.textFieldTitleImage.isHidden = true
-            secondTextField.textField.placeholder = placeholder
-            secondTextField.textField.keyboardType = keyboard
-            secondTextField.textField.isSecureTextEntry = secure
-            secondTextField.textField.text = ""
-            secondTextField.textField.delegate = self
-        }
+        firstTextField.textFieldTitle.text = title
+        firstTextField.textFieldTitleImage.isHidden = true
+        firstTextField.textField.placeholder = placeholder
+        firstTextField.textField.keyboardType = keyboard
+        firstTextField.textField.isSecureTextEntry = secure
+        firstTextField.textField.text = ""
+        firstTextField.textField.delegate = self
+    }
+    
+    func setupSecondField(title: String, placeholder: String, keyboard: UIKeyboardType, secure: Bool) {
+        secondTextField.textFieldTitle.text  = title
+        secondTextField.textFieldTitleImage.isHidden = true
+        secondTextField.textField.placeholder = placeholder
+        secondTextField.textField.keyboardType = keyboard
+        secondTextField.textField.isSecureTextEntry = secure
+        secondTextField.textField.text = ""
+        secondTextField.textField.delegate = self
+    }
     
     func setupButton(title: String, action: Selector) {
-            btnEnterOTpView.btnCustomClick.removeTarget(nil, action: nil, for: .allEvents)
+        btnEnterOTpView.btnCustomClick.removeTarget(nil, action: nil, for: .allEvents)
         btnEnterOTpView.btnCustomLabel.setupButtonLabel(title: title)
-            btnEnterOTpView.btnCustomClick.addTarget(self, action: action, for: .touchUpInside)
-        }
-    
-    
+        btnEnterOTpView.btnCustomClick.addTarget(self, action: action, for: .touchUpInside)
+    }
     
     @objc func verifySignUpOTP() {
         let otp = firstTextField.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
@@ -113,7 +110,6 @@ class OtpInputViewController: UIViewController {
         }
         
         loader = showLoading(message: "Verifying OTP...")
-//        loader = SCLAlertView().showWait("Please wait", subTitle: "Verifying OTP...", colorStyle: 0xFCCF1C)
         
         let request = OTPRequestModel(
             user_reg_temp_id: "\(tempId)",
@@ -146,7 +142,7 @@ class OtpInputViewController: UIViewController {
         
         if !email.isValidEmail { showError("Please Enter Valid Email"); return }
         
-//        loader = showLoading(message: "Sending OTP...")
+        //        loader = showLoading(message: "Sending OTP...")
         loader = SCLAlertView().showWait("Please wait", subTitle: "Sending OTP...", colorStyle: 0xFCCF1C)
         
         APIManager.shared.forgotPassword(email: email) { [weak self] response, error in
@@ -175,7 +171,7 @@ class OtpInputViewController: UIViewController {
         guard let otpInt = Int(otp) else { showError("Please Enter Valid OTP"); return }
         guard let email = forgotPasswordEmail else { showError("Something went wrong."); return }
         
-//        loader = showLoading(message: "Verifying OTP...")
+        //        loader = showLoading(message: "Verifying OTP...")
         loader = SCLAlertView().showWait("Please wait", subTitle: "Verifying OTP...", colorStyle: 0xFCCF1C)
         
         APIManager.shared.verifyForgotOTP(email: email, otp: otpInt) { [weak self] response, error in
@@ -227,7 +223,7 @@ class OtpInputViewController: UIViewController {
         }
         
         loader = showLoading(message: "Saving new password...")
-//        loader = SCLAlertView().showWait("Please wait", subTitle: "Saving new password...", colorStyle: 0xFCCF1C)
+        //        loader = SCLAlertView().showWait("Please wait", subTitle: "Saving new password...", colorStyle: 0xFCCF1C)
         
         APIManager.shared.resetPassword(email: email, token: token, password: password) { [weak self] response, error in
             DispatchQueue.main.async {
@@ -278,10 +274,10 @@ extension OtpInputViewController: UITextFieldDelegate {
         
         textField.resignFirstResponder()
         switch screenMode {
-        case .signUpOTP:          verifySignUpOTP()
+        case .signUpOTP: verifySignUpOTP()
         case .forgotPasswordEmail: verifyForgotEmail()
-        case .forgotPasswordOTP:  verifyForgotOTP()
-        case .resetPassword:  saveNewPassword()
+        case .forgotPasswordOTP: verifyForgotOTP()
+        case .resetPassword: saveNewPassword()
         }
         return true
         

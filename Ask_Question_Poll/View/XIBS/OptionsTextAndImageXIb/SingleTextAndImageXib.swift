@@ -20,6 +20,7 @@ class SingleTextAndImageXib: NibView {
     var isImageSelected: Bool {
         return optionImagePicker.isImageSelected
     }
+    var selectedImage: UIImage?
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -35,6 +36,7 @@ class SingleTextAndImageXib: NibView {
         optionImagePicker.onImageSelected = { [weak self] image in
             guard let self = self else { return }
             // Set selected image as background
+            self.selectedImage = image
             self.option_bg_image.image = image
             print("Option \(self.optionIndex) image selected")
         }
@@ -68,7 +70,7 @@ class SingleTextAndImageXib: NibView {
         optiontextView.isHidden = false
         optionImagePicker.isHidden = true
         optionImagePicker.cameraIconImageView.isHidden = true
-        option_bg_image.image = UIImage(named: "option_button") // reset bg
+        option_bg_image.image = UIImage(named: "option_button")
         let isEmpty = optiontextView.text.trimmingCharacters(in: .whitespaces).isEmpty
         OptionNumberTitle.isHidden = !isEmpty
         optionCharacterLimit.isHidden = !isEmpty
@@ -80,11 +82,15 @@ class SingleTextAndImageXib: NibView {
         OptionNumberTitle.isHidden = true
         optionImagePicker.isHidden = false
         optionImagePicker.cameraIconImageView.isHidden = true
-        
-        if !optionImagePicker.isImageSelected {
-            let imageName = optionIndex == 1 ? "image_1" : "image_2"
-            optionImagePicker.imagePickerImage.image = UIImage(named: imageName)
-        }
+
+        if let saved = selectedImage {
+              option_bg_image.image = saved
+              optionImagePicker.imagePickerImage.image = saved
+          } else {
+              // No image selected yet — show placeholder
+              let imageName = optionIndex == 1 ? "image_1" : "image_2"
+              optionImagePicker.imagePickerImage.image = UIImage(named: imageName)
+          }
     }
     
     func centerTextViewContent(_ textView: UITextView) {
