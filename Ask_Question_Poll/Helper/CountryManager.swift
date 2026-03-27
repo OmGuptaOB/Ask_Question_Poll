@@ -11,7 +11,7 @@ import ObjectMapper
 class CountryManager {
     static let shared = CountryManager()
     
-    private(set) var countries: [CountryModel] = []
+    var countries: [CountryModel] = []
     
     private init() {
         loadCountries()

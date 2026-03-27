@@ -49,14 +49,8 @@ class APIManager{
     
     func signUp(request: SignUpRequestModel,
                 completion: @escaping (SignUpResponseModel?, String?) -> Void) {
-        
         let urlString = "\(baseURL)/api/signup"
-        
-        
         AF.upload(multipartFormData: { multipart in
-            
-            
-            //
             // Append each field individually so the server receives them as separate form fields
             
             //let params = request.toJSON()
@@ -147,12 +141,9 @@ class APIManager{
                 }
             }
     }
-    
-    
-    
+
     func forgotPassword(email: String,
                         completion: @escaping (ForgotPasswordResponseModel?, String?) -> Void) {
-        
         let urlString = "\(baseURL)/api/forgotPasswordForUser"
         let params    = ForgotPasswordRequestModel(email: email).toJSON()
         
@@ -179,11 +170,8 @@ class APIManager{
             }
     }
 
-    // ─── Verify Forgot Password OTP ───────────────────────────────
-
     func verifyForgotOTP(email: String, otp: Int,
                          completion: @escaping (VerifyForgotOTPResponseModel?, String?) -> Void) {
-        
         let urlString = "\(baseURL)/api/verifyOtpForUser"
         let params    = VerifyForgotOTPRequestModel(email: email, token: otp).toJSON()
         
@@ -212,7 +200,6 @@ class APIManager{
     
     func resetPassword(email: String, token: String, password: String,
                        completion: @escaping (ResetPasswordResponseModel?, String?) -> Void) {
-        
         let urlString = "\(baseURL)/api/generateNewPasswordForUser"
         let params    = ResetPasswordRequestModel(email: email, token: token, password: password).toJSON()
         
@@ -241,17 +228,9 @@ class APIManager{
     
     func addQuestion(request: AddQuestionRequestModel,
                      completion: @escaping (AddQuestionResponseModel?, String?) -> Void) {
-        
-//        let token = UserDefaultsManager.shared.token ?? ""
-//
-//        let headers: HTTPHeaders = [
-//            "Authorization": "Bearer \(token)"
-//        ]
-//        
         let urlString = "\(baseURL)/api/addQuestion"
         
         AF.upload(multipartFormData: { multipart in
-            
             // request_data as JSON string
             if let jsonData   = try? JSONSerialization.data(withJSONObject: request.toRequestDataJSON()),
                let jsonString = String(data: jsonData, encoding: .utf8),
@@ -304,9 +283,7 @@ class APIManager{
         }
     }
 
-    
     func getAllQuestions(completion: @escaping (GetAllQuestionsResponseModel?, String?) -> Void) {
-        
         let urlString = "\(baseURL)/api/getAllQuestionByUser"
         
         AF.request(urlString, method: .post, headers: getAuthHeaders())
@@ -333,7 +310,6 @@ class APIManager{
     }
     
     func viewQuestions(completion: @escaping (GetAllQuestionsResponseModel?, String?) -> Void) {
-        
         let urlString = "\(baseURL)/api/viewQuestions"
         
         AF.request(urlString, method: .post, headers: getAuthHeaders())
@@ -360,7 +336,6 @@ class APIManager{
     }
     
     func logout(completion: @escaping (Bool, String?) -> Void) {
-        
         let urlString = "\(baseURL)/api/logout"
         
         AF.request(urlString, method: .post, headers: getAuthHeaders())

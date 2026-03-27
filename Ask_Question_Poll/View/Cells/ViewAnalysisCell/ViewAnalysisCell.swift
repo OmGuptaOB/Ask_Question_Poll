@@ -18,7 +18,7 @@ class ViewAnalysisCell: UITableViewCell {
     }
     
     func setupBtn(){
-        btnViewAnalysis.btnCustomLabel.setupButton(title: "view analysis", textColour: .black)
+        btnViewAnalysis.btnCustomLabel.setupButtonLabel(title: "view analysis", textColour: .black)
         btnViewAnalysis.btnCustomLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
     }
 }

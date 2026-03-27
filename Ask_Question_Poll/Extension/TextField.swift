@@ -39,7 +39,7 @@ class NoSelectTextField: UITextField {
     override func cut(_ sender: Any?) { }
     override func copy(_ sender: Any?) { }
     
-    // 👇 Nuclear — remove ALL gestures except tap
+    //remove ALL gestures except tap
     override func didMoveToWindow() {
         super.didMoveToWindow()
         removeUnwantedGestures()
@@ -48,7 +48,7 @@ class NoSelectTextField: UITextField {
     private func removeUnwantedGestures() {
         gestureRecognizers?.forEach { gesture in
             if gesture is UILongPressGestureRecognizer {
-                removeGestureRecognizer(gesture)  // 👈 fully remove, not just disable
+                removeGestureRecognizer(gesture)
             }
         }
     }

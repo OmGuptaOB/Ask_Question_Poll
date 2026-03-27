@@ -50,14 +50,15 @@
                         <constraint firstAttribute="height" constant="47.329999999999998" id="yGq-9c-zXX"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" verticalHuggingPriority="251" image="password_icon" translatesAutoresizingMaskIntoConstraints="NO" id="nw7-mU-SuN">
-                    <rect key="frame" x="316" y="4.3333333333333321" width="20" height="17"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" image="password_icon" translatesAutoresizingMaskIntoConstraints="NO" id="nw7-mU-SuN">
+                    <rect key="frame" x="316" y="1.3333333333333339" width="20" height="20"/>
                     <constraints>
+                        <constraint firstAttribute="width" secondItem="nw7-mU-SuN" secondAttribute="height" id="A2Q-be-DCf"/>
                         <constraint firstAttribute="width" constant="20" id="aIH-3Q-5de"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0os-Zd-0xz">
-                    <rect key="frame" x="0.0" y="4.3333333333333321" width="34.666666666666664" height="17"/>
+                    <rect key="frame" x="0.0" y="1.3333333333333339" width="34.666666666666664" height="20"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.98823529409999999" green="0.81176470590000005" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>

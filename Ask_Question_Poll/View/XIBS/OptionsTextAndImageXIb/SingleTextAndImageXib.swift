@@ -9,7 +9,6 @@ import UIKit
 import SCLAlertView
 
 class SingleTextAndImageXib: NibView {
-    
     @IBOutlet weak var OptionNumberTitle: UILabel!
     @IBOutlet weak var optionCharacterLimit: UILabel!
     @IBOutlet weak var optiontextView: UITextView!
@@ -31,13 +30,12 @@ class SingleTextAndImageXib: NibView {
     }
     
     func setupOptionImagePicker() {
-        optionImagePicker.isHidden = true // hidden by default (text mode)
+        optionImagePicker.isHidden = true // hidden by default
         
         optionImagePicker.onImageSelected = { [weak self] image in
             guard let self = self else { return }
             // Set selected image as background
             self.option_bg_image.image = image
-            //               optionImagePicker.imagePickerImage.contentMode = .scaleAspectFill
             print("Option \(self.optionIndex) image selected")
         }
     }
@@ -49,12 +47,12 @@ class SingleTextAndImageXib: NibView {
         optionCharacterLimit.textColor = .white
         optiontextView.delegate = self
         
-        // 👇 Center the text and cursor
+        // Center the text and cursor
         optiontextView.textAlignment = .center
         optiontextView.backgroundColor = .clear
         optiontextView.textColor = .white
         
-        // 👇 Push content to vertical center
+        // Push content to vertical center
         optiontextView.contentInsetAdjustmentBehavior = .never
     }
     func setupImageTap() {
@@ -67,7 +65,6 @@ class SingleTextAndImageXib: NibView {
         onImageTapped?()  // tell HomeVC to open picker
     }
     func setupForTextMode() {
-
         optiontextView.isHidden = false
         optionImagePicker.isHidden = true
         optionImagePicker.cameraIconImageView.isHidden = true
@@ -102,7 +99,6 @@ class SingleTextAndImageXib: NibView {
 
 extension SingleTextAndImageXib: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        
         let currentText = textView.text ?? ""
         
         guard let stringRange = Range(range, in: currentText) else { return false }

@@ -8,16 +8,12 @@
 import UIKit
 
 class SelectFromPickerXIb: NibView {
-    
     @IBOutlet weak var selectDataTextField: UITextField!
-    
     @IBOutlet weak var noteDescriptionLabel: UILabel!
     
     var onValueSelected: ((String) -> Void)?
-    
     private var pickerView = UIPickerView()
     private var dataList: [String] = []
-    
     private var selectedValue: String = ""
     
     override func awakeFromNib() {

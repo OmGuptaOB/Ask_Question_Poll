@@ -71,10 +71,10 @@ class HomeViewController: UIViewController{
     }
     
     func setupButton() {
-        previewButtonView.btnCustomLabel.setupButton(title: "preview",textColour: .black)
+        previewButtonView.btnCustomLabel.setupButtonLabel(title: "preview",textColour: .black)
         previewButtonView.btnCustomClick.addTarget(self, action: #selector(previewTapped), for: .touchUpInside)
         
-        submitButtonView.btnCustomLabel.setupButton(title: "submit",textColour: .black)
+        submitButtonView.btnCustomLabel.setupButtonLabel(title: "submit",textColour: .black)
         submitButtonView.btnCustomClick.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
     }
     

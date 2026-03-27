@@ -88,7 +88,7 @@ class OtpInputViewController: UIViewController {
     
     func setupButton(title: String, action: Selector) {
             btnEnterOTpView.btnCustomClick.removeTarget(nil, action: nil, for: .allEvents)
-        btnEnterOTpView.btnCustomLabel.setupButton(title: title)
+        btnEnterOTpView.btnCustomLabel.setupButtonLabel(title: title)
             btnEnterOTpView.btnCustomClick.addTarget(self, action: action, for: .touchUpInside)
         }
     

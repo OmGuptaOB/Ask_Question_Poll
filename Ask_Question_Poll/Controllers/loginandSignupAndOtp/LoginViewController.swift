@@ -43,16 +43,12 @@ class LoginViewController: UIViewController {
         signUpBtnView.backgroundColor = .clear
     }
     
-    
     func setupforgotPassword(){
         labelForgotPassword.setupTitle(size: 20,underline: true)
     }
     
     func setupSignUp(){
         lblSignUp.setupTitle(size: 20,underline: true)
-//        
-//        signUpBtnView.lblLinkText.text = "SIGNUP"
-//        signUpBtnView.lblLinkText.textAlignment = .center
     }
 
     func setupBtnLogin(){
@@ -60,23 +56,18 @@ class LoginViewController: UIViewController {
     }
     
     func setupEmailtextField(){
-        emailTextFieldView.textFieldTitle.text = "email"
+        emailTextFieldView.textFieldTitle.text = "EMAIL"
         emailTextFieldView.textField.placeholder = "Enter Email"
         emailTextFieldView.textField.text = "sifila1565@fun4k.com"
         emailTextFieldView.textFieldTitleImage.image = UIImage(named: "email_icon")
-//        emailTextFieldView.setAspect()
         emailTextFieldView.textField.keyboardType = .emailAddress
-        
     }
     
     func setupPasswordTextField(){
-        passwordTextFieldView.textFieldTitle.text = "password"
-        
+        passwordTextFieldView.textFieldTitle.text = "PASSWORD"
         passwordTextFieldView.textField.text = "123456789@Ob"
         passwordTextFieldView.textFieldTitleImage.image = UIImage(named: "password_icon")
-//        passwordTextFieldView.setAspect()
         passwordTextFieldView.textField.placeholder = "Enter Password"
-        
         passwordTextFieldView.textField.isSecureTextEntry = true
     }
     func validateAndCallAPI() {
@@ -98,8 +89,6 @@ class LoginViewController: UIViewController {
         }
         
         loader = showLoading(message: "Logging in...")
-//        loader = SCLAlertView().showWait("Please wait", subTitle: "Logging in...", colorStyle: 0xFCCF1C)
-        
         
         let request = LoginRequestModel(email: email, password: password)
         
@@ -107,14 +96,14 @@ class LoginViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 
                 self?.loader?.close()
-                print("Code: \(String(describing: response?.code))")       // ← what code comes back?
-                        print("Message: \(String(describing: response?.message))") // ← what message?
-                        print("Data: \(String(describing: response?.data))")
+                //use to debug response
+//                print("Code: \(String(describing: response?.code))")       // ← what code comes back?
+//                        print("Message: \(String(describing: response?.message))") // ← what message?
+//                        print("Data: \(String(describing: response?.data))")
                 if let error = error {
                     showError(error)
                     return
                 }
-                
                 if response?.code == 200 {
                     if let token = response?.data?.token {
                             UserDefaultsManager.shared.saveLoginData(token: token)
@@ -146,7 +135,6 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController : UITextFieldDelegate{
     func forgotTapped(){
-        let OtpInputAndPasswordStoryBoard = UIStoryboard(name: "OtpInputAndPasswordStoryBoard", bundle: nil)
         let vc = OtpInputAndPasswordStoryBoard.instantiateViewController(withIdentifier: "OtpInputViewController") as! OtpInputViewController
         vc.screenMode = .forgotPasswordEmail
         self.navigationController?.pushViewController(vc, animated: true)
@@ -158,7 +146,7 @@ extension LoginViewController : UITextFieldDelegate{
     }
     
     func navigateToHome(){
-        let vc = storyBoard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: "TabBarViewController") as? TabBarViewController else {return}
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

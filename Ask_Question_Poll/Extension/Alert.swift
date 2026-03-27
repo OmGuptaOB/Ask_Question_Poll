@@ -9,7 +9,7 @@ import UIKit
 import SCLAlertView
 
 let appearance = SCLAlertView.SCLAppearance(
-    showCloseButton: false // 👈 THIS hides the Done button
+    showCloseButton: false
 )
 
 let alert = SCLAlertView(appearance: appearance)
@@ -28,19 +28,15 @@ func showLoading(title: String = "Please wait", message: String) -> SCLAlertView
 
 
 func showNoDataAlert(on vc: UIViewController,
-                    title: String = "No Questions",
+                    title: String = "",
                     message: String = "Please add question first") {
     
     let alert = SCLAlertView(appearance: appearance)
     
-    alert.addButton("OK") {
+    alert.addButton("OK",textColor: UIColor.white) {
             if let tabVC = vc.parent as? TabBarViewController {
                 tabVC.selectTab(at: 1)
             }
         }
-    
-    alert.showInfo(title,
-                   subTitle: message,
-                   closeButtonTitle: nil,
-                   colorStyle: 0x007BFF)
+    alert.showWarning(title, subTitle: message,closeButtonTitle: nil,colorStyle: 0x007BFF)
 }

@@ -9,7 +9,6 @@ import UIKit
 import SDWebImage
 
 class QuestionContainerCell: UICollectionViewCell {
-    
     @IBOutlet weak var questionImageView: UIImageView!
     @IBOutlet weak var questionDescription: UILabel!
     @IBOutlet weak var optionOneView: SingleTextAndImageXib!
@@ -34,10 +33,8 @@ class QuestionContainerCell: UICollectionViewCell {
         questionDescription.text = ""
     }
     
-    func configure(with question: QuestionModel, shouldHideClose: Bool = false) {
-        
+    func configure(with question: QuestionModel) {
         questionDescription.text = question.description ?? ""
-        
         //  Question image
         if let urlString = question.question_compress,
            let url = URL(string: urlString) {
@@ -46,10 +43,9 @@ class QuestionContainerCell: UICollectionViewCell {
         } else {
             questionImageView.image = UIImage(named: "img")
         }
-        
         //  Hide labels
-        optionOneView.OptionNumberTitle.isHidden    = true
-        optionTwoView.OptionNumberTitle.isHidden    = true
+        optionOneView.OptionNumberTitle.isHidden = true
+        optionTwoView.OptionNumberTitle.isHidden = true
         optionOneView.optionCharacterLimit.isHidden = true
         optionTwoView.optionCharacterLimit.isHidden = true
         
@@ -57,27 +53,27 @@ class QuestionContainerCell: UICollectionViewCell {
         
         if isTextMode {
             //  Text options
-            optionOneView.optiontextView.isHidden     = false
-            optionTwoView.optiontextView.isHidden     = false
-            optionOneView.optionImagePicker.isHidden  = true
-            optionTwoView.optionImagePicker.isHidden  = true
+            optionOneView.optiontextView.isHidden = false
+            optionTwoView.optiontextView.isHidden = false
+            optionOneView.optionImagePicker.isHidden = true
+            optionTwoView.optionImagePicker.isHidden = true
             optionOneView.option_bg_image.image = UIImage(named: "option_button")
             optionTwoView.option_bg_image.image = UIImage(named: "option_button")
             
-            optionOneView.optiontextView.text         = question.option1 ?? ""
-            optionTwoView.optiontextView.text         = question.option2 ?? ""
-            optionOneView.optiontextView.isEditable   = false
-            optionTwoView.optiontextView.isEditable   = false
+            optionOneView.optiontextView.text = question.option1 ?? ""
+            optionTwoView.optiontextView.text = question.option2 ?? ""
+            optionOneView.optiontextView.isEditable = false
+            optionTwoView.optiontextView.isEditable = false
             
             optionOneView.centerTextViewContent(optionOneView.optiontextView)
             optionTwoView.centerTextViewContent(optionTwoView.optiontextView)
             
         } else {
             // Image options
-            optionOneView.optiontextView.isHidden     = true
-            optionTwoView.optiontextView.isHidden     = true
-            optionOneView.optionImagePicker.isHidden  = true
-            optionTwoView.optionImagePicker.isHidden  = true
+            optionOneView.optiontextView.isHidden = true
+            optionTwoView.optiontextView.isHidden = true
+            optionOneView.optionImagePicker.isHidden = true
+            optionTwoView.optionImagePicker.isHidden = true
             
             // Option 1 Image
             if let url1String = question.option1_compress_image,

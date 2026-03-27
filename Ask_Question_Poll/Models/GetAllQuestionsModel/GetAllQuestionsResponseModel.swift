@@ -25,14 +25,6 @@ class GetAllQuestionsResponseModel: Mappable {
 }
 
 class AllQuestionsData: Mappable {
-//    var result: [[QuestionModel]]?
-//    
-//    required init?(map: Map) {}
-//    
-//    func mapping(map: Map) {
-//        result <- map["result"]
-//    }
-    
     var result: [QuestionModel] = []  // ✅ flat array directly
         
         required init?(map: Map) {}

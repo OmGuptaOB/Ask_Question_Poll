@@ -81,7 +81,7 @@ class ShowQuestionViewController: UIViewController {
     
     
     func stupButton(){
-        btnClose.btnCustomLabel.setupButton(title: "close",textColour: .black)
+        btnClose.btnCustomLabel.setupButtonLabel(title: "close",textColour: .black)
         btnClose.btnCustomClick.addTarget(self, action: #selector(closeView), for: .touchUpInside)
     }
     @objc func closeView(){

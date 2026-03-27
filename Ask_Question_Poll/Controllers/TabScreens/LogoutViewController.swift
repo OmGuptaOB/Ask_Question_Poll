@@ -18,29 +18,22 @@ class LogoutViewController: UIViewController {
         stupButton()
     }
     func stupButton(){
-        btnLogOut.btnCustomLabel.setupButton(title: "logout",textColour: .black)
-        btnLogOut.btnCustomClick.addTarget(self, action: #selector(logout), for: .touchUpInside)
+        btnLogOut.btnCustomLabel.setupButtonLabel(title: "logout",textColour: .black)
+        btnLogOut.btnCustomClick.addTarget(self, action: #selector(performLogout), for: .touchUpInside)
     }
-    @objc func logout(){
-        let alert = SCLAlertView()
-                alert.addButton("Yes, Logout") { [weak self] in
-                    self?.performLogout()
-                }
-                alert.showWarning("Logout", subTitle: "Are you sure you want to logout?")
-    }
-    func performLogout() {
+
+    @objc func performLogout() {
             loader = showLoading(message: "Logging out...")
             
             APIManager.shared.logout { [weak self] success, message in
                 DispatchQueue.main.async {
                     self?.loader?.close()
-                    
                     if success {
-                        // ✅ Clear token and user data
+                        // Clear token and user data
                         UserDefaultsManager.shared.clearLoginData()
                         self?.navigateToLogin()
                     } else {
-                        // ✅ Even if API fails — clear local data and logout
+                        // Even if API fails — clear local data and logout
                         UserDefaultsManager.shared.clearLoginData()
                         self?.navigateToLogin()
                     }
@@ -50,5 +43,12 @@ class LogoutViewController: UIViewController {
     
     func navigateToLogin(){
         self.navigationController?.popToRootViewController(animated: true)
+                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let loginVC = LoginStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                let nav = UINavigationController(rootViewController: loginVC)
+                nav.navigationBar.isHidden = false
+        appDelegate.window?.rootViewController = nav
+                appDelegate.window?.makeKeyAndVisible()
+    
     }
 }

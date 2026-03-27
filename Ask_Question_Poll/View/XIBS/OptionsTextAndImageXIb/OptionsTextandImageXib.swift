@@ -8,16 +8,13 @@
 import UIKit
 
 class OptionsTextandImageXib: NibView {
-
     @IBOutlet weak var optionOneView: SingleTextAndImageXib!
     @IBOutlet weak var optionTwoView: SingleTextAndImageXib!
     
-    
-    
     override func awakeFromNib() {
-           super.awakeFromNib()
-           //  Tell each view which option it is
-           optionOneView.optionIndex = 1
-           optionTwoView.optionIndex = 2
-       }
+        super.awakeFromNib()
+        //  Tell each view which option it is
+        optionOneView.optionIndex = 1
+        optionTwoView.optionIndex = 2
+    }
 }

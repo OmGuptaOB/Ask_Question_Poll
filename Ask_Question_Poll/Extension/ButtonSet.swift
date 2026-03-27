@@ -8,7 +8,7 @@
 import UIKit
 
 extension UILabel {
-    func setupButton(title: String = "CTA", textColour: UIColor = .white) {
+    func setupButtonLabel(title: String = "CTA", textColour: UIColor = .white) {
         self.text = title
         self.textColor = textColour
     }

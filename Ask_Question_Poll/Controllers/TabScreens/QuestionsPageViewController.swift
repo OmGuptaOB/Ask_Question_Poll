@@ -9,18 +9,14 @@ import UIKit
 import SCLAlertView
 
 class QuestionsPageViewController: UIViewController {
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var questions: [QuestionModel] = []
     var currentIndex: Int = 0
-    var shouldHideCloseButton: Bool = false
-    var loader: SCLAlertViewResponder?
-
-    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-                fetchQuestions()
     }
     override func viewWillAppear(_ animated: Bool) {
         if questions.isEmpty || UserDefaultsManager.isQuestionAdded {
@@ -78,15 +74,14 @@ class QuestionsPageViewController: UIViewController {
                         if let self = self {
                             showNoDataAlert(on: self)
                         }
-                        self?.loader?.close()
                         return
                     }
                     
                     self?.questions = data
                     self?.collectionView.reloadData()
                     print("Questions loaded: \(data.count)")
-
                     UserDefaultsManager.isQuestionAdded = false
+
                 }
             }
         }
@@ -125,7 +120,7 @@ extension QuestionsPageViewController: UICollectionViewDelegateFlowLayout ,UICol
         
         let question = questions[indexPath.item]
 
-        cell.configure(with: question, shouldHideClose: shouldHideCloseButton)
+        cell.configure(with: question)
         
         return cell
     }

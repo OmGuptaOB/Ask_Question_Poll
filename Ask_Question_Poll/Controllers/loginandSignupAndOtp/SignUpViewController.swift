@@ -41,7 +41,6 @@ class SignUpViewController: UIViewController {
         setupEmailtextField()
         setupPasswordTextField()
         setupDefaultNav()
-        setupProfileImagePicker()
         setupGenderRadio()
         setupCountryPicker()
         
@@ -52,11 +51,6 @@ class SignUpViewController: UIViewController {
         countryTextFieldView.textField.delegate = self
         pickerView.delegate = self
         pickerView.dataSource = self
-
-        
-        for fontfamily in UIFont.fontNames(forFamilyName: "SF Atarian System Extended") {
-            print(fontfamily)
-        }
         
         //MARK: Background colour set
         emailTextFieldView.backgroundColor = .clear
@@ -72,9 +66,12 @@ class SignUpViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
+    override func viewDidLayoutSubviews() {
+        setupProfileImagePicker()
+    }
     //MARK: imagepicker setup
     func setupProfileImagePicker(){
-//        imagePickerView.imagePickerImage.image = UIImage(named: "img")
         imagePickerView.imagePickerImage.image = UIImage(named: "profile_avtar")
         imagePickerView.cameraIconImageView.isHidden = true
         imagePickerView.imagePickerImage.layer.cornerRadius = imagePickerView.imagePickerImage.frame.height / 2
@@ -103,7 +100,6 @@ class SignUpViewController: UIViewController {
         
         
         confirmPasswordTextFieldView.textFieldTitle.text = "confirm password"
-//        confirmPasswordTextFieldView.textField.text = confirmPasswordTextFieldView.textField.text
         confirmPasswordTextFieldView.textField.text = "123456789@Ob"
         confirmPasswordTextFieldView.textFieldTitleImage.isHidden = true
         confirmPasswordTextFieldView.textField.placeholder = "Enter Confirm Password"
@@ -121,7 +117,7 @@ class SignUpViewController: UIViewController {
     
     //MARK: Signup Button set
     func setupBtnSignUp(){
-        btnSignUpView.btnCustomLabel.setupButton(title: "signup")
+        btnSignUpView.btnCustomLabel.setupButtonLabel(title: "signup")
         btnSignUpView.btnCustomClick.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
     }
     //MARK: Api call Validation
@@ -139,7 +135,51 @@ class SignUpViewController: UIViewController {
 
         let emptyCount = [emailEmpty, passwordEmpty, cpassEmpty, countryEmpty].filter { $0 }.count
 
-        // ─── Format Validations (all fields filled) ────────────────
+        if emptyCount == 4 {
+            showError("Please Enter All Details")
+            return
+        }
+
+        if emptyCount == 3 {
+            showError("Enter Remaining Details")
+            return
+        }
+
+        if emptyCount == 2 {
+            switch (emailEmpty, passwordEmpty, cpassEmpty, countryEmpty) {
+            case (true, true, false, false):
+                showError("Enter Email and Password")
+            case (true, false, true, false):
+                showError("Enter Email and ConfirmPassword")
+            case (true, false, false, true):
+                showError("Enter Email and Choose Country")
+            case (false, true, true, false):
+                showError("Enter Password and ConfirmPassword")
+            case (false, true, false, true):
+                showError("Enter Password and Choose Country")
+            case (false, false, true, true):
+                showError("Enter ConfirmPassword and Choose Country")
+            default:
+                showError("Enter Remaining Details")
+            }
+            return
+        }
+
+        if emptyCount == 1 {
+            switch (emailEmpty, passwordEmpty, cpassEmpty, countryEmpty) {
+            case (true, false, false, false):
+                showError("Please Enter Email")
+            case (false, true, false, false):
+                showError("Please Enter Password")
+            case (false, false, true, false):
+                showError("Please Enter ConfirmPassword")
+            case (false, false, false, true):
+                showError("Please Choose Country")
+            default:
+                break
+            }
+            return
+        }
 
         if !email.isValidEmail {
             showError("Please Enter Valid Email")
@@ -169,15 +209,9 @@ class SignUpViewController: UIViewController {
         // ─── All Good — Show Loader & Call API ────────────────────
 
         loader = showLoading(message: "Creating account...")
-//        loader = SCLAlertView().showWait("Please wait", subTitle: "Creating account...", colorStyle: 0xFCCF1C)
 
           // Pass selected image from your ImagePickerXib
-          let request = SignUpRequestModel(
-              email:      email,
-              password:   password,
-              country:    country,
-              gender:     selectedGender,   // "male" or "female" → converted to 1/2 inside model
-              profileImg: imagePickerView.imagePickerImage.image  // grabbed directly from your xib
+          let request = SignUpRequestModel(email:email,password:password,country:country,gender:selectedGender,profileImg: imagePickerView.imagePickerImage.image
           )
 
           APIManager.shared.signUp(request: request) { [weak self] response, error in
@@ -188,11 +222,10 @@ class SignUpViewController: UIViewController {
                       showError(error)
                       return
                   }
-
                   if response?.code == 200 {
                       let tempId = response?.data?.userRegTempId ?? 0
                       SCLAlertView().showSuccess(response?.message ?? "ThankYou from confirming your account and opt has been sent to your email", subTitle: "")
-                      DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                      DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                              self?.navigateToOTP(tempId: tempId)
                          }
                   } else {
@@ -254,7 +287,7 @@ class SignUpViewController: UIViewController {
         toolbar.sizeToFit()
         
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneBtn   = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(countryPickerDoneTapped))
+        let doneBtn = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(countryPickerDoneTapped))
         
         toolbar.setItems([flexSpace, doneBtn], animated: false)
         toolbar.isUserInteractionEnabled = true

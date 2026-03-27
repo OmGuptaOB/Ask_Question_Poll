@@ -10,7 +10,6 @@ extension UILabel {
     func setupTitle(size: CGFloat = 20, underline: Bool = false) {
         
         guard let fontName = UIFont(name: "SFAtarianSystemExtended", size: size) else {
-            //allback if font not found — won't crash
             print(" Font 'SFAtarianSystemExtended' not found")
             self.font = UIFont.systemFont(ofSize: size)
             return

@@ -35,13 +35,10 @@ class TabBarViewController: UIViewController {
         super.viewDidLoad()
         setupTabbar()
         setupButtons()
-//        fetchAndLoadQuestions()
         self.navigationController?.isNavigationBarHidden = true
-        QuestionVC.shouldHideCloseButton = true
     }
     func setupTabbar() {
         selectTab(at: 1)
-//        switchVc(homeVC)
     }
     
     func setupButtons() {
@@ -92,22 +89,5 @@ class TabBarViewController: UIViewController {
         
         currentVC = vc
     }
-//    func fetchAndLoadQuestions() {
-//        APIManager.shared.viewQuestions { [weak self] response, error in
-//            DispatchQueue.main.async {
-//                if response?.code == 200 {
-//                    let questions = response?.data?.result ?? []
-//                    self?.QuestionVC.questions = questions
-//                    
-//                    // ✅ Set first page after data loads
-//                    if let first = self?.QuestionVC.makeQuestionVC(at: 0) {
-//                        self?.QuestionVC.setViewControllers(
-//                            [first], direction: .forward, animated: false
-//                        )
-//                    }
-//                }
-//            }
-//        }
-//    }
 }
 

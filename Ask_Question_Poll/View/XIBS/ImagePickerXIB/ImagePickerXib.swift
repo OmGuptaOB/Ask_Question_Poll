@@ -8,11 +8,8 @@
 import UIKit
 
 class ImagePickerXib: NibView {
-    
     @IBOutlet weak var imagePickerImage: UIImageView!
-    
     @IBOutlet weak var btnClickOpenPicker: UIButton!
-    
     @IBOutlet weak var cameraIconImageView: UIImageView!
     
     // Parent gets notified here — just set this closure wherever you use it
@@ -31,6 +28,7 @@ class ImagePickerXib: NibView {
         btnClickOpenPicker.addTarget(self, action: #selector(openPickerTapped), for: .touchUpInside)
         isImageSelected = false
     }
+    
     // Finds the top-most VC automatically — works from any screen
     private func topViewController() -> UIViewController? {
         var topVC = UIApplication.shared.keyWindow?.rootViewController
@@ -39,6 +37,7 @@ class ImagePickerXib: NibView {
         }
         return topVC
     }
+    
     @objc private func openPickerTapped() {
         let alert = UIAlertController(title: "Select Image", message: nil, preferredStyle: .actionSheet)
         
