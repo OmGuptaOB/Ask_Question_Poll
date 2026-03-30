@@ -349,11 +349,39 @@
                                                                     <constraint firstAttribute="bottom" secondItem="ih6-g5-4S1" secondAttribute="bottom" id="vsN-ez-jd7"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rd7-vL-P0H" customClass="OptionsTextandImageXib" customModule="Ask_Question_Poll" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rd7-vL-P0H">
                                                                 <rect key="frame" x="8" y="44.333333333333314" width="408" height="110"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDk-S7-spw" customClass="SingleTextAndImageXib" customModule="Ask_Question_Poll" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="204" height="110"/>
+                                                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjt-aO-j1v" customClass="SingleTextAndImageXib" customModule="Ask_Question_Poll" customModuleProvider="target">
+                                                                        <rect key="frame" x="204" y="0.0" width="204" height="110"/>
+                                                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </view>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="or-" translatesAutoresizingMaskIntoConstraints="NO" id="9eL-Dl-r9z">
+                                                                        <rect key="frame" x="189" y="40" width="30" height="30"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="30" id="NrL-GQ-knX"/>
+                                                                            <constraint firstAttribute="width" constant="30" id="bfb-UE-rv9"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
+                                                                    <constraint firstItem="TDk-S7-spw" firstAttribute="leading" secondItem="rd7-vL-P0H" secondAttribute="leading" id="AIO-QK-NKG"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="TDk-S7-spw" secondAttribute="bottom" id="HXd-6I-9cs"/>
+                                                                    <constraint firstItem="9eL-Dl-r9z" firstAttribute="centerY" secondItem="rd7-vL-P0H" secondAttribute="centerY" id="J5l-km-fHP"/>
                                                                     <constraint firstAttribute="height" constant="110" id="RmS-tJ-9GQ"/>
+                                                                    <constraint firstItem="fjt-aO-j1v" firstAttribute="top" secondItem="rd7-vL-P0H" secondAttribute="top" id="Tcp-Ab-Lt3"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="fjt-aO-j1v" secondAttribute="trailing" id="UPd-w9-h0n"/>
+                                                                    <constraint firstItem="fjt-aO-j1v" firstAttribute="leading" secondItem="TDk-S7-spw" secondAttribute="trailing" id="a4z-eq-JzX"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="fjt-aO-j1v" secondAttribute="bottom" id="mRa-sc-zdX"/>
+                                                                    <constraint firstItem="TDk-S7-spw" firstAttribute="top" secondItem="rd7-vL-P0H" secondAttribute="top" id="nDm-wS-ueb"/>
+                                                                    <constraint firstItem="TDk-S7-spw" firstAttribute="width" secondItem="rd7-vL-P0H" secondAttribute="width" multiplier="0.5" id="oKO-jm-9sI"/>
+                                                                    <constraint firstItem="fjt-aO-j1v" firstAttribute="width" secondItem="TDk-S7-spw" secondAttribute="width" id="xQJ-vr-dIM"/>
+                                                                    <constraint firstItem="9eL-Dl-r9z" firstAttribute="centerX" secondItem="rd7-vL-P0H" secondAttribute="centerX" id="zR1-rJ-Kss"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -513,7 +541,8 @@
                         <outlet property="lblTextViewCharacterLimit" destination="0za-nm-aDj" id="e4M-Bh-GTz"/>
                         <outlet property="locationPickerSelector" destination="N56-Ai-2Fb" id="Ejo-rY-idU"/>
                         <outlet property="optionsLabel" destination="44C-qC-tLL" id="KBi-mS-HQS"/>
-                        <outlet property="optionsView" destination="rd7-vL-P0H" id="DAv-dP-eEZ"/>
+                        <outlet property="optionsOneView" destination="TDk-S7-spw" id="8L6-za-hMD"/>
+                        <outlet property="optionsTwoView" destination="fjt-aO-j1v" id="hpM-Oq-ah5"/>
                         <outlet property="previewButtonView" destination="FFw-QA-SVF" id="MjQ-Zw-HLF"/>
                         <outlet property="radioImageOption" destination="rQK-rW-2Cl" id="LII-Tl-UCu"/>
                         <outlet property="radioTextOption" destination="ih6-g5-4S1" id="t38-H9-yJj"/>
@@ -525,7 +554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqc-Ph-0rq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7406" y="-53"/>
+            <point key="canvasLocation" x="7405.909090909091" y="-53.347280334728033"/>
         </scene>
         <!--Logout View Controller-->
         <scene sceneID="cn0-3z-cU6">

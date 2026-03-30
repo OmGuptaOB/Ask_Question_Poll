@@ -24,8 +24,8 @@ class SelectFromPickerXIb: NibView {
     }
     
     func setupTitle() {
-        selectDataTextField.font = UIFont(name: "SFAtarianSystemExtended", size: 20)
-        noteDescriptionLabel.font = UIFont(name: "SFAtarianSystemExtended", size: 13)
+        selectDataTextField.font = UIFont(name: "Atarian", size: 20,type: .DEFAULT)
+        noteDescriptionLabel.font = UIFont(name: "Atarian", size: 13,type: .DEFAULT)
         selectDataTextField.isEnabled = true
         selectDataTextField.isUserInteractionEnabled = true
     }
@@ -78,7 +78,7 @@ class SelectFromPickerXIb: NibView {
             return
         }
         
-        let font = UIFont(name: "SFAtarianSystemExtended", size: 13) ?? UIFont.systemFont(ofSize: 13)
+        let font = UIFont(name: "Atarian", size: 13,type: .DEFAULT) ?? UIFont.systemFont(ofSize: 13)
         let attributedText = NSMutableAttributedString()
         
         attributedText.append(NSAttributedString(

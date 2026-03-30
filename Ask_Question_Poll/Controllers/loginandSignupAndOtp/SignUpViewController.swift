@@ -121,9 +121,9 @@ class SignUpViewController: UIViewController {
     
     //MARK: Radio button
     func setupGenderRadio() {
-        lblGender.font = UIFont(name: "SFAtarianSystemExtended", size: 24)
-        radioMaleView.radioTitle.font = UIFont(name: "SFAtarianSystemExtended", size: 20)
-        radioFemaleView.radioTitle.font = UIFont(name: "SFAtarianSystemExtended", size: 20)
+        lblGender.font = UIFont(name: "Atarian", size: 24,type: .DEFAULT)
+        radioMaleView.radioTitle.font = UIFont(name: "Atarian", size: 20,type: .DEFAULT)
+        radioFemaleView.radioTitle.font = UIFont(name: "Atarian", size: 20,type: .DEFAULT)
         radioMaleView.radioTitle.text = "male"
         radioFemaleView.radioTitle.text = "female"
         

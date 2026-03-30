@@ -25,7 +25,7 @@ class TextFieldXib: NibView {
     
     
     func setupTextField() {
-        textFieldTitle.font = UIFont(name: "SFAtarianSystemExtended", size: 26)
+        textFieldTitle.font = UIFont(name: "Atarian Bold", size: 26,type: .DEFAULT)
         textField.layer.cornerRadius = 4
         textField.clipsToBounds = true
         

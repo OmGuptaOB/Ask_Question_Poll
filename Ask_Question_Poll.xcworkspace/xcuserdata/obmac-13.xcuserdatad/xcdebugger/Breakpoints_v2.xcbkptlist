@@ -350,8 +350,8 @@
             filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "366"
-            endingLineNumber = "366"
+            startingLineNumber = "380"
+            endingLineNumber = "380"
             landmarkName = "previewTapped()"
             landmarkType = "7">
          </BreakpointContent>

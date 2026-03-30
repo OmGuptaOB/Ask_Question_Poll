@@ -99,65 +99,17 @@ extension UIFont {
     convenience init(name: String, size: CGFloat, type: fontType) {
         switch type {
         case .BUTTON:
-            if name.contains("BlackItalic") || name.contains("Black Italic") {
-                self.init(name: "AzoSans-BlackItalic", size: size)!
-            }else if name.contains("Black") {
-                self.init(name: "AzoSans-Black", size: size)!
-            }else if name.contains("BoldItalic") || name.contains("Bold Italic") {
-                self.init(name: "AzoSans-BoldItalic", size: size)!
-            }else if name.contains("Bold") {
-                self.init(name: "AzoSans-Bold", size: size)!
-            }else if name.contains("SemiBold") {
-                self.init(name: "AzoSans-SemiBold", size: size)!
-            }else if name.contains("LightItalic") || name.contains("Light Italic") {
-                self.init(name: "AzoSans-LightItalic", size: size)!
-            }else if name.contains("Light") {
-                self.init(name: "AzoSans-Light", size: size)!
-            }else if name.contains("MediumItalic") || name.contains("Medium Italic") {
-                self.init(name: "AzoSans-MediumItalic", size: size)!
-            }else if name.contains("Medium") {
-                self.init(name: "AzoSans-Medium", size: size)!
-            }else if name.contains("ThinItalic") || name.contains("Thin Italic") {
-                self.init(name: "AzoSans-ThinItalic", size: size)!
-            }else if name.contains("Thin") {
-                self.init(name: "AzoSans-Thin", size: size)!
-            }else if name.contains("RegularItalic") || name.contains("Regular Italic") {
-                self.init(name: "AzoSans-Italic", size: size)!
-            }else if name.contains("Italic") {
-                self.init(name: "AzoSans-Italic", size: size)!
+            if name.contains("SFAtarianBold") || name.contains("Atarian Bold") {
+                self.init(name: "SFAtarianSystemExtended-Bold", size: size)!
             }else {
-                self.init(name: "Azo Sans", size: size)!
+                self.init(name: "SFAtarianSystemExtended", size: size)!
             }
             break
         case .DEFAULT:
-            if name.contains("BlackItalic") || name.contains("Black Italic") {
-                self.init(name: "Satoshi-BoldItalic", size: size)!
-            }else if name.contains("Black") {
-                self.init(name: "Satoshi-Bold", size: size)!
-            }else if name.contains("BoldItalic") || name.contains("Bold Italic") {
-                self.init(name: "Satoshi-BoldItalic", size: size)!
-            }else if name.contains("Bold") {
-                self.init(name: "Satoshi-Bold", size: size)!
-            }else if name.contains("SemiBold") {
-                self.init(name: "Satoshi-Bold", size: size)!
-            }else if name.contains("LightItalic") || name.contains("Light Italic") {
-                self.init(name: "Satoshi-LightItalic", size: size)!
-            }else if name.contains("Light") {
-                self.init(name: "Satoshi-Regular", size: size)!
-            }else if name.contains("MediumItalic") || name.contains("Medium Italic") {
-                self.init(name: "Satoshi-Italic", size: size)!
-            }else if name.contains("Medium") {
-                self.init(name: "Satoshi-Medium", size: size)!
-            }else if name.contains("ThinItalic") || name.contains("Thin Italic") {
-                self.init(name: "Satoshi-Italic", size: size)!
-            }else if name.contains("Thin") {
-                self.init(name: "Satoshi-Regular", size: size)!
-            }else if name.contains("RegularItalic") || name.contains("Regular Italic") {
-                self.init(name: "Satoshi-MediumItalic", size: size)!
-            }else if name.contains("Italic") {
-                self.init(name: "Satoshi-Italic", size: size)!
+            if name.contains("SFAtarianBold") || name.contains("Atarian Bold") {
+                self.init(name: "SFAtarianSystemExtended-Bold", size: size)!
             }else {
-                self.init(name: "Satoshi-Medium", size: size)!
+                self.init(name: "SFAtarianSystemExtended", size: size)!
             }
         }
     }

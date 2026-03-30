@@ -43,8 +43,8 @@ class SingleTextAndImageXib: NibView {
     }
     
     func setupLabel(){
-        OptionNumberTitle.font = UIFont(name: "SFAtarianSystemExtended", size: 20)
-        optionCharacterLimit.font = UIFont(name: "SFAtarianSystemExtended", size: 15)
+        OptionNumberTitle.font = UIFont(name: "Atarian", size: 20,type: .DEFAULT)
+        optionCharacterLimit.font = UIFont(name: "Atarian", size: 15,type: .DEFAULT)
         OptionNumberTitle.textColor = .white
         optionCharacterLimit.textColor = .white
         optiontextView.delegate = self
@@ -74,6 +74,8 @@ class SingleTextAndImageXib: NibView {
         let isEmpty = optiontextView.text.trimmingCharacters(in: .whitespaces).isEmpty
         OptionNumberTitle.isHidden = !isEmpty
         optionCharacterLimit.isHidden = !isEmpty
+        OptionNumberTitle.text = optionIndex == 1 ? "OPTION 1" : "OPTION 2"
+        
     }
     
     func setupForImageMode() {

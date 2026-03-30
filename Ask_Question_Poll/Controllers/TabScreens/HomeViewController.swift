@@ -31,7 +31,11 @@ class HomeViewController: UIViewController{
     @IBOutlet weak var labelDescription: UILabel!
     @IBOutlet weak var optionsLabel: UILabel!
     @IBOutlet weak var labelPrefrences: UILabel!
-    @IBOutlet weak var optionsView: OptionsTextandImageXib!
+//    @IBOutlet weak var optionsView: OptionsTextandImageXib!
+    
+    @IBOutlet weak var optionsOneView: SingleTextAndImageXib!
+    @IBOutlet weak var optionsTwoView: SingleTextAndImageXib!
+    
     @IBOutlet weak var locationPickerSelector: SelectFromPickerXIb!
     @IBOutlet weak var genderPickerSelector: SelectFromPickerXIb!
     @IBOutlet weak var descriptionTextViewHeightConstraint: NSLayoutConstraint!
@@ -44,6 +48,7 @@ class HomeViewController: UIViewController{
     var selectedCountry: CountryModel?
     var selectedGender: String?
     var loader: SCLAlertViewResponder?
+    var selectedCategoryId: Int = 0
 
     let categoryData: [String: Int] = [
         "World Affairs": 3,
@@ -53,6 +58,7 @@ class HomeViewController: UIViewController{
         "Wildlife": 2,
         "Trending News": 1
     ]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +69,9 @@ class HomeViewController: UIViewController{
         setupLocationPicker()
         setupGenderPicker()
         setupButton()
+        
+        optionsOneView.optionIndex = 1
+        optionsTwoView.optionIndex = 2
         
         writeDescriptionView.backgroundColor = .clear
         descriptionTextView.backgroundColor = .clear
@@ -83,11 +92,11 @@ class HomeViewController: UIViewController{
     }
     
     func setupFont(){
-        labelPrefrences.font = UIFont(name: "SFAtarianSystemExtended", size: 17)
-        labelQuestion.font = UIFont(name: "SFAtarianSystemExtended", size: 20)
-        optionsLabel.font = UIFont(name: "SFAtarianSystemExtended", size: 17)
-        labelDescription.font = UIFont(name: "SFAtarianSystemExtended", size: 17)
-        lblTextViewCharacterLimit.font = UIFont(name: "SFAtarianSystemExtended", size: 14)
+        labelPrefrences.font = UIFont(name: "Atarian", size: 17,type: .DEFAULT)
+        labelQuestion.font = UIFont(name: "Atarian", size: 20,type: .DEFAULT)
+        optionsLabel.font = UIFont(name: "Atarian", size: 17,type: .DEFAULT)
+        labelDescription.font = UIFont(name: "Atarian", size: 17,type: .DEFAULT)
+        lblTextViewCharacterLimit.font = UIFont(name: "Atarian", size: 14,type: .DEFAULT)
     }
     func setupImagePicker(){
 //        selectQuestionImageView.imagePickerImage.image = nil
@@ -102,8 +111,8 @@ class HomeViewController: UIViewController{
     }
     
     func setupRadioButtons(){
-        radioTextOption.radioTitle.font = UIFont(name: "SFAtarianSystemExtended", size: 22)
-        radioImageOption.radioTitle.font = UIFont(name: "SFAtarianSystemExtended", size: 22)
+        radioTextOption.radioTitle.font = UIFont(name: "Atarian", size: 22,type: .DEFAULT)
+        radioImageOption.radioTitle.font = UIFont(name: "Atarian", size: 22,type: .DEFAULT)
         radioTextOption.radioTitle.textColor = .white
         radioImageOption.radioTitle.textColor = .white
         radioTextOption.radioTitle.text = "text"
@@ -116,8 +125,8 @@ class HomeViewController: UIViewController{
             self.selectedOption = "text"
             self.radioTextOption.setSelected(true)
             self.radioImageOption.setSelected(false)
-            self.optionsView.optionOneView.setupForTextMode()
-            self.optionsView.optionTwoView.setupForTextMode()
+            self.optionsOneView.setupForTextMode()
+            self.optionsTwoView.setupForTextMode()
             print("selected option \(self.selectedOption)")
         }
         
@@ -128,8 +137,8 @@ class HomeViewController: UIViewController{
             self.radioTextOption.setSelected(false)
             self.radioImageOption.setSelected(true)
             print("selected option \(self.selectedOption)")
-            self.optionsView.optionOneView.setupForImageMode()
-            self.optionsView.optionTwoView.setupForImageMode()
+            self.optionsOneView.setupForImageMode()
+            self.optionsTwoView.setupForImageMode()
         }
     }
     
@@ -141,7 +150,12 @@ class HomeViewController: UIViewController{
         selectCategoryPickerView.configure(with: sortedCategories, placeholder: "Select Category")
         selectCategoryPickerView.noteDescriptionLabel.isHidden = true
         selectCategoryPickerView.onValueSelected = { [weak self] value in
-            print("Selected category: \(value)")
+            guard let self = self else { return }
+            let match = self.categoryData.first {
+                $0.key.lowercased() == value.lowercased()
+            }
+            self.selectedCategoryId = match?.value ?? 0
+            print("Selected category: \(value)  ID: \(self.selectedCategoryId)")
         }
     }
     
@@ -189,18 +203,18 @@ class HomeViewController: UIViewController{
         
         // ─── Empty check ──────────────────────────────────────────────
         let imageEmpty = !(selectQuestionImageView.isImageSelected)
-        let categoryEmpty = category.isEmpty || category == "select category"
+        let categoryEmpty = category.isEmpty || category == "select category" || selectedCategoryId == 0
         let descriptionEmpty = description.isEmpty
         let locationEmpty = location.isEmpty || location == "select location"
         let genderEmpty = gender.isEmpty || gender == "select gender"
         
         // Text mode option checks
-        let option1Text = optionsView.optionOneView.optiontextView.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        let option2Text = optionsView.optionTwoView.optiontextView.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let option1Text = optionsOneView.optiontextView.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let option2Text = optionsTwoView.optiontextView.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         
         // Image mode option checks
-        let option1Image = optionsView.optionOneView.optionImagePicker?.imagePickerImage.image
-        let option2Image = optionsView.optionTwoView.optionImagePicker?.imagePickerImage.image
+        let option1Image = optionsOneView.optionImagePicker?.imagePickerImage.image
+        let option2Image = optionsTwoView.optionImagePicker?.imagePickerImage.image
         
         // ─── All empty check ──────────────────────────────────────────
         if categoryEmpty && descriptionEmpty && locationEmpty && genderEmpty {
@@ -233,11 +247,11 @@ class HomeViewController: UIViewController{
                 return
             }
         } else {
-            if !(optionsView.optionOneView.isImageSelected) {
+            if !(optionsOneView.isImageSelected) {
                 showError("Select Option 1 Image")
                 return
             }
-            if !(optionsView.optionTwoView.isImageSelected) {
+            if !(optionsTwoView.isImageSelected) {
                 showError("Select Option 2 Image")
                 return
             }
@@ -255,7 +269,7 @@ class HomeViewController: UIViewController{
         switch taptype {
             
         case .submit:
-            let categoryId = categoryData[category] ?? 0
+            let categoryId = selectedCategoryId
             let genderInt  = gender == "Male" ? 1 : 2
             let optionType = isTextMode ? 1 : 2
             
@@ -301,11 +315,11 @@ class HomeViewController: UIViewController{
                 gender: selectedGender == "Male" ? 1 : 2,
                 description: descriptionTextView.text ?? "",
                 optionType: isTextMode ? 1 : 2,
-                option1: isTextMode ? optionsView.optionOneView.optiontextView.text : nil,
-                option2: isTextMode ? optionsView.optionTwoView.optiontextView.text : nil,
+                option1: isTextMode ? optionsOneView.optiontextView.text : nil,
+                option2: isTextMode ? optionsTwoView.optiontextView.text : nil,
                 questionImage: selectQuestionImageView.isImageSelected ? selectQuestionImageView.imagePickerImage.image : nil,
-                optionOneImage: isTextMode ? nil : optionsView.optionOneView.option_bg_image.image,
-                optionTwoImage: isTextMode ? nil : optionsView.optionTwoView.option_bg_image.image
+                optionOneImage: isTextMode ? nil : optionsOneView.option_bg_image.image,
+                optionTwoImage: isTextMode ? nil : optionsTwoView.option_bg_image.image
             )
             
             let vc = storyBoard.instantiateViewController(withIdentifier: "ShowQuestionViewController") as! ShowQuestionViewController
@@ -333,27 +347,27 @@ class HomeViewController: UIViewController{
         radioTextOption.setSelected(true)
         radioImageOption.setSelected(false)
         selectedOption = "text"
-        optionsView.optionOneView.selectedImage = nil
-        optionsView.optionTwoView.selectedImage = nil
-        optionsView.optionOneView.setupForTextMode()
-        optionsView.optionTwoView.setupForTextMode()
+        optionsOneView.selectedImage = nil
+        optionsTwoView.selectedImage = nil
+        optionsOneView.setupForTextMode()
+        optionsTwoView.setupForTextMode()
 
         // Clear option text views
-        optionsView.optionOneView.optiontextView.text = ""
-        optionsView.optionTwoView.optiontextView.text = ""
+        optionsOneView.optiontextView.text = ""
+        optionsTwoView.optiontextView.text = ""
         
         updateTextViewHeight(descriptionTextView,
                              heightConstraint: descriptionTextViewHeightConstraint,
                              maxHeight: 40)
         
         
-        if optionsView.optionOneView.optiontextView.text.isEmpty{
-            optionsView.optionOneView.OptionNumberTitle.isHidden = false
-            optionsView.optionOneView.optionCharacterLimit.isHidden = false
+        if optionsOneView.optiontextView.text.isEmpty{
+            optionsOneView.OptionNumberTitle.isHidden = false
+            optionsOneView.optionCharacterLimit.isHidden = false
         }
-        if optionsView.optionTwoView.optiontextView.text.isEmpty{
-            optionsView.optionTwoView.OptionNumberTitle.isHidden = false
-            optionsView.optionTwoView.optionCharacterLimit.isHidden = false
+        if optionsTwoView.optiontextView.text.isEmpty{
+            optionsTwoView.OptionNumberTitle.isHidden = false
+            optionsTwoView.optionCharacterLimit.isHidden = false
         }
         
     }

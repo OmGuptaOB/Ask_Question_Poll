@@ -18,7 +18,7 @@ class ButtonXib: NibView {
     }
     
     func setupTitle() {
-        let font = UIFont(name: "SFAtarianSystemExtended-Bold", size: 24)!
+        let font = UIFont(name: "Atarian", size: 24,type: .DEFAULT)
         let attributedString = NSAttributedString(
             string: btnCustomLabel.text ?? "",
             attributes: [
