@@ -36,7 +36,7 @@ class QuestionsPageViewController: UIViewController {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = .clear
         
-        // ✅ Remove all spacing
+        // Remove all spacing
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
             layout.minimumLineSpacing = 0
@@ -46,26 +46,25 @@ class QuestionsPageViewController: UIViewController {
         collectionView.scrollIndicatorInsets = .zero
         collectionView.contentInsetAdjustmentBehavior = .never
         
-        collectionView.register(
-            UINib(nibName: "QuestionContainerCell", bundle: nil),
-            forCellWithReuseIdentifier: "QuestionContainerCell"
-        )
+//        collectionView.register(
+//            UINib(nibName: "QuestionContainerCell", bundle: nil),
+//            forCellWithReuseIdentifier: "QuestionContainerCell"
+//        )
     }
     func fetchQuestions() {
-        APIManager.shared.viewQuestions { [weak self] response, error in
+        APIManager.shared.viewQuestions { [weak self] response,error, isSuccess in
             DispatchQueue.main.async {
-                if response?.code == 200 {
+                guard let self = self else { return }
+                if isSuccess {
                     let data = response?.data?.result ?? []
                     
                     if data.isEmpty {
-                        if let self = self {
                             showNoDataAlert(on: self)
-                        }
                         return
                     }
                     
-                    self?.questions = data
-                    self?.collectionView.reloadData()
+                    self.questions = data
+                    self.collectionView.reloadData()
                     print("Questions loaded: \(data.count)")
                     UserDefaultsManager.isQuestionAdded = false
 

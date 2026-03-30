@@ -26,6 +26,7 @@ class OtpInputViewController: UIViewController {
     var forgotPasswordEmail: String?
     var resetToken:String?
     var loader: SCLAlertViewResponder?
+    var loginEmail : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,22 +39,22 @@ class OtpInputViewController: UIViewController {
             
         case .signUpOTP:
             showFields(first: true, second: false)
-            setupFirstField(title: "otp", placeholder: "Enter OTP", keyboard: .numberPad, secure: false)
+            setupFirstField(title: "otp", placeholder: "Enter OTP", keyboard: .numberPad, secure: false,prefilledEmail: "")
             setupButton(title: "ok", action: #selector(verifySignUpOTP))
             
         case .forgotPasswordEmail:
             showFields(first: true, second: false)
-            setupFirstField(title: "email", placeholder: "Enter Email", keyboard: .emailAddress, secure: false)
+            setupFirstField(title: "email", placeholder: "Enter Email", keyboard: .emailAddress, secure: false,prefilledEmail: loginEmail)
             setupButton(title: "next", action: #selector(verifyForgotEmail))
             
         case .forgotPasswordOTP:
             showFields(first: true, second: false)
-            setupFirstField(title: "otp", placeholder: "Enter OTP", keyboard: .numberPad, secure: false)
+            setupFirstField(title: "otp", placeholder: "Enter OTP", keyboard: .numberPad, secure: false, prefilledEmail: "")
             setupButton(title: "ok", action: #selector(verifyForgotOTP))
             
         case .resetPassword:
             showFields(first: true, second: true)
-            setupFirstField(title: "new password", placeholder: "Enter new password", keyboard: .default, secure: true)
+            setupFirstField(title: "new password", placeholder: "Enter new password", keyboard: .default, secure: true,prefilledEmail: "")
             setupSecondField(title: "confirm password", placeholder: "Enter confirm password", keyboard: .default, secure: true)
             setupButton(title: "save", action: #selector(saveNewPassword))
         }
@@ -65,13 +66,14 @@ class OtpInputViewController: UIViewController {
         stackView.layoutIfNeeded()
     }
     
-    func setupFirstField(title: String, placeholder: String, keyboard: UIKeyboardType, secure: Bool) {
+    func setupFirstField(title: String, placeholder: String, keyboard: UIKeyboardType, secure: Bool,prefilledEmail: String?) {
         firstTextField.textFieldTitle.text = title
+        firstTextField.textField.text = prefilledEmail
         firstTextField.textFieldTitleImage.isHidden = true
         firstTextField.textField.placeholder = placeholder
         firstTextField.textField.keyboardType = keyboard
         firstTextField.textField.isSecureTextEntry = secure
-        firstTextField.textField.text = ""
+//        firstTextField.textField.text = ""
         firstTextField.textField.delegate = self
     }
     
@@ -109,24 +111,25 @@ class OtpInputViewController: UIViewController {
             return
         }
         
-        loader = showLoading(message: "Verifying OTP...")
+        loader = showLoading(message: "")
         
         let request = OTPRequestModel(
             user_reg_temp_id: "\(tempId)",
             token: otpInt
         )
         
-        APIManager.shared.verifyUser(request: request) { [weak self] response, error in
+        APIManager.shared.verifyUser(request: request) { [weak self] response,error, isSuccess in
             DispatchQueue.main.async {
-                self?.loader?.close()
+                guard let self = self else { return }
+                self.loader?.close()
                 
                 if let error = error {
                     showError(error)
                     return
                 }
                 
-                if response?.code == 200 {
-                    self?.navigateToLogin()
+                if isSuccess {
+                    self.navigateToLogin()
                 } else {
                     showError(response?.message ?? "OTP Verification Failed")
                 }
@@ -142,18 +145,22 @@ class OtpInputViewController: UIViewController {
         
         if !email.isValidEmail { showError("Please Enter Valid Email"); return }
         
-        //        loader = showLoading(message: "Sending OTP...")
-        loader = SCLAlertView().showWait("Please wait", subTitle: "Sending OTP...", colorStyle: 0xFCCF1C)
+                loader = showLoading(message: "")
+//        loader = SCLAlertView().showWait("Please wait", subTitle: "Sending OTP...", colorStyle: 0xFCCF1C)
         
-        APIManager.shared.forgotPassword(email: email) { [weak self] response, error in
+        APIManager.shared.forgotPassword(email: email) { [weak self] response,error, isSuccess in
             DispatchQueue.main.async {
-                self?.loader?.close()
-                if let error = error { showError(error); return }
+                guard let self = self else { return }
+                self.loader?.close()
+                if let error = error {
+                    showError(error)
+                    return
+                }
                 
-                if response?.code == 200 {
-                    self?.forgotPasswordEmail = email
-                    self?.screenMode = .forgotPasswordOTP
-                    self?.configureScreen()
+                if isSuccess{
+                    self.forgotPasswordEmail = email
+                    self.screenMode = .forgotPasswordOTP
+                    self.configureScreen()
                     showSuccess(response?.message ?? "Check your email for the OTP")
                 } else {
                     showError(response?.message ?? "Failed to send OTP")
@@ -174,16 +181,17 @@ class OtpInputViewController: UIViewController {
         //        loader = showLoading(message: "Verifying OTP...")
         loader = SCLAlertView().showWait("Please wait", subTitle: "Verifying OTP...", colorStyle: 0xFCCF1C)
         
-        APIManager.shared.verifyForgotOTP(email: email, otp: otpInt) { [weak self] response, error in
+        APIManager.shared.verifyForgotOTP(email: email, otp: otpInt) { [weak self] response,error, isSuccess in
             DispatchQueue.main.async {
-                self?.loader?.close()
+                guard let self = self else { return }
+                self.loader?.close()
                 if let error = error { showError(error); return }
                 
-                if response?.code == 200 {
+                if isSuccess {
                     // Save reset token for use in reset password screen
-                    self?.resetToken = response?.data?.token ?? ""
-                    self?.screenMode = .resetPassword
-                    self?.configureScreen()
+                    self.resetToken = response?.data?.token ?? ""
+                    self.screenMode = .resetPassword
+                    self.configureScreen()
                 } else {
                     showError(response?.message ?? "OTP Verification Failed")
                 }
@@ -222,18 +230,19 @@ class OtpInputViewController: UIViewController {
             return
         }
         
-        loader = showLoading(message: "Saving new password...")
+        loader = showLoading(message: "")
         //        loader = SCLAlertView().showWait("Please wait", subTitle: "Saving new password...", colorStyle: 0xFCCF1C)
         
-        APIManager.shared.resetPassword(email: email, token: token, password: password) { [weak self] response, error in
+        APIManager.shared.resetPassword(email: email, token: token, password: password) { [weak self] response,error, isSuccess in
             DispatchQueue.main.async {
-                self?.loader?.close()
+                guard let self = self else { return }
+                self.loader?.close()
                 if let error = error { showError(error); return }
                 
-                if response?.code == 200 {
+                if isSuccess {
                     showSuccess(response?.message ?? "Password Reset Successfully")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                        self?.navigationController?.popToRootViewController(animated: true)
+                        self.navigationController?.popToRootViewController(animated: true)
                     }
                 } else {
                     showError(response?.message ?? "Reset Password Failed")

@@ -23,7 +23,7 @@ class LogoutViewController: UIViewController {
     }
 
     @objc func performLogout() {
-            loader = showLoading(message: "Logging out...")
+            loader = showLoading(message: "")
             
             APIManager.shared.logout { [weak self] success, message in
                 DispatchQueue.main.async {

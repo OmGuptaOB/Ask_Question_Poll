@@ -67,9 +67,7 @@ class SignUpViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
-//    override func viewDidLayoutSubviews() {
-//    }
+
     //MARK: imagepicker setup
     func setupProfileImagePicker(){
         imagePickerView.imagePickerImage.image = UIImage(named: "profile_avtar")
@@ -86,21 +84,21 @@ class SignUpViewController: UIViewController {
     func setupEmailtextField(){
         emailTextFieldView.textFieldTitle.text = "email"
         emailTextFieldView.textField.placeholder = "Enter Email"
-        emailTextFieldView.textField.text = "vaferam713@onbap.com"
+//        emailTextFieldView.textField.text = "vaferam713@onbap.com"
         emailTextFieldView.textFieldTitleImage.isHidden = true
         emailTextFieldView.textField.keyboardType = .emailAddress
     }
     
     func setupPasswordTextField(){
         passwordTextFieldView.textFieldTitle.text = "password"
-        passwordTextFieldView.textField.text = "123456789@Ob"
+//        passwordTextFieldView.textField.text = "123456789@Ob"
         passwordTextFieldView.textFieldTitleImage.isHidden = true
         passwordTextFieldView.textField.placeholder = "Enter Password"
         passwordTextFieldView.textField.isSecureTextEntry = true
         
         
         confirmPasswordTextFieldView.textFieldTitle.text = "confirm password"
-        confirmPasswordTextFieldView.textField.text = "123456789@Ob"
+//        confirmPasswordTextFieldView.textField.text = "123456789@Ob"
         confirmPasswordTextFieldView.textFieldTitleImage.isHidden = true
         confirmPasswordTextFieldView.textField.placeholder = "Enter Confirm Password"
         confirmPasswordTextFieldView.textField.isSecureTextEntry = true
@@ -159,7 +157,7 @@ class SignUpViewController: UIViewController {
         let cpassword = confirmPasswordTextFieldView.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let country  = countryTextFieldView.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         
-        let emailEmpty    = email.isEmpty
+        let emailEmpty = email.isEmpty
         let passwordEmpty = password.isEmpty
         let cpassEmpty    = cpassword.isEmpty
         let countryEmpty = country.isEmpty
@@ -211,12 +209,7 @@ class SignUpViewController: UIViewController {
             }
             return
         }
-        
-        if !email.isValidEmail {
-            showError("Please Enter Valid Email")
-            return
-        }
-        
+    
         if password.count < 6 {
             showError("Password Must Be At Least 6 Characters")
             return
@@ -237,27 +230,33 @@ class SignUpViewController: UIViewController {
             return
         }
         
+        if !email.isValidEmail {
+            showError("Please Enter Valid Email")
+            return
+        }
+        
         // ─── All Good — Show Loader & Call API ────────────────────
         
-        loader = showLoading(message: "Creating account...")
+        loader = showLoading(message: "")
         
         // Pass selected image from your ImagePickerXib
         let request = SignUpRequestModel(email:email,password:password,country:country,gender:selectedGender,profileImg: imagePickerView.imagePickerImage.image
         )
         
-        APIManager.shared.signUp(request: request) { [weak self] response, error in
+        APIManager.shared.signUp(request: request) { [weak self] response,error, isSuccess in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-                self?.loader?.close()
+                guard let self = self else { return }
+                self.loader?.close()
                 
                 if let error = error {
                     showError(error)
                     return
                 }
-                if response?.code == 200 {
+                if isSuccess{
                     let tempId = response?.data?.userRegTempId ?? 0
                     SCLAlertView().showSuccess(response?.message ?? "ThankYou from confirming your account and opt has been sent to your email", subTitle: "")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        self?.navigateToOTP(tempId: tempId)
+                        self.navigateToOTP(tempId: tempId)
                     }
                 } else {
                     showError(response?.message ?? "Sign Up Failed")
@@ -294,15 +293,19 @@ class SignUpViewController: UIViewController {
         countryTextFieldView.textField.inputAccessoryView = toolbar
         
         // Set default selection
-        let countries = CountryManager.shared.countries
-        countryTextFieldView.textField.text = countries.first?.name
-        selectedCountry = countries.first
+//        let countries = CountryManager.shared.countries
+//        countryTextFieldView.textField.text = countries.first?.name
+//        selectedCountry = countries.first
     }
     
     @objc func countryPickerDoneTapped() {
         countryTextFieldView.textField.resignFirstResponder()
     }
     
+    @objc func signUpTapped(){
+        print("sign up Tapped")
+        validateAndCallAPI()
+    }
     
     // MARK: - Keyboard Observers
     @objc func keyboardWillShow(_ notification: Notification) {
@@ -347,20 +350,15 @@ extension SignUpViewController : UITextFieldDelegate,UIPickerViewDelegate, UIPic
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let countries = CountryManager.shared.countries
-        return "\(countries[row].name ?? "India") (\(countries[row].dial_code ?? "no code avaialabe"))"
+        return "\(countries[row].name ?? "India")"
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let countries = CountryManager.shared.countries
         selectedCountry = countries[row]
-        countryTextFieldView.textField.text = "\(countries[row].name ?? "India") (\(countries[row].dial_code ?? "no code availabe"))"
+        countryTextFieldView.textField.text = "\(countries[row].name ?? "India")"
     }
-    
-    
-    @objc func signUpTapped(){
-        print("sign up Tapped")
-        validateAndCallAPI()
-    }
+
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         

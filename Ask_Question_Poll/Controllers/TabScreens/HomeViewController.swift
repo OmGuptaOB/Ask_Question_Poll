@@ -12,6 +12,11 @@ enum PickingFor {
     case optionOne, optionTwo
 }
 
+enum tapType{
+    case preview
+    case submit
+}
+
 class HomeViewController: UIViewController{
     
     
@@ -150,7 +155,7 @@ class HomeViewController: UIViewController{
         locationPickerSelector.onValueSelected = { [weak self] value in
             guard let self = self else { return }
             self.selectedCountry = CountryManager.shared.countries.first { $0.name == value }
-            print("Selected country: \(self.selectedCountry?.name ?? "") \(self.selectedCountry?.dial_code ?? "")")
+            print("Selected country: \(self.selectedCountry?.name?.lowercased() ?? "")")
         }
     }
     
@@ -166,7 +171,6 @@ class HomeViewController: UIViewController{
             print("Selected gender: \(value)")
         }
     }
-    
     func updateTextViewHeight(_ textView: UITextView, heightConstraint: NSLayoutConstraint, maxHeight: CGFloat = 120) {
         let size = CGSize(width: textView.frame.width, height: .infinity)
         let estimatedSize = textView.sizeThatFits(size)
@@ -175,7 +179,8 @@ class HomeViewController: UIViewController{
     
     // MARK: - Validation & API
 
-    func validateAndSubmit() {
+    func validateAndSubmit(taptype : tapType) {
+        
         let category = selectCategoryPickerView.selectDataTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let description = descriptionTextView.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let location = locationPickerSelector.selectDataTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
@@ -247,43 +252,65 @@ class HomeViewController: UIViewController{
             return
         }
         
-        // ─── Build request ────────────────────────────────────────────
-        let categoryId = categoryData[category] ?? 0
-        let genderInt  = gender == "Male" ? 1 : 2
-        let optionType = isTextMode ? 1 : 2
-        
-        let request = AddQuestionRequestModel(categoryId: categoryId,country: selectedCountry?.name,gender: genderInt,
-            description: description,
-            optionType: optionType,
-            option1: isTextMode ? option1Text : nil,
-            option2: isTextMode ? option2Text : nil,
-            questionImage: selectQuestionImageView.isImageSelected ? selectQuestionImageView.imagePickerImage.image : nil,
-            optionOneImage: isTextMode ? nil : option1Image,
-            optionTwoImage: isTextMode ? nil : option2Image
-        )
-        
-        // ─── Show loader & call API ───────────────────────────────────
-      loader = showLoading(message: "Submitting question...")
-        
-        APIManager.shared.addQuestion(request: request) { [weak self] response, error in
-            DispatchQueue.main.async {
-                self?.loader?.close()
-                
-                if let error = error {
-                    showError(error)
-                    return
-                }
-                
-                if response?.code == 200 {
-                    showSuccess(response?.message ?? "Question added successfully!")
-                    UserDefaultsManager.isQuestionAdded = true
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                        self?.clearForm()
+        switch taptype {
+            
+        case .submit:
+            let categoryId = categoryData[category] ?? 0
+            let genderInt  = gender == "Male" ? 1 : 2
+            let optionType = isTextMode ? 1 : 2
+            
+            let request = AddQuestionRequestModel(categoryId: categoryId,country: selectedCountry?.name,gender: genderInt,
+                                                  description: description,
+                                                  optionType: optionType,
+                                                  option1: isTextMode ? option1Text : nil,
+                                                  option2: isTextMode ? option2Text : nil,
+                                                  questionImage: selectQuestionImageView.isImageSelected ? selectQuestionImageView.imagePickerImage.image : nil,
+                                                  optionOneImage: isTextMode ? nil : option1Image,
+                                                  optionTwoImage: isTextMode ? nil : option2Image
+            )
+            
+            loader = showLoading(message: "")
+            
+            APIManager.shared.addQuestion(request: request) { [weak self] response,error, isSuccess in
+                DispatchQueue.main.async {
+                    guard let self = self else { return }
+                    self.loader?.close()
+                    
+                    if let error = error {
+                        showError(error)
+                        return
                     }
-                } else {
-                   showError(response?.message ?? "Failed to add question")
+                    
+                    if isSuccess {
+                        showSuccess(response?.message ?? "Question added successfully!")
+                        UserDefaultsManager.isQuestionAdded = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                            self.clearForm()
+                        }
+                    } else {
+                        showError(response?.message ?? "Failed to add question")
+                    }
                 }
             }
+        case .preview:
+            let isTextMode  = selectedOption == "text" || selectedOption == nil
+            
+            let previewData = AddQuestionRequestModel(
+                categoryId: categoryData[selectCategoryPickerView.selectDataTextField.text ?? ""] ?? 0,
+                country: selectedCountry?.name,
+                gender: selectedGender == "Male" ? 1 : 2,
+                description: descriptionTextView.text ?? "",
+                optionType: isTextMode ? 1 : 2,
+                option1: isTextMode ? optionsView.optionOneView.optiontextView.text : nil,
+                option2: isTextMode ? optionsView.optionTwoView.optiontextView.text : nil,
+                questionImage: selectQuestionImageView.isImageSelected ? selectQuestionImageView.imagePickerImage.image : nil,
+                optionOneImage: isTextMode ? nil : optionsView.optionOneView.option_bg_image.image,
+                optionTwoImage: isTextMode ? nil : optionsView.optionTwoView.option_bg_image.image
+            )
+            
+            let vc = storyBoard.instantiateViewController(withIdentifier: "ShowQuestionViewController") as! ShowQuestionViewController
+            vc.previewData = previewData
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 
@@ -330,71 +357,14 @@ class HomeViewController: UIViewController{
         }
         
     }
-    
-    func showPreview(){
-        let isTextMode  = selectedOption == "text" || selectedOption == nil
-        
-        let previewData = AddQuestionRequestModel(
-            categoryId: categoryData[selectCategoryPickerView.selectDataTextField.text ?? ""] ?? 0,
-            country: selectedCountry?.name,
-            gender: selectedGender == "Male" ? 1 : 2,
-            description: descriptionTextView.text ?? "",
-            optionType: isTextMode ? 1 : 2,
-            option1: isTextMode ? optionsView.optionOneView.optiontextView.text : nil,
-            option2: isTextMode ? optionsView.optionTwoView.optiontextView.text : nil,
-            questionImage: selectQuestionImageView.isImageSelected ? selectQuestionImageView.imagePickerImage.image : nil,
-            optionOneImage: isTextMode ? nil : optionsView.optionOneView.option_bg_image.image,
-            optionTwoImage: isTextMode ? nil : optionsView.optionTwoView.option_bg_image.image
-        )
-        
-        let vc = storyBoard.instantiateViewController(withIdentifier: "ShowQuestionViewController") as! ShowQuestionViewController
-        vc.previewData = previewData
-        navigationController?.pushViewController(vc, animated: true)
-    }
-
 
     @objc func submitTapped() {
-        validateAndSubmit()
+        validateAndSubmit(taptype: .submit)
     }
     
     @objc func previewTapped() {
-        guard canShowPreview() else { return }
-        showPreview()
+        validateAndSubmit(taptype: .preview)
     }
-
-    func canShowPreview() -> Bool {
-        let description = descriptionTextView.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        let isTextMode  = selectedOption == "text" || selectedOption == nil
-        let option1Text = optionsView.optionOneView.optiontextView.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        let option2Text = optionsView.optionTwoView.optiontextView.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-
-        if description.isEmpty {
-            showError("Fill Description to preview")
-            return false
-        }
-
-        if isTextMode {
-            if option1Text.isEmpty {
-                showError("Fill Option 1 Data to preview")
-                return false
-            }
-            if option2Text.isEmpty {
-                showError("Fill Option 2 Data to preview")
-                return false
-            }
-        } else {
-            if !optionsView.optionOneView.isImageSelected {
-                showError("Select Option 1 Image to preview")
-                return false
-            }
-            if !optionsView.optionTwoView.isImageSelected {
-                showError("Select Option 2 Image to preview")
-                return false
-            }
-        }
-        return true
-    }
-    
     
     @objc func keyboardWillShow(_ notification: Notification) {
         guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
@@ -438,7 +408,8 @@ extension HomeViewController: UITextViewDelegate {
          let currentText = textView.text ?? ""
          guard let stringRange = Range(range, in: currentText) else { return false }
          let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
-        if textView.text.count == 200 {
+        if text.isEmpty { return true }
+        if updatedText.count > 200 {
             showError("Limit reached you can only write 200 characters")
             textView.resignFirstResponder()
             return updatedText.count <= 200

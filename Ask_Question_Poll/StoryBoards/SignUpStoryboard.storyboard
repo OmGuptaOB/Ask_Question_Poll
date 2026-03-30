@@ -19,18 +19,18 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="Fxj-e9-c0Q">
                                 <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="akl-nc-PZ7">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akl-nc-PZ7">
                                 <rect key="frame" x="0.0" y="106" width="402" height="734"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNl-cB-BC7">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="855"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocY-m8-oRV" customClass="BackGroundViewXib" customModule="Ask_Question_Poll" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="161" width="382" height="574"/>
+                                                <rect key="frame" x="10" y="131" width="382" height="574"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o2x-e1-pxu">
-                                                <rect key="frame" x="10" y="161" width="382" height="574"/>
+                                                <rect key="frame" x="10" y="131" width="382" height="574"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OhH-ar-Vrn" customClass="TextFieldXib" customModule="Ask_Question_Poll" customModuleProvider="target">
                                                         <rect key="frame" x="8" y="35" width="366" height="73"/>
@@ -121,7 +121,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWN-xY-nCX" customClass="ImagePickerXib" customModule="Ask_Question_Poll" customModuleProvider="target">
-                                                <rect key="frame" x="151" y="35" width="100" height="100"/>
+                                                <rect key="frame" x="151" y="5" width="100" height="100"/>
                                                 <color key="backgroundColor" systemColor="tintColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="DXS-IE-LAe"/>
@@ -132,9 +132,9 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="o2x-e1-pxu" firstAttribute="leading" secondItem="ocY-m8-oRV" secondAttribute="leading" id="2rq-Mj-rHl"/>
-                                            <constraint firstAttribute="height" priority="750" constant="1000" id="5Ma-CK-K7j"/>
+                                            <constraint firstAttribute="height" priority="999" constant="800" id="5Ma-CK-K7j"/>
                                             <constraint firstItem="QWN-xY-nCX" firstAttribute="centerX" secondItem="mNl-cB-BC7" secondAttribute="centerX" id="8ca-h3-EXh"/>
-                                            <constraint firstItem="QWN-xY-nCX" firstAttribute="top" secondItem="mNl-cB-BC7" secondAttribute="top" constant="35" id="9WQ-72-pPK"/>
+                                            <constraint firstItem="QWN-xY-nCX" firstAttribute="top" secondItem="mNl-cB-BC7" secondAttribute="top" constant="5" id="9WQ-72-pPK"/>
                                             <constraint firstItem="o2x-e1-pxu" firstAttribute="leading" secondItem="mNl-cB-BC7" secondAttribute="leading" constant="10" id="Thf-hR-pMS"/>
                                             <constraint firstItem="o2x-e1-pxu" firstAttribute="top" secondItem="QWN-xY-nCX" secondAttribute="bottom" constant="26" id="Z3z-4q-A5x"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="o2x-e1-pxu" secondAttribute="bottom" constant="150" id="Zgg-z9-8jc"/>

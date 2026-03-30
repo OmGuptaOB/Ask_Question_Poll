@@ -78,8 +78,8 @@
             filePath = "Ask_Question_Poll/Controllers/loginandSignupAndOtp/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "validateAndCallAPI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "Ask_Question_Poll/Controllers/loginandSignupAndOtp/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "validateAndCallAPI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "Ask_Question_Poll/Controllers/loginandSignupAndOtp/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "validateAndCallAPI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "Ask_Question_Poll/Controllers/loginandSignupAndOtp/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "validateAndCallAPI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -136,14 +136,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "08001D11-1E10-4F31-BDF1-598D48B0F3F4"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ask_Question_Poll/Controllers/TabScreens/AllQuestionListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -162,92 +162,6 @@
             endingLineNumber = "15"
             landmarkName = "AllQuestionListViewController"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "A82BE8C6-280F-487C-90EE-29E52C9F7A2E - 3fe5eb20a44e023f"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Ask_Question_Poll.AllQuestionListViewController.questions.getter : Swift.Array&lt;Ask_Question_Poll.QuestionModel&gt;"
-                  moduleName = "Ask_Question_Poll.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/TabScreens/AllQuestionListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "A82BE8C6-280F-487C-90EE-29E52C9F7A2E - 8f8280daa1ee30f2"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Ask_Question_Poll.AllQuestionListViewController.questions.setter : Swift.Array&lt;Ask_Question_Poll.QuestionModel&gt;"
-                  moduleName = "Ask_Question_Poll.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/TabScreens/AllQuestionListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15">
-               </Location>
-               <Location
-                  uuid = "A82BE8C6-280F-487C-90EE-29E52C9F7A2E - fe871bd14d013cc3"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Ask_Question_Poll.AllQuestionListViewController.questions.modify : Swift.Array&lt;Ask_Question_Poll.QuestionModel&gt;"
-                  moduleName = "Ask_Question_Poll.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/TabScreens/AllQuestionListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15">
-               </Location>
-               <Location
-                  uuid = "A82BE8C6-280F-487C-90EE-29E52C9F7A2E - e01ddd1530e99daf"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Ask_Question_Poll.AllQuestionListViewController.questions.modify : Swift.Array&lt;Ask_Question_Poll.QuestionModel&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "Ask_Question_Poll.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///%3Ccompiler-generated%3E"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "A82BE8C6-280F-487C-90EE-29E52C9F7A2E - 10d99f6ac79d0379"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Ask_Question_Poll.AllQuestionListViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Ask_Question_Poll.AllQuestionListViewController"
-                  moduleName = "Ask_Question_Poll.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/TabScreens/AllQuestionListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15">
-               </Location>
-               <Location
-                  uuid = "A82BE8C6-280F-487C-90EE-29E52C9F7A2E - a56a414c7bf3e43c"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Ask_Question_Poll.AllQuestionListViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Ask_Question_Poll.AllQuestionListViewController&gt;"
-                  moduleName = "Ask_Question_Poll.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/TabScreens/AllQuestionListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -269,22 +183,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B58807A3-0E97-4195-AA8F-ECBA4B8742A5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Controllers/TabScreens/AllQuestionListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "3E5111B9-C275-4DB5-99AA-95102761C46B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -292,40 +190,10 @@
             filePath = "Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "setupGenderRadio()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3E5111B9-C275-4DB5-99AA-95102761C46B - c902aa26909bed9d"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Ask_Question_Poll.SignUpViewController.setupGenderRadio() -&gt; ()"
-                  moduleName = "Ask_Question_Poll.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137">
-               </Location>
-               <Location
-                  uuid = "3E5111B9-C275-4DB5-99AA-95102761C46B - 12eb1c89ae266fe9"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Ask_Question_Poll.SignUpViewController.setupGenderRadio() -&gt; ()"
-                  moduleName = "Ask_Question_Poll.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -338,40 +206,10 @@
             filePath = "Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "setupGenderRadio()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F801543C-6B59-40BD-8C95-18A6D98F3CB9 - c902aa26909becb2"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Ask_Question_Poll.SignUpViewController.setupGenderRadio() -&gt; ()"
-                  moduleName = "Ask_Question_Poll.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "146"
-                  endingLineNumber = "146">
-               </Location>
-               <Location
-                  uuid = "F801543C-6B59-40BD-8C95-18A6D98F3CB9 - c08ef7f6c980bac7"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; () in Ask_Question_Poll.SignUpViewController.setupGenderRadio() -&gt; ()"
-                  moduleName = "Ask_Question_Poll.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "146"
-                  endingLineNumber = "146">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -384,8 +222,8 @@
             filePath = "Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "setupGenderRadio()"
             landmarkType = "7">
          </BreakpointContent>
@@ -400,8 +238,8 @@
             filePath = "Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "setupGenderRadio()"
             landmarkType = "7">
          </BreakpointContent>
@@ -416,40 +254,10 @@
             filePath = "Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "setupProfileImagePicker()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D5C35A29-B798-4212-B922-AAFD287D7C8D - c0f62ba211412cd9"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Ask_Question_Poll.SignUpViewController.setupProfileImagePicker() -&gt; ()"
-                  moduleName = "Ask_Question_Poll.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80">
-               </Location>
-               <Location
-                  uuid = "D5C35A29-B798-4212-B922-AAFD287D7C8D - 37f7af724335ac02"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.UIImage) -&gt; () in Ask_Question_Poll.SignUpViewController.setupProfileImagePicker() -&gt; ()"
-                  moduleName = "Ask_Question_Poll.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -542,8 +350,8 @@
             filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "361"
-            endingLineNumber = "361"
+            startingLineNumber = "366"
+            endingLineNumber = "366"
             landmarkName = "previewTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -551,192 +359,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1AD3415D-AC5C-4F81-BFE4-40B82B362EB3"
+            uuid = "2506996C-FBCC-4E47-803D-935BCF65C795"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
+            filePath = "Ask_Question_Poll/Controllers/TabScreens/AllQuestionListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "366"
-            endingLineNumber = "366"
-            landmarkName = "canShowPreview()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9012EB79-CDB8-41A4-8C3D-84AE00DBCE41"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "367"
-            endingLineNumber = "367"
-            landmarkName = "canShowPreview()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5DA0C841-CCAC-444C-9103-BAB43A2DF53D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "368"
-            endingLineNumber = "368"
-            landmarkName = "canShowPreview()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D76CB730-386C-4D56-A264-244315C111AE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "369"
-            endingLineNumber = "369"
-            landmarkName = "canShowPreview()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D049C450-3614-4CEE-BED4-88302EED57AA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "372"
-            endingLineNumber = "372"
-            landmarkName = "canShowPreview()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "828655C1-A401-4ECA-80B2-7C5BA3186007"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "376"
-            endingLineNumber = "376"
-            landmarkName = "canShowPreview()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2AAA0310-61BA-4D07-8484-08D9188967C7"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "377"
-            endingLineNumber = "377"
-            landmarkName = "canShowPreview()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6B28B04D-BD08-4366-9433-DA13033AC104"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "379"
-            endingLineNumber = "379"
-            landmarkName = "canShowPreview()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EBB30DA6-E51C-4D86-9CD7-C8EC6C31FCC7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "378"
-            endingLineNumber = "378"
-            landmarkName = "canShowPreview()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "362A922B-98F7-4338-8A5A-A786BA37A76A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "382"
-            endingLineNumber = "382"
-            landmarkName = "canShowPreview()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "025B0369-2FC1-4B98-8C04-75DC23AD9323"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "387"
-            endingLineNumber = "387"
-            landmarkName = "canShowPreview()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C4FBD508-581C-41E6-A0C0-71F59F2001E1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "391"
-            endingLineNumber = "391"
-            landmarkName = "canShowPreview()"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

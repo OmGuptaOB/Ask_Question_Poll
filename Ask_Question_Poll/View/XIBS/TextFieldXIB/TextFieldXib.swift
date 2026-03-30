@@ -17,11 +17,12 @@ class TextFieldXib: NibView {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         setupTextField()
     }
+    
     
     func setupTextField() {
         textFieldTitle.font = UIFont(name: "SFAtarianSystemExtended", size: 26)

@@ -15,12 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
             sleep(1)
             let rootVC: UIViewController
-            rootVC = LoginStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            if UserDefaultsManager.shared.isLoggedIn {
+                rootVC = storyBoard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
+            } else {
+                rootVC = LoginStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            }
             let nav = UINavigationController(rootViewController: rootVC)
             window = UIWindow(frame: UIScreen.main.bounds)
             window?.rootViewController = nav
             window?.makeKeyAndVisible()
             return true
+            
+        
         }
 
 //    // MARK: UISceneSession Lifecycle

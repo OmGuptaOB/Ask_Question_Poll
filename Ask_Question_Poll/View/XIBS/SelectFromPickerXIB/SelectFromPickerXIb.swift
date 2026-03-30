@@ -25,8 +25,8 @@ class SelectFromPickerXIb: NibView {
     
     func setupTitle() {
         selectDataTextField.font = UIFont(name: "SFAtarianSystemExtended", size: 20)
-        noteDescriptionLabel.font = UIFont(name: "SFAtarianSystemExtended", size: 10)
-        selectDataTextField.isEnabled = true       // keeps tap working
+        noteDescriptionLabel.font = UIFont(name: "SFAtarianSystemExtended", size: 13)
+        selectDataTextField.isEnabled = true
         selectDataTextField.isUserInteractionEnabled = true
     }
     
@@ -51,8 +51,8 @@ class SelectFromPickerXIb: NibView {
     }
     
     @objc private func textFieldDidChange() {
-           selectDataTextField.text = selectedValue
-       }
+        selectDataTextField.text = selectedValue.lowercased()
+    }
     
     // Call this to load data into picker
     func configure(with data: [String], placeholder: String = "Select") {
@@ -65,7 +65,7 @@ class SelectFromPickerXIb: NibView {
         if !dataList.isEmpty {
             let index = pickerView.selectedRow(inComponent: 0)
             selectedValue = dataList[index]
-            selectDataTextField.text = selectedValue
+            selectDataTextField.text = selectedValue.lowercased()
             onValueSelected?(selectedValue)
         }
         selectDataTextField.resignFirstResponder()
@@ -78,7 +78,7 @@ class SelectFromPickerXIb: NibView {
             return
         }
         
-        let font = UIFont(name: "SFAtarianSystemExtended", size: 10) ?? UIFont.systemFont(ofSize: 10)
+        let font = UIFont(name: "SFAtarianSystemExtended", size: 13) ?? UIFont.systemFont(ofSize: 13)
         let attributedText = NSMutableAttributedString()
         
         attributedText.append(NSAttributedString(
@@ -108,7 +108,7 @@ extension SelectFromPickerXIb: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedValue = dataList[row]
-        selectDataTextField.text = selectedValue
+        selectDataTextField.text = selectedValue.lowercased()
         onValueSelected?(selectedValue)
     }
 }

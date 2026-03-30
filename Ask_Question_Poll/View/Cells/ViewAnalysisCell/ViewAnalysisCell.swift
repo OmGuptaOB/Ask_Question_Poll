@@ -8,17 +8,13 @@
 import UIKit
 
 class ViewAnalysisCell: UITableViewCell {
-
+    
     @IBOutlet weak var LabelQuestionDescription: UILabel!
     @IBOutlet weak var btnViewAnalysis: ButtonXib!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupBtn()
-    }
-    
-    func setupBtn(){
-        btnViewAnalysis.btnCustomLabel.setupButtonLabel(title: "view analysis", textColour: .black)
-        btnViewAnalysis.btnCustomLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        btnViewAnalysis?.btnCustomLabel.setupButtonLabel(title: "view analysis", textColour: .black)
+        btnViewAnalysis?.btnCustomLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
     }
 }

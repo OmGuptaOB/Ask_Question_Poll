@@ -10,8 +10,8 @@ import UIKit
 class BackGroundViewXib: NibView {
     @IBOutlet var containerView: UIView!
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    override func awakeFromNib() {
+        super.awakeFromNib()
         setupConatinerView()
     }
 

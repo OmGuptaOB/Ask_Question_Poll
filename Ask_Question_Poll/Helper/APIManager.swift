@@ -19,7 +19,7 @@ class APIManager{
     }
     
     func login(request: LoginRequestModel,
-               completion: @escaping (LoginResponseModel?, String?) -> Void){
+               completion: @escaping (LoginResponseModel?, String?, Bool) -> Void){
         let urlString = "\(baseURL)/api/loginForUser"
         let params = request.toJSON()
         
@@ -34,21 +34,31 @@ class APIManager{
                     do {
                         if let json = try JSONSerialization.jsonObject(with: data) as? NSDictionary,
                            let model = Mapper<LoginResponseModel>().map(JSONObject: json) {
-                            completion(model, nil)
+                            switch model.code {
+                            case 200:
+                                completion(model, nil, true)
+                                break
+                            case 201:
+                                completion(nil, model.message, false)
+                                break
+                            default:
+                                completion(nil, model.message, false)
+                                break
+                            }
                         } else {
-                            completion(nil, "Parsing Error")
+                            completion(nil, "Parsing Error", false)
                         }
                     } catch {
-                        completion(nil, "Invalid server response")
+                        completion(nil, "Invalid server response", false)
                     }
                 case .failure(let error):
-                    completion(nil, error.localizedDescription)
+                    completion(nil, error.localizedDescription, false)
                 }
             }
     }
     
     func signUp(request: SignUpRequestModel,
-                completion: @escaping (SignUpResponseModel?, String?) -> Void) {
+                completion: @escaping (SignUpResponseModel?, String?,Bool) -> Void) {
         let urlString = "\(baseURL)/api/signup"
         AF.upload(multipartFormData: { multipart in
 
@@ -92,21 +102,31 @@ class APIManager{
                 do {
                     if let json = try JSONSerialization.jsonObject(with: data) as? NSDictionary,
                        let model = Mapper<SignUpResponseModel>().map(JSONObject: json) {
-                        completion(model, nil)
+                        switch model.code {
+                        case 200:
+                            completion(model, nil, true)
+                            break
+                        case 201:
+                            completion(nil, model.message, false)
+                            break
+                        default:
+                            completion(nil, model.message, false)
+                            break
+                        }
                     } else {
-                        completion(nil, "Parsing Error")
+                        completion(nil, "Parsing Error", false)
                     }
                 } catch {
-                    completion(nil, "Invalid server response")
+                    completion(nil, "Invalid server response",false)
                 }
             case .failure(let error):
-                completion(nil, error.localizedDescription)
+                completion(nil, error.localizedDescription,false)
             }
         }
     }
     
     func verifyUser(request: OTPRequestModel,
-                    completion: @escaping (OTPResponseModel?, String?) -> Void){
+                    completion: @escaping (OTPResponseModel?, String?,Bool) -> Void){
         let urlString = "\(baseURL)/api/verifyUser"
         let params = request.toJSON()
         
@@ -120,21 +140,31 @@ class APIManager{
                     do {
                         if let json = try JSONSerialization.jsonObject(with: data) as? NSDictionary,
                            let model = Mapper<OTPResponseModel>().map(JSONObject: json) {
-                            completion(model, nil)
+                            switch model.code {
+                            case 200:
+                                completion(model, nil, true)
+                                break
+                            case 201:
+                                completion(nil, model.message, false)
+                                break
+                            default:
+                                completion(nil, model.message, false)
+                                break
+                            }
                         } else {
-                            completion(nil, "Parsing Error")
+                            completion(nil, "Parsing Error", false)
                         }
                     } catch {
-                        completion(nil, "Invalid server response")
+                        completion(nil, "Invalid server response", false)
                     }
                 case .failure(let error):
-                    completion(nil, error.localizedDescription)
+                    completion(nil, error.localizedDescription, false)
                 }
             }
     }
 
     func forgotPassword(email: String,
-                        completion: @escaping (ForgotPasswordResponseModel?, String?) -> Void) {
+                        completion: @escaping (ForgotPasswordResponseModel?, String?,Bool) -> Void) {
         let urlString = "\(baseURL)/api/forgotPasswordForUser"
         let params    = ForgotPasswordRequestModel(email: email).toJSON()
         
@@ -148,21 +178,31 @@ class APIManager{
                     do {
                         if let json = try JSONSerialization.jsonObject(with: data) as? NSDictionary,
                            let model = Mapper<ForgotPasswordResponseModel>().map(JSONObject: json) {
-                            completion(model, nil)
+                            switch model.code {
+                            case 200:
+                                completion(model, nil, true)
+                                break
+                            case 201:
+                                completion(nil, model.message, false)
+                                break
+                            default:
+                                completion(nil, model.message, false)
+                                break
+                            }
                         } else {
-                            completion(nil, "Parsing Error")
+                            completion(nil, "Parsing Error", false)
                         }
                     } catch {
-                        completion(nil, "Invalid server response")
+                        completion(nil, "Invalid server response", false)
                     }
                 case .failure(let error):
-                    completion(nil, error.localizedDescription)
+                    completion(nil, error.localizedDescription, false)
                 }
             }
     }
 
     func verifyForgotOTP(email: String, otp: Int,
-                         completion: @escaping (VerifyForgotOTPResponseModel?, String?) -> Void) {
+                         completion: @escaping (VerifyForgotOTPResponseModel?, String?,Bool) -> Void) {
         let urlString = "\(baseURL)/api/verifyOtpForUser"
         let params    = VerifyForgotOTPRequestModel(email: email, token: otp).toJSON()
         
@@ -176,21 +216,31 @@ class APIManager{
                     do {
                         if let json = try JSONSerialization.jsonObject(with: data) as? NSDictionary,
                            let model = Mapper<VerifyForgotOTPResponseModel>().map(JSONObject: json) {
-                            completion(model, nil)
+                            switch model.code {
+                            case 200:
+                                completion(model, nil, true)
+                                break
+                            case 201:
+                                completion(nil, model.message, false)
+                                break
+                            default:
+                                completion(nil, model.message, false)
+                                break
+                            }
                         } else {
-                            completion(nil, "Parsing Error")
+                            completion(nil, "Parsing Error", false)
                         }
                     } catch {
-                        completion(nil, "Invalid server response")
+                        completion(nil, "Invalid server response", false)
                     }
                 case .failure(let error):
-                    completion(nil, error.localizedDescription)
+                    completion(nil, error.localizedDescription, false)
                 }
             }
     }
     
     func resetPassword(email: String, token: String, password: String,
-                       completion: @escaping (ResetPasswordResponseModel?, String?) -> Void) {
+                       completion: @escaping (ResetPasswordResponseModel?, String?,Bool) -> Void) {
         let urlString = "\(baseURL)/api/generateNewPasswordForUser"
         let params    = ResetPasswordRequestModel(email: email, token: token, password: password).toJSON()
         
@@ -204,21 +254,31 @@ class APIManager{
                     do {
                         if let json = try JSONSerialization.jsonObject(with: data) as? NSDictionary,
                            let model = Mapper<ResetPasswordResponseModel>().map(JSONObject: json) {
-                            completion(model, nil)
+                            switch model.code {
+                            case 200:
+                                completion(model, nil, true)
+                                break
+                            case 201:
+                                completion(nil, model.message, false)
+                                break
+                            default:
+                                completion(nil, model.message, false)
+                                break
+                            }
                         } else {
-                            completion(nil, "Parsing Error")
+                            completion(nil, "Parsing Error", false)
                         }
                     } catch {
-                        completion(nil, "Invalid server response")
+                        completion(nil, "Invalid server response", false)
                     }
                 case .failure(let error):
-                    completion(nil, error.localizedDescription)
+                    completion(nil, error.localizedDescription, false)
                 }
             }
     }
     
     func addQuestion(request: AddQuestionRequestModel,
-                     completion: @escaping (AddQuestionResponseModel?, String?) -> Void) {
+                     completion: @escaping (AddQuestionResponseModel?, String?,Bool) -> Void) {
         let urlString = "\(baseURL)/api/addQuestion"
         
         AF.upload(multipartFormData: { multipart in
@@ -231,7 +291,7 @@ class APIManager{
             }
             
             // Question image (optional)
-            if let image     = request.questionImage,
+            if let image = request.questionImage,
                let imageData = image.jpegData(compressionQuality: 0.8) {
                 multipart.append(imageData, withName: "question_image",
                                  fileName: "question_image.jpg", mimeType: "image/jpeg")
@@ -239,7 +299,7 @@ class APIManager{
             
             // Option images (only for image mode)
             if request.option_type == 2 {
-                if let image     = request.optionOneImage,
+                if let image = request.optionOneImage,
                    let imageData = image.jpegData(compressionQuality: 0.8) {
                     multipart.append(imageData, withName: "option1",
                                      fileName: "option1.jpg", mimeType: "image/jpeg")
@@ -261,20 +321,30 @@ class APIManager{
                 do {
                     if let json  = try JSONSerialization.jsonObject(with: data) as? NSDictionary,
                        let model = Mapper<AddQuestionResponseModel>().map(JSONObject: json) {
-                        completion(model, nil)
+                        switch model.code {
+                        case 200:
+                            completion(model, nil, true)
+                            break
+                        case 201:
+                            completion(nil, model.message, false)
+                            break
+                        default:
+                            completion(nil, model.message, false)
+                            break
+                        }
                     } else {
-                        completion(nil, "Parsing Error")
+                        completion(nil, "Parsing Error", false)
                     }
                 } catch {
-                    completion(nil, "Invalid server response")
+                    completion(nil, "Invalid server response", false)
                 }
             case .failure(let error):
-                completion(nil, error.localizedDescription)
+                completion(nil, error.localizedDescription, false)
             }
         }
     }
 
-    func getAllQuestions(completion: @escaping (GetAllQuestionsResponseModel?, String?) -> Void) {
+    func getAllQuestions(completion: @escaping (GetAllQuestionsResponseModel?, String?,Bool) -> Void) {
         let urlString = "\(baseURL)/api/getAllQuestionByUser"
         
         AF.request(urlString, method: .post, headers: getAuthHeaders())
@@ -287,20 +357,30 @@ class APIManager{
                     do {
                         if let json  = try JSONSerialization.jsonObject(with: data) as? NSDictionary,
                            let model = Mapper<GetAllQuestionsResponseModel>().map(JSONObject: json) {
-                            completion(model, nil)
+                            switch model.code {
+                            case 200:
+                                completion(model, nil, true)
+                                break
+                            case 201:
+                                completion(nil, model.message, false)
+                                break
+                            default:
+                                completion(nil, model.message, false)
+                                break
+                            }
                         } else {
-                            completion(nil, "Parsing Error")
+                            completion(nil, "Parsing Error", false)
                         }
                     } catch {
-                        completion(nil, "Invalid server response")
+                        completion(nil, "Invalid server response", false)
                     }
                 case .failure(let error):
-                    completion(nil, error.localizedDescription)
+                    completion(nil, error.localizedDescription, false)
                 }
             }
     }
     
-    func viewQuestions(completion: @escaping (GetAllQuestionsResponseModel?, String?) -> Void) {
+    func viewQuestions(completion: @escaping (GetAllQuestionsResponseModel?, String?,Bool) -> Void) {
         let urlString = "\(baseURL)/api/viewQuestions"
         
         AF.request(urlString, method: .post, headers: getAuthHeaders())
@@ -313,15 +393,25 @@ class APIManager{
                     do {
                         if let json  = try JSONSerialization.jsonObject(with: data) as? NSDictionary,
                            let model = Mapper<GetAllQuestionsResponseModel>().map(JSONObject: json) {
-                            completion(model, nil)
+                            switch model.code {
+                            case 200:
+                                completion(model, nil, true)
+                                break
+                            case 201:
+                                completion(nil, model.message, false)
+                                break
+                            default:
+                                completion(nil, model.message, false)
+                                break
+                            }
                         } else {
-                            completion(nil, "Parsing Error")
+                            completion(nil, "Parsing Error", false)
                         }
                     } catch {
-                        completion(nil, "Invalid server response")
+                        completion(nil, "Invalid server response", false)
                     }
                 case .failure(let error):
-                    completion(nil, error.localizedDescription)
+                    completion(nil, error.localizedDescription, false)
                 }
             }
     }

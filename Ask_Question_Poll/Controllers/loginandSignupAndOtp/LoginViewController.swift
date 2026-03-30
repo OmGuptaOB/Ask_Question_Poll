@@ -49,6 +49,7 @@ class LoginViewController: UIViewController {
     
     func setupSignUp(){
         lblSignUp.setupTitle(size: 20,underline: true)
+//        self.lblSignUp.font = UIFont(name: "", size: 12, type: .DEFAULT)
     }
 
     func setupBtnLogin(){
@@ -80,22 +81,25 @@ class LoginViewController: UIViewController {
         } else if email.isEmpty {
             showError("Please Enter Email")
             return
-        } else if !email.isValidEmail {
-            showError("Please Enter Valid Email")
-            return
         } else if password.isEmpty {
             showError("Please Enter Password")
             return
         }
         
-        loader = showLoading(message: "Logging in...")
+        if !email.isValidEmail {
+            showError("Please Enter Valid Email")
+            return
+        }
+        
+        loader = showLoading(message: "")
         
         let request = LoginRequestModel(email: email, password: password)
         
-        APIManager.shared.login(request: request) { [weak self] response,error in
+        APIManager.shared.login(request: request) { [weak self] response,error, isSuccess in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                guard let self = self else { return }
                 
-                self?.loader?.close()
+                self.loader?.close()
                 //use to debug response
 //                print("Code: \(String(describing: response?.code))")       // ← what code comes back?
 //                        print("Message: \(String(describing: response?.message))") // ← what message?
@@ -104,15 +108,15 @@ class LoginViewController: UIViewController {
                     showError(error)
                     return
                 }
-                if response?.code == 200 {
+                if isSuccess {
                     if let token = response?.data?.token {
                             UserDefaultsManager.shared.saveLoginData(token: token)
                             print("Token saved: \(token)")
                         }
                     showSuccess(response?.message ?? "Login Successful")
-                    self?.navigateToHome()
+                    self.navigateToHome()
                 } else {
-                   showError(response?.message ?? "Login Failed")
+                   showError(error ?? "Login Failed")
                 }
             }
             
@@ -133,6 +137,7 @@ class LoginViewController: UIViewController {
 extension LoginViewController : UITextFieldDelegate{
     func forgotTapped(){
         let vc = OtpInputAndPasswordStoryBoard.instantiateViewController(withIdentifier: "OtpInputViewController") as! OtpInputViewController
+        vc.loginEmail = emailTextFieldView.textField.text
         vc.screenMode = .forgotPasswordEmail
         self.navigationController?.pushViewController(vc, animated: true)
     }

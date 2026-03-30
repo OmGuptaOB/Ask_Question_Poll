@@ -13,41 +13,24 @@
 		2E4E44402F7168B9008BF9B6 /* OtpInputAndPasswordStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E443F2F7168B9008BF9B6 /* OtpInputAndPasswordStoryBoard.storyboard */; };
 		2E6231492F7285D500C3EE26 /* OptionsTextandImageXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6231482F7285D500C3EE26 /* OptionsTextandImageXib.swift */; };
 		2E62314B2F72BF3F00C3EE26 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62314A2F72BF3500C3EE26 /* TextField.swift */; };
-		2E62314E2F72D4A500C3EE26 /* AddQuestionRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62314D2F72D4A200C3EE26 /* AddQuestionRequestModel.swift */; };
-		2E6231502F72D4CC00C3EE26 /* AddQuestionResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62314F2F72D4CB00C3EE26 /* AddQuestionResponseModel.swift */; };
-		2E69B2D12F6C357F00F00615 /* SignUpRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E69B2D02F6C357B00F00615 /* SignUpRequestModel.swift */; };
-		2E69B2D32F6C35AF00F00615 /* SignUpResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E69B2D22F6C35AE00F00615 /* SignUpResponseModel.swift */; };
+		2E81249F2F7AA93B00FC6CC5 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E81249D2F7AA93B00FC6CC5 /* CountryModel.swift */; };
 		2E96B18E2F71149300B8CBFA /* OptionsTextandImageXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E96B18D2F71149300B8CBFA /* OptionsTextandImageXib.xib */; };
 		2E96B1902F71152B00B8CBFA /* SingleTextAndImageXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E96B18F2F71152B00B8CBFA /* SingleTextAndImageXib.xib */; };
 		2E96B1922F71165600B8CBFA /* SingleTextAndImageXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E96B1912F71165600B8CBFA /* SingleTextAndImageXib.swift */; };
 		2E96B1952F71374200B8CBFA /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E96B1942F71374200B8CBFA /* LoginStoryboard.storyboard */; };
 		2E96B1972F7137E300B8CBFA /* SignUpStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E96B1962F7137E300B8CBFA /* SignUpStoryboard.storyboard */; };
-		2E96B1992F714CDC00B8CBFA /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E96B1982F714CDC00B8CBFA /* Label.swift */; };
 		2E9D61062F6A84AE00D0FEB0 /* BackGroundViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E9D61052F6A84AE00D0FEB0 /* BackGroundViewXib.xib */; };
 		2E9D61082F6A84EB00D0FEB0 /* BackGroundViewXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9D61072F6A84EB00D0FEB0 /* BackGroundViewXib.swift */; };
 		2E9D61242F6AC60D00D0FEB0 /* TextFieldXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E9D61232F6AC60D00D0FEB0 /* TextFieldXib.xib */; };
 		2E9D61262F6AC61D00D0FEB0 /* TextFieldXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9D61252F6AC61D00D0FEB0 /* TextFieldXib.swift */; };
 		2E9D612B2F6AD99600D0FEB0 /* ButtonXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E9D612A2F6AD99600D0FEB0 /* ButtonXib.xib */; };
 		2E9D612F2F6AD9AE00D0FEB0 /* ButtonXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9D612E2F6AD9AE00D0FEB0 /* ButtonXib.swift */; };
-		2EAD4E462F6BBF77007C2B3C /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD4E452F6BBF70007C2B3C /* LoginRequestModel.swift */; };
-		2EAD4E482F6BBFB9007C2B3C /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD4E472F6BBFB0007C2B3C /* LoginResponseModel.swift */; };
 		2EAD4E4A2F6BC025007C2B3C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD4E492F6BC015007C2B3C /* APIManager.swift */; };
 		2EAD4E4C2F6BCF3C007C2B3C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD4E4B2F6BCF3C007C2B3C /* SignUpViewController.swift */; };
-		2EAD4E532F6BDF13007C2B3C /* Colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD4E522F6BDF0C007C2B3C /* Colour.swift */; };
 		2EAD4E582F6BF506007C2B3C /* ImagePickerXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EAD4E572F6BF506007C2B3C /* ImagePickerXib.xib */; };
 		2EAD4E5A2F6BF512007C2B3C /* ImagePickerXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD4E592F6BF512007C2B3C /* ImagePickerXib.swift */; };
 		2EAD4E5C2F6BFBB5007C2B3C /* NIBExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD4E5B2F6BFBAE007C2B3C /* NIBExtension.swift */; };
-		2EAD4E5E2F6BFCDB007C2B3C /* NavExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD4E5D2F6BFCD3007C2B3C /* NavExtension.swift */; };
-		2EB63E3B2F6D45E30011B1F5 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB63E3A2F6D45E10011B1F5 /* CountryModel.swift */; };
 		2EB63E3D2F6D50950011B1F5 /* OtpInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB63E3C2F6D50950011B1F5 /* OtpInputViewController.swift */; };
-		2EB63E3F2F6D5E530011B1F5 /* OTPRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB63E3E2F6D5E510011B1F5 /* OTPRequestModel.swift */; };
-		2EB63E422F6D5FD70011B1F5 /* OTPResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB63E412F6D5FD10011B1F5 /* OTPResponseModel.swift */; };
-		2EB63E452F6D8D010011B1F5 /* ForgotPasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB63E442F6D8D010011B1F5 /* ForgotPasswordRequestModel.swift */; };
-		2EB63E472F6D8D1A0011B1F5 /* ForgotPasswordResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB63E462F6D8D1A0011B1F5 /* ForgotPasswordResponseModel.swift */; };
-		2EB63E4A2F6D8D410011B1F5 /* VerifyForgotOTPRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB63E492F6D8D410011B1F5 /* VerifyForgotOTPRequestModel.swift */; };
-		2EB63E4C2F6D8D520011B1F5 /* VerifyForgotOTPResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB63E4B2F6D8D520011B1F5 /* VerifyForgotOTPResponseModel.swift */; };
-		2EB63E512F6D9A810011B1F5 /* ResetPasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB63E502F6D9A7F0011B1F5 /* ResetPasswordRequestModel.swift */; };
-		2EB63E532F6D9A920011B1F5 /* ResetPasswordResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB63E522F6D9A920011B1F5 /* ResetPasswordResponseModel.swift */; };
 		2EC686442F70F1E1001BC76F /* SelectFromPickerXIb.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EC686432F70F1E1001BC76F /* SelectFromPickerXIb.xib */; };
 		2EC6864A2F70F805001BC76F /* SelectFromPickerXIb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC686492F70F805001BC76F /* SelectFromPickerXIb.swift */; };
 		2EC6864D2F70FCBE001BC76F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC6864C2F70FCBE001BC76F /* HomeViewController.swift */; };
@@ -62,7 +45,6 @@
 		2ED10A332F6A70CA0033DA96 /* SF Atarian System Extended Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2ED10A2C2F6A70CA0033DA96 /* SF Atarian System Extended Bold.ttf */; };
 		2ED10A342F6A70CA0033DA96 /* SF Atarian System Extended.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2ED10A2B2F6A70CA0033DA96 /* SF Atarian System Extended.ttf */; };
 		2ED10A382F6A72DD0033DA96 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED10A372F6A72DD0033DA96 /* LoginViewController.swift */; };
-		2ED205042F739B9D00C4A6DE /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205022F739B9D00C4A6DE /* Validation.swift */; };
 		2ED205052F739B9D00C4A6DE /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205032F739B9D00C4A6DE /* Alert.swift */; };
 		2ED205072F739C1F00C4A6DE /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205062F739C1F00C4A6DE /* CountryManager.swift */; };
 		2ED2050A2F73A9C900C4A6DE /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205092F73A9C900C4A6DE /* TabBarViewController.swift */; };
@@ -71,12 +53,12 @@
 		2ED205132F7414E000C4A6DE /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED205122F7414DE00C4A6DE /* UserDefaultsManager.swift */; };
 		2ED3B5922F74EA6100836787 /* AllQuestionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3B5912F74EA6100836787 /* AllQuestionListViewController.swift */; };
 		2ED3B5982F74EBC900836787 /* ViewAnalysisCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3B5962F74EBC900836787 /* ViewAnalysisCell.swift */; };
-		2ED3B5992F74EBC900836787 /* ViewAnalysisCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ED3B5972F74EBC900836787 /* ViewAnalysisCell.xib */; };
-		2ED3B59B2F74F1CE00836787 /* ButtonSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3B59A2F74F1C500836787 /* ButtonSet.swift */; };
-		2ED3B59E2F75000800836787 /* GetAllQuestionsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3B59D2F75000800836787 /* GetAllQuestionsResponseModel.swift */; };
+		2ED3B59B2F74F1CE00836787 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3B59A2F74F1C500836787 /* Extension.swift */; };
 		2ED3B5A02F750BFC00836787 /* QuestionsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3B59F2F750BFC00836787 /* QuestionsPageViewController.swift */; };
 		2ED3B5A22F753C4700836787 /* QuestionContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3B5A12F753C4700836787 /* QuestionContainerCell.swift */; };
 		2ED3B5A42F75411000836787 /* QuestionContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ED3B5A32F75411000836787 /* QuestionContainerCell.xib */; };
+		2ED611142F7A8C8B00817FD8 /* RequestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED611132F7A8C8B00817FD8 /* RequestModels.swift */; };
+		2ED611162F7A8E1300817FD8 /* ResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED611152F7A8E0D00817FD8 /* ResponseModels.swift */; };
 		728DBF079E467657D9FB15F8 /* Pods_Ask_Question_Poll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C94A5ADB093B7C933AE6D22 /* Pods_Ask_Question_Poll.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,41 +69,24 @@
 		2E4E443F2F7168B9008BF9B6 /* OtpInputAndPasswordStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OtpInputAndPasswordStoryBoard.storyboard; sourceTree = "<group>"; };
 		2E6231482F7285D500C3EE26 /* OptionsTextandImageXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTextandImageXib.swift; sourceTree = "<group>"; };
 		2E62314A2F72BF3500C3EE26 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		2E62314D2F72D4A200C3EE26 /* AddQuestionRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionRequestModel.swift; sourceTree = "<group>"; };
-		2E62314F2F72D4CB00C3EE26 /* AddQuestionResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionResponseModel.swift; sourceTree = "<group>"; };
-		2E69B2D02F6C357B00F00615 /* SignUpRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequestModel.swift; sourceTree = "<group>"; };
-		2E69B2D22F6C35AE00F00615 /* SignUpResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponseModel.swift; sourceTree = "<group>"; };
+		2E81249D2F7AA93B00FC6CC5 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		2E96B18D2F71149300B8CBFA /* OptionsTextandImageXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsTextandImageXib.xib; sourceTree = "<group>"; };
 		2E96B18F2F71152B00B8CBFA /* SingleTextAndImageXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleTextAndImageXib.xib; sourceTree = "<group>"; };
 		2E96B1912F71165600B8CBFA /* SingleTextAndImageXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextAndImageXib.swift; sourceTree = "<group>"; };
 		2E96B1942F71374200B8CBFA /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		2E96B1962F7137E300B8CBFA /* SignUpStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpStoryboard.storyboard; sourceTree = "<group>"; };
-		2E96B1982F714CDC00B8CBFA /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		2E9D61052F6A84AE00D0FEB0 /* BackGroundViewXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackGroundViewXib.xib; sourceTree = "<group>"; };
 		2E9D61072F6A84EB00D0FEB0 /* BackGroundViewXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackGroundViewXib.swift; sourceTree = "<group>"; };
 		2E9D61232F6AC60D00D0FEB0 /* TextFieldXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldXib.xib; sourceTree = "<group>"; };
 		2E9D61252F6AC61D00D0FEB0 /* TextFieldXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldXib.swift; sourceTree = "<group>"; };
 		2E9D612A2F6AD99600D0FEB0 /* ButtonXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonXib.xib; sourceTree = "<group>"; };
 		2E9D612E2F6AD9AE00D0FEB0 /* ButtonXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonXib.swift; sourceTree = "<group>"; };
-		2EAD4E452F6BBF70007C2B3C /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
-		2EAD4E472F6BBFB0007C2B3C /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		2EAD4E492F6BC015007C2B3C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		2EAD4E4B2F6BCF3C007C2B3C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		2EAD4E522F6BDF0C007C2B3C /* Colour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colour.swift; sourceTree = "<group>"; };
 		2EAD4E572F6BF506007C2B3C /* ImagePickerXib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePickerXib.xib; sourceTree = "<group>"; };
 		2EAD4E592F6BF512007C2B3C /* ImagePickerXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerXib.swift; sourceTree = "<group>"; };
 		2EAD4E5B2F6BFBAE007C2B3C /* NIBExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBExtension.swift; sourceTree = "<group>"; };
-		2EAD4E5D2F6BFCD3007C2B3C /* NavExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavExtension.swift; sourceTree = "<group>"; };
-		2EB63E3A2F6D45E10011B1F5 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		2EB63E3C2F6D50950011B1F5 /* OtpInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpInputViewController.swift; sourceTree = "<group>"; };
-		2EB63E3E2F6D5E510011B1F5 /* OTPRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPRequestModel.swift; sourceTree = "<group>"; };
-		2EB63E412F6D5FD10011B1F5 /* OTPResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPResponseModel.swift; sourceTree = "<group>"; };
-		2EB63E442F6D8D010011B1F5 /* ForgotPasswordRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequestModel.swift; sourceTree = "<group>"; };
-		2EB63E462F6D8D1A0011B1F5 /* ForgotPasswordResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResponseModel.swift; sourceTree = "<group>"; };
-		2EB63E492F6D8D410011B1F5 /* VerifyForgotOTPRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyForgotOTPRequestModel.swift; sourceTree = "<group>"; };
-		2EB63E4B2F6D8D520011B1F5 /* VerifyForgotOTPResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyForgotOTPResponseModel.swift; sourceTree = "<group>"; };
-		2EB63E502F6D9A7F0011B1F5 /* ResetPasswordRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordRequestModel.swift; sourceTree = "<group>"; };
-		2EB63E522F6D9A920011B1F5 /* ResetPasswordResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordResponseModel.swift; sourceTree = "<group>"; };
 		2EC686432F70F1E1001BC76F /* SelectFromPickerXIb.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectFromPickerXIb.xib; sourceTree = "<group>"; };
 		2EC686492F70F805001BC76F /* SelectFromPickerXIb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFromPickerXIb.swift; sourceTree = "<group>"; };
 		2EC6864C2F70FCBE001BC76F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -138,7 +103,6 @@
 		2ED10A2E2F6A70CA0033DA96 /* category.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = category.json; sourceTree = "<group>"; };
 		2ED10A2F2F6A70CA0033DA96 /* countryNames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = countryNames.json; sourceTree = "<group>"; };
 		2ED10A372F6A72DD0033DA96 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		2ED205022F739B9D00C4A6DE /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		2ED205032F739B9D00C4A6DE /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		2ED205062F739C1F00C4A6DE /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
 		2ED205092F73A9C900C4A6DE /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -147,12 +111,12 @@
 		2ED205122F7414DE00C4A6DE /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		2ED3B5912F74EA6100836787 /* AllQuestionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQuestionListViewController.swift; sourceTree = "<group>"; };
 		2ED3B5962F74EBC900836787 /* ViewAnalysisCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAnalysisCell.swift; sourceTree = "<group>"; };
-		2ED3B5972F74EBC900836787 /* ViewAnalysisCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewAnalysisCell.xib; sourceTree = "<group>"; };
-		2ED3B59A2F74F1C500836787 /* ButtonSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSet.swift; sourceTree = "<group>"; };
-		2ED3B59D2F75000800836787 /* GetAllQuestionsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllQuestionsResponseModel.swift; sourceTree = "<group>"; };
+		2ED3B59A2F74F1C500836787 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		2ED3B59F2F750BFC00836787 /* QuestionsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsPageViewController.swift; sourceTree = "<group>"; };
 		2ED3B5A12F753C4700836787 /* QuestionContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionContainerCell.swift; sourceTree = "<group>"; };
 		2ED3B5A32F75411000836787 /* QuestionContainerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionContainerCell.xib; sourceTree = "<group>"; };
+		2ED611132F7A8C8B00817FD8 /* RequestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModels.swift; sourceTree = "<group>"; };
+		2ED611152F7A8E0D00817FD8 /* ResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModels.swift; sourceTree = "<group>"; };
 		8C94A5ADB093B7C933AE6D22 /* Pods_Ask_Question_Poll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ask_Question_Poll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C83E86651D924D7A7777C63B /* Pods-Ask_Question_Poll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ask_Question_Poll.debug.xcconfig"; path = "Target Support Files/Pods-Ask_Question_Poll/Pods-Ask_Question_Poll.debug.xcconfig"; sourceTree = "<group>"; };
 		D781A0B8C9FC8031B1313EA4 /* Pods-Ask_Question_Poll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ask_Question_Poll.release.xcconfig"; path = "Target Support Files/Pods-Ask_Question_Poll/Pods-Ask_Question_Poll.release.xcconfig"; sourceTree = "<group>"; };
@@ -187,22 +151,12 @@
 			path = RadioXIB;
 			sourceTree = "<group>";
 		};
-		2E62314C2F72D48800C3EE26 /* AddQuestionModel */ = {
+		2E81249E2F7AA93B00FC6CC5 /* JsonModels */ = {
 			isa = PBXGroup;
 			children = (
-				2E62314F2F72D4CB00C3EE26 /* AddQuestionResponseModel.swift */,
-				2E62314D2F72D4A200C3EE26 /* AddQuestionRequestModel.swift */,
+				2E81249D2F7AA93B00FC6CC5 /* CountryModel.swift */,
 			);
-			path = AddQuestionModel;
-			sourceTree = "<group>";
-		};
-		2E69B2CF2F6C357200F00615 /* SignUpModels */ = {
-			isa = PBXGroup;
-			children = (
-				2E69B2D22F6C35AE00F00615 /* SignUpResponseModel.swift */,
-				2E69B2D02F6C357B00F00615 /* SignUpRequestModel.swift */,
-			);
-			path = SignUpModels;
+			path = JsonModels;
 			sourceTree = "<group>";
 		};
 		2E96B18C2F71140C00B8CBFA /* OptionsTextAndImageXIb */ = {
@@ -254,15 +208,6 @@
 			path = ButtonXIB;
 			sourceTree = "<group>";
 		};
-		2EAD4E442F6BBF66007C2B3C /* LoginModels */ = {
-			isa = PBXGroup;
-			children = (
-				2EAD4E472F6BBFB0007C2B3C /* LoginResponseModel.swift */,
-				2EAD4E452F6BBF70007C2B3C /* LoginRequestModel.swift */,
-			);
-			path = LoginModels;
-			sourceTree = "<group>";
-		};
 		2EAD4E562F6BF4E0007C2B3C /* ImagePickerXIB */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,50 +215,6 @@
 				2EAD4E592F6BF512007C2B3C /* ImagePickerXib.swift */,
 			);
 			path = ImagePickerXIB;
-			sourceTree = "<group>";
-		};
-		2EB63E392F6D45D90011B1F5 /* JsonModels */ = {
-			isa = PBXGroup;
-			children = (
-				2EB63E3A2F6D45E10011B1F5 /* CountryModel.swift */,
-			);
-			path = JsonModels;
-			sourceTree = "<group>";
-		};
-		2EB63E402F6D5E590011B1F5 /* OTPModels */ = {
-			isa = PBXGroup;
-			children = (
-				2EB63E412F6D5FD10011B1F5 /* OTPResponseModel.swift */,
-				2EB63E3E2F6D5E510011B1F5 /* OTPRequestModel.swift */,
-			);
-			path = OTPModels;
-			sourceTree = "<group>";
-		};
-		2EB63E432F6D8CE00011B1F5 /* ForgotPasswordModels */ = {
-			isa = PBXGroup;
-			children = (
-				2EB63E442F6D8D010011B1F5 /* ForgotPasswordRequestModel.swift */,
-				2EB63E462F6D8D1A0011B1F5 /* ForgotPasswordResponseModel.swift */,
-			);
-			path = ForgotPasswordModels;
-			sourceTree = "<group>";
-		};
-		2EB63E482F6D8D280011B1F5 /* VerifyForgotPasswordRequstModels */ = {
-			isa = PBXGroup;
-			children = (
-				2EB63E492F6D8D410011B1F5 /* VerifyForgotOTPRequestModel.swift */,
-				2EB63E4B2F6D8D520011B1F5 /* VerifyForgotOTPResponseModel.swift */,
-			);
-			path = VerifyForgotPasswordRequstModels;
-			sourceTree = "<group>";
-		};
-		2EB63E4F2F6D9A6B0011B1F5 /* ResetPasswordModels */ = {
-			isa = PBXGroup;
-			children = (
-				2EB63E502F6D9A7F0011B1F5 /* ResetPasswordRequestModel.swift */,
-				2EB63E522F6D9A920011B1F5 /* ResetPasswordResponseModel.swift */,
-			);
-			path = ResetPasswordModels;
 			sourceTree = "<group>";
 		};
 		2EC01DA72F764032002A0D13 /* QuestionContainerCell */ = {
@@ -425,15 +326,9 @@
 		2ED109F42F6A66BE0033DA96 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2ED3B59C2F74FFF300836787 /* GetAllQuestionsModel */,
-				2E62314C2F72D48800C3EE26 /* AddQuestionModel */,
-				2EB63E4F2F6D9A6B0011B1F5 /* ResetPasswordModels */,
-				2EB63E482F6D8D280011B1F5 /* VerifyForgotPasswordRequstModels */,
-				2EB63E432F6D8CE00011B1F5 /* ForgotPasswordModels */,
-				2EB63E402F6D5E590011B1F5 /* OTPModels */,
-				2EB63E392F6D45D90011B1F5 /* JsonModels */,
-				2E69B2CF2F6C357200F00615 /* SignUpModels */,
-				2EAD4E442F6BBF66007C2B3C /* LoginModels */,
+				2E81249E2F7AA93B00FC6CC5 /* JsonModels */,
+				2ED611152F7A8E0D00817FD8 /* ResponseModels.swift */,
+				2ED611132F7A8C8B00817FD8 /* RequestModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -450,14 +345,10 @@
 		2ED109F72F6A66F50033DA96 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				2ED3B59A2F74F1C500836787 /* ButtonSet.swift */,
-				2ED205022F739B9D00C4A6DE /* Validation.swift */,
+				2ED3B59A2F74F1C500836787 /* Extension.swift */,
 				2ED205032F739B9D00C4A6DE /* Alert.swift */,
 				2E62314A2F72BF3500C3EE26 /* TextField.swift */,
-				2E96B1982F714CDC00B8CBFA /* Label.swift */,
-				2EAD4E5D2F6BFCD3007C2B3C /* NavExtension.swift */,
 				2EAD4E5B2F6BFBAE007C2B3C /* NIBExtension.swift */,
-				2EAD4E522F6BDF0C007C2B3C /* Colour.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -502,7 +393,6 @@
 			isa = PBXGroup;
 			children = (
 				2ED3B5962F74EBC900836787 /* ViewAnalysisCell.swift */,
-				2ED3B5972F74EBC900836787 /* ViewAnalysisCell.xib */,
 			);
 			path = ViewAnalysisCell;
 			sourceTree = "<group>";
@@ -528,14 +418,6 @@
 				2E9D61042F6A846D00D0FEB0 /* BackGroundViewXIB */,
 			);
 			path = XIBS;
-			sourceTree = "<group>";
-		};
-		2ED3B59C2F74FFF300836787 /* GetAllQuestionsModel */ = {
-			isa = PBXGroup;
-			children = (
-				2ED3B59D2F75000800836787 /* GetAllQuestionsResponseModel.swift */,
-			);
-			path = GetAllQuestionsModel;
 			sourceTree = "<group>";
 		};
 		86441650B770DD490145A1DC /* Pods */ = {
@@ -615,7 +497,6 @@
 				2ED10A212F6A67890033DA96 /* Contents.json in Resources */,
 				2ED3B5A42F75411000836787 /* QuestionContainerCell.xib in Resources */,
 				2E96B1972F7137E300B8CBFA /* SignUpStoryboard.storyboard in Resources */,
-				2ED3B5992F74EBC900836787 /* ViewAnalysisCell.xib in Resources */,
 				2E96B1952F71374200B8CBFA /* LoginStoryboard.storyboard in Resources */,
 				2EAD4E582F6BF506007C2B3C /* ImagePickerXib.xib in Resources */,
 				2E9D61062F6A84AE00D0FEB0 /* BackGroundViewXib.xib in Resources */,
@@ -652,7 +533,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n// Source - https://stackoverflow.com/a/40712171\n// Posted by Repose, modified by community. See post 'Timeline' for change history\n// Retrieved 2026-03-18, License - CC BY-SA 4.0\n\n#   ON/OFF Script Toggle (script ON with #, script OFF without #)\n#exit 0\n\n#   App vesion / Build version constants\nsourceFilePath=\"$PROJECT_DIR/$PROJECT_NAME/Base.lproj/LaunchScreen.storyboard\"\nversionNumber=\"$MARKETING_VERSION\"\nbuildNumber=\"$CURRENT_PROJECT_VERSION\"\n\n#   Output version & build numbers into a label on LaunchScreen.storyboard\nsed -i .bak -e \"/userLabel=\\\"APP_VERSION\\\"/s/text=\\\"[^\\\"]*\\\"/text=\\\"$versionNumber($buildNumber)\\\"/\" \"$sourceFilePath\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n// Source - https://stackoverflow.com/a/40712171\n// Posted by Repose, modified by community. See post 'Timeline' for change history\n// Retrieved 2026-03-18, License - CC BY-SA 4.0\n\n#   ON/OFF Script Toggle (script ON with #, script OFF without #)\n#exit 0\n\n#   App vesion / Build version constants\nsourceFilePath=\"$PROJECT_DIR/$PROJECT_NAME/Base.lproj/LaunchScreen.storyboard\"\nversionNumber=\"$MARKETING_VERSION\"\nbuildNumber=\"$CURRENT_PROJECT_VERSION\"\n\n#   Output version & build numbers into a label on LaunchScreen.storyboard\nsed -i .bak -e \"/userLabel=\\\"APP_VERSION\\\"/s/text=\\\"[^\\\"]*\\\"/text=\\\"$versionNumber.$buildNumber\\\"/\" \"$sourceFilePath\"\n";
 		};
 		537CAD163F03AA5311EDE172 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -700,53 +581,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EAD4E5E2F6BFCDB007C2B3C /* NavExtension.swift in Sources */,
 				2E2BBE672F717CC000F2BBE0 /* StoryBoardDeclaration.swift in Sources */,
-				2EAD4E482F6BBFB9007C2B3C /* LoginResponseModel.swift in Sources */,
-				2EB63E4C2F6D8D520011B1F5 /* VerifyForgotOTPResponseModel.swift in Sources */,
 				2ED3B5922F74EA6100836787 /* AllQuestionListViewController.swift in Sources */,
 				2ED2050A2F73A9C900C4A6DE /* TabBarViewController.swift in Sources */,
-				2EB63E472F6D8D1A0011B1F5 /* ForgotPasswordResponseModel.swift in Sources */,
+				2ED611162F7A8E1300817FD8 /* ResponseModels.swift in Sources */,
 				2ED109EC2F6A66640033DA96 /* AppDelegate.swift in Sources */,
-				2EB63E512F6D9A810011B1F5 /* ResetPasswordRequestModel.swift in Sources */,
 				2ED3B5A22F753C4700836787 /* QuestionContainerCell.swift in Sources */,
-				2E62314E2F72D4A500C3EE26 /* AddQuestionRequestModel.swift in Sources */,
-				2ED3B59B2F74F1CE00836787 /* ButtonSet.swift in Sources */,
+				2ED3B59B2F74F1CE00836787 /* Extension.swift in Sources */,
 				2E9D612F2F6AD9AE00D0FEB0 /* ButtonXib.swift in Sources */,
-				2E69B2D12F6C357F00F00615 /* SignUpRequestModel.swift in Sources */,
 				2EC6864A2F70F805001BC76F /* SelectFromPickerXIb.swift in Sources */,
 				2EAD4E5C2F6BFBB5007C2B3C /* NIBExtension.swift in Sources */,
 				2EAD4E4A2F6BC025007C2B3C /* APIManager.swift in Sources */,
 				2ED2050C2F73EC9700C4A6DE /* ShowQuestionViewController.swift in Sources */,
 				2E9D61262F6AC61D00D0FEB0 /* TextFieldXib.swift in Sources */,
-				2ED3B59E2F75000800836787 /* GetAllQuestionsResponseModel.swift in Sources */,
 				2E96B1922F71165600B8CBFA /* SingleTextAndImageXib.swift in Sources */,
-				2EAD4E532F6BDF13007C2B3C /* Colour.swift in Sources */,
 				2E24091D2F6C254500BB6BCF /* RadioXib.swift in Sources */,
 				2ED109ED2F6A66640033DA96 /* Ask_Question_Poll.xcdatamodeld in Sources */,
-				2EB63E422F6D5FD70011B1F5 /* OTPResponseModel.swift in Sources */,
 				2ED205072F739C1F00C4A6DE /* CountryManager.swift in Sources */,
 				2E9D61082F6A84EB00D0FEB0 /* BackGroundViewXib.swift in Sources */,
-				2EB63E3F2F6D5E530011B1F5 /* OTPRequestModel.swift in Sources */,
+				2E81249F2F7AA93B00FC6CC5 /* CountryModel.swift in Sources */,
 				2E6231492F7285D500C3EE26 /* OptionsTextandImageXib.swift in Sources */,
 				2EAD4E4C2F6BCF3C007C2B3C /* SignUpViewController.swift in Sources */,
-				2EB63E4A2F6D8D410011B1F5 /* VerifyForgotOTPRequestModel.swift in Sources */,
-				2EB63E3B2F6D45E30011B1F5 /* CountryModel.swift in Sources */,
 				2EB63E3D2F6D50950011B1F5 /* OtpInputViewController.swift in Sources */,
 				2ED205132F7414E000C4A6DE /* UserDefaultsManager.swift in Sources */,
 				2ED3B5982F74EBC900836787 /* ViewAnalysisCell.swift in Sources */,
 				2E62314B2F72BF3F00C3EE26 /* TextField.swift in Sources */,
-				2E6231502F72D4CC00C3EE26 /* AddQuestionResponseModel.swift in Sources */,
 				2EAD4E5A2F6BF512007C2B3C /* ImagePickerXib.swift in Sources */,
 				2ED3B5A02F750BFC00836787 /* QuestionsPageViewController.swift in Sources */,
-				2EAD4E462F6BBF77007C2B3C /* LoginRequestModel.swift in Sources */,
-				2EB63E452F6D8D010011B1F5 /* ForgotPasswordRequestModel.swift in Sources */,
 				2ED10A382F6A72DD0033DA96 /* LoginViewController.swift in Sources */,
-				2E96B1992F714CDC00B8CBFA /* Label.swift in Sources */,
 				2EC6864D2F70FCBE001BC76F /* HomeViewController.swift in Sources */,
-				2E69B2D32F6C35AF00F00615 /* SignUpResponseModel.swift in Sources */,
-				2EB63E532F6D9A920011B1F5 /* ResetPasswordResponseModel.swift in Sources */,
-				2ED205042F739B9D00C4A6DE /* Validation.swift in Sources */,
+				2ED611142F7A8C8B00817FD8 /* RequestModels.swift in Sources */,
 				2ED205052F739B9D00C4A6DE /* Alert.swift in Sources */,
 				2ED205102F7411F300C4A6DE /* LogoutViewController.swift in Sources */,
 			);

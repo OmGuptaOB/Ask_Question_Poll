@@ -22,12 +22,13 @@ class SingleTextAndImageXib: NibView {
     }
     var selectedImage: UIImage?
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // One-time setup when outlets are connected. Do not repeat in layoutSubviews —
+        // that runs often and would stack duplicate gesture recognizers on the image view.
         setupLabel()
         setupImageTap()
         setupOptionImagePicker()
-       
     }
     
     func setupOptionImagePicker() {
@@ -107,7 +108,8 @@ extension SingleTextAndImageXib: UITextViewDelegate {
         guard let stringRange = Range(range, in: currentText) else { return false }
         
         let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
-        if textView.text.count == 30 {
+        if text.isEmpty { return true }
+        if updatedText.count > 30 {
             SCLAlertView().showError("Limit Reached", subTitle: "You can only enter 30 characters")
             textView.resignFirstResponder()
             return updatedText.count <= 30
