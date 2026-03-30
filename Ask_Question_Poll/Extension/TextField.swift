@@ -55,12 +55,12 @@ class NoSelectTextField: UITextField {
     
     override func addGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer) {
         if gestureRecognizer is UILongPressGestureRecognizer {
-            return  // 👈 never even add it
+            return 
         }
         super.addGestureRecognizer(gestureRecognizer)
     }
     
     override func replace(_ range: UITextRange, withText text: String) { }
-
+    
     override func insertText(_ text: String) { }
 }

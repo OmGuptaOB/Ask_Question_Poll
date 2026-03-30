@@ -38,6 +38,7 @@ class SignUpViewController: UIViewController {
         //MARK: Function calls
         setupCountrySelect()
         setupBtnSignUp()
+        setupProfileImagePicker()
         setupEmailtextField()
         setupPasswordTextField()
         setupDefaultNav()
@@ -67,9 +68,8 @@ class SignUpViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    override func viewDidLayoutSubviews() {
-        setupProfileImagePicker()
-    }
+//    override func viewDidLayoutSubviews() {
+//    }
     //MARK: imagepicker setup
     func setupProfileImagePicker(){
         imagePickerView.imagePickerImage.image = UIImage(named: "profile_avtar")

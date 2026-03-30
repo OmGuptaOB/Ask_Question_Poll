@@ -152,7 +152,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A82BE8C6-280F-487C-90EE-29E52C9F7A2E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ask_Question_Poll/Controllers/TabScreens/AllQuestionListViewController.swift"
@@ -162,13 +162,99 @@
             endingLineNumber = "15"
             landmarkName = "AllQuestionListViewController"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "A82BE8C6-280F-487C-90EE-29E52C9F7A2E - 3fe5eb20a44e023f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ask_Question_Poll.AllQuestionListViewController.questions.getter : Swift.Array&lt;Ask_Question_Poll.QuestionModel&gt;"
+                  moduleName = "Ask_Question_Poll.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/TabScreens/AllQuestionListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "A82BE8C6-280F-487C-90EE-29E52C9F7A2E - 8f8280daa1ee30f2"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ask_Question_Poll.AllQuestionListViewController.questions.setter : Swift.Array&lt;Ask_Question_Poll.QuestionModel&gt;"
+                  moduleName = "Ask_Question_Poll.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/TabScreens/AllQuestionListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15">
+               </Location>
+               <Location
+                  uuid = "A82BE8C6-280F-487C-90EE-29E52C9F7A2E - fe871bd14d013cc3"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ask_Question_Poll.AllQuestionListViewController.questions.modify : Swift.Array&lt;Ask_Question_Poll.QuestionModel&gt;"
+                  moduleName = "Ask_Question_Poll.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/TabScreens/AllQuestionListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15">
+               </Location>
+               <Location
+                  uuid = "A82BE8C6-280F-487C-90EE-29E52C9F7A2E - e01ddd1530e99daf"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ask_Question_Poll.AllQuestionListViewController.questions.modify : Swift.Array&lt;Ask_Question_Poll.QuestionModel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Ask_Question_Poll.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "A82BE8C6-280F-487C-90EE-29E52C9F7A2E - 10d99f6ac79d0379"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ask_Question_Poll.AllQuestionListViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Ask_Question_Poll.AllQuestionListViewController"
+                  moduleName = "Ask_Question_Poll.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/TabScreens/AllQuestionListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15">
+               </Location>
+               <Location
+                  uuid = "A82BE8C6-280F-487C-90EE-29E52C9F7A2E - a56a414c7bf3e43c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ask_Question_Poll.AllQuestionListViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Ask_Question_Poll.AllQuestionListViewController&gt;"
+                  moduleName = "Ask_Question_Poll.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/TabScreens/AllQuestionListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3E1A3675-DF05-42B7-980B-E233579532A7"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ask_Question_Poll/Controllers/TabScreens/AllQuestionListViewController.swift"
@@ -184,7 +270,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B58807A3-0E97-4195-AA8F-ECBA4B8742A5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ask_Question_Poll/Controllers/TabScreens/AllQuestionListViewController.swift"
@@ -200,7 +286,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3E5111B9-C275-4DB5-99AA-95102761C46B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
@@ -210,13 +296,43 @@
             endingLineNumber = "137"
             landmarkName = "setupGenderRadio()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3E5111B9-C275-4DB5-99AA-95102761C46B - c902aa26909bed9d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ask_Question_Poll.SignUpViewController.setupGenderRadio() -&gt; ()"
+                  moduleName = "Ask_Question_Poll.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137">
+               </Location>
+               <Location
+                  uuid = "3E5111B9-C275-4DB5-99AA-95102761C46B - 12eb1c89ae266fe9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Ask_Question_Poll.SignUpViewController.setupGenderRadio() -&gt; ()"
+                  moduleName = "Ask_Question_Poll.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F801543C-6B59-40BD-8C95-18A6D98F3CB9"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
@@ -226,13 +342,43 @@
             endingLineNumber = "146"
             landmarkName = "setupGenderRadio()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F801543C-6B59-40BD-8C95-18A6D98F3CB9 - c902aa26909becb2"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ask_Question_Poll.SignUpViewController.setupGenderRadio() -&gt; ()"
+                  moduleName = "Ask_Question_Poll.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146">
+               </Location>
+               <Location
+                  uuid = "F801543C-6B59-40BD-8C95-18A6D98F3CB9 - c08ef7f6c980bac7"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in Ask_Question_Poll.SignUpViewController.setupGenderRadio() -&gt; ()"
+                  moduleName = "Ask_Question_Poll.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C950DA2C-4868-4563-96D7-AE46B4BBA3C2"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
@@ -248,7 +394,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A23CFB7A-BED8-496C-AD54-6CABBCE2A1AA"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
@@ -264,7 +410,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D5C35A29-B798-4212-B922-AAFD287D7C8D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
@@ -274,13 +420,43 @@
             endingLineNumber = "80"
             landmarkName = "setupProfileImagePicker()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D5C35A29-B798-4212-B922-AAFD287D7C8D - c0f62ba211412cd9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ask_Question_Poll.SignUpViewController.setupProfileImagePicker() -&gt; ()"
+                  moduleName = "Ask_Question_Poll.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80">
+               </Location>
+               <Location
+                  uuid = "D5C35A29-B798-4212-B922-AAFD287D7C8D - 37f7af724335ac02"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIImage) -&gt; () in Ask_Question_Poll.SignUpViewController.setupProfileImagePicker() -&gt; ()"
+                  moduleName = "Ask_Question_Poll.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/DATA/OM/iOS/Training/Ask_Question_Poll/Ask_Question_Poll/Controllers/loginandSignupAndOtp/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "115C6A51-F47E-4537-B0E6-ED8B035C3EC6"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ask_Question_Poll/View/XIBS/ImagePickerXIB/ImagePickerXib.swift"
@@ -296,7 +472,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "36E4F9D1-E4F7-4C68-A3CF-C6B0897BFB1F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ask_Question_Poll/View/XIBS/ImagePickerXIB/ImagePickerXib.swift"
@@ -312,7 +488,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8D8C6996-EC24-406A-9B98-9A4475644E00"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ask_Question_Poll/View/XIBS/ImagePickerXIB/ImagePickerXib.swift"
@@ -321,38 +497,6 @@
             startingLineNumber = "76"
             endingLineNumber = "76"
             landmarkName = "openPicker(sourceType:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D565E8AB-760C-49B6-BA39-7E4AB516F4FB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/View/XIBS/ImagePickerXIB/ImagePickerXib.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "openPickerTapped()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A0BEF6D8-9449-41E6-87B9-D1F890C94D81"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/View/XIBS/ImagePickerXIB/ImagePickerXib.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "topViewController()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -375,88 +519,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "846A335B-2D39-4348-A680-8295EB70E8CD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Helper/APIManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "login(request:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2F4FA9BB-149E-46E8-978E-B687461EC1B3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Helper/APIManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "login(request:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "36F66A59-7941-4814-910D-5A6C08F415FD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Helper/APIManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "login(request:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8D5A59A3-E0AD-4BEB-A96E-3626E4C8702F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Helper/APIManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "login(request:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F3948EB2-762A-4542-9C37-DC2FD7AE7912"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Helper/APIManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "login(request:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "40653D42-ED65-4971-8898-E9D5566D0B76"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ask_Question_Poll/Helper/APIManager.swift"
@@ -471,193 +535,209 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D4E1AFB3-C456-4673-B129-0FE6CEB48A8C"
+            uuid = "CBD75135-2456-4694-BF2B-D1539FCE7721"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Extension/NIBExtension.swift"
+            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "init(frame:)"
+            startingLineNumber = "361"
+            endingLineNumber = "361"
+            landmarkName = "previewTapped()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "794F9491-1D30-4FE5-8416-502B0964DA2E"
+            uuid = "1AD3415D-AC5C-4F81-BFE4-40B82B362EB3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Extension/NIBExtension.swift"
+            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "init(frame:)"
+            startingLineNumber = "366"
+            endingLineNumber = "366"
+            landmarkName = "canShowPreview()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "373791D7-C7C6-4FFC-ACE6-539453384FB1"
+            uuid = "9012EB79-CDB8-41A4-8C3D-84AE00DBCE41"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Extension/NIBExtension.swift"
+            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "init?(coder:)"
+            startingLineNumber = "367"
+            endingLineNumber = "367"
+            landmarkName = "canShowPreview()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "84864C90-096C-47E9-9DDE-31B56CF18BBC"
+            uuid = "5DA0C841-CCAC-444C-9103-BAB43A2DF53D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Extension/NIBExtension.swift"
+            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "xibSetup()"
+            startingLineNumber = "368"
+            endingLineNumber = "368"
+            landmarkName = "canShowPreview()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A21F5FDB-F2FE-48FA-8E40-B5F336938591"
+            uuid = "D76CB730-386C-4D56-A264-244315C111AE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Extension/NIBExtension.swift"
+            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "xibSetup()"
+            startingLineNumber = "369"
+            endingLineNumber = "369"
+            landmarkName = "canShowPreview()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FDA39A1A-0DBC-4D6F-BAA1-A1CB23B15DBF"
+            uuid = "D049C450-3614-4CEE-BED4-88302EED57AA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Extension/NIBExtension.swift"
+            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "xibSetup()"
+            startingLineNumber = "372"
+            endingLineNumber = "372"
+            landmarkName = "canShowPreview()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E46EDAC5-998E-40A9-96B6-559320E26F68"
+            uuid = "828655C1-A401-4ECA-80B2-7C5BA3186007"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Extension/NIBExtension.swift"
+            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "xibSetup()"
+            startingLineNumber = "376"
+            endingLineNumber = "376"
+            landmarkName = "canShowPreview()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9E8B084A-0C3E-4C13-8553-1E3709B13F1D"
-            shouldBeEnabled = "Yes"
+            uuid = "2AAA0310-61BA-4D07-8484-08D9188967C7"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Extension/NIBExtension.swift"
+            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "xibSetup()"
+            startingLineNumber = "377"
+            endingLineNumber = "377"
+            landmarkName = "canShowPreview()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B0B467D0-3962-44DF-BC10-2030BE988645"
-            shouldBeEnabled = "Yes"
+            uuid = "6B28B04D-BD08-4366-9433-DA13033AC104"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Extension/NIBExtension.swift"
+            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "xibSetup()"
+            startingLineNumber = "379"
+            endingLineNumber = "379"
+            landmarkName = "canShowPreview()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B086C4E7-7DBE-4043-A3FE-B37221CB97AC"
+            uuid = "EBB30DA6-E51C-4D86-9CD7-C8EC6C31FCC7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Extension/NIBExtension.swift"
+            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "xibSetup()"
+            startingLineNumber = "378"
+            endingLineNumber = "378"
+            landmarkName = "canShowPreview()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9380222F-30E2-4EA7-AD2B-A1B67A389089"
+            uuid = "362A922B-98F7-4338-8A5A-A786BA37A76A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Extension/NIBExtension.swift"
+            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "loadNib()"
+            startingLineNumber = "382"
+            endingLineNumber = "382"
+            landmarkName = "canShowPreview()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A58676CA-5E7D-477C-A9A2-0D4E5B50076C"
+            uuid = "025B0369-2FC1-4B98-8C04-75DC23AD9323"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ask_Question_Poll/Extension/NIBExtension.swift"
+            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "firstResponder"
-            landmarkType = "24">
+            startingLineNumber = "387"
+            endingLineNumber = "387"
+            landmarkName = "canShowPreview()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C4FBD508-581C-41E6-A0C0-71F59F2001E1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ask_Question_Poll/Controllers/TabScreens/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "391"
+            endingLineNumber = "391"
+            landmarkName = "canShowPreview()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -26,17 +26,14 @@ func showLoading(title: String = "Please wait", message: String) -> SCLAlertView
     return alert.showWait(title, subTitle: message, colorStyle: 0xFFD110)
 }
 
-
-func showNoDataAlert(on vc: UIViewController,
-                    title: String = "",
-                    message: String = "Please add question first") {
+func showNoDataAlert(on vc: UIViewController,title: String = "",message: String = "Please add question first") {
     
     let alert = SCLAlertView(appearance: appearance)
     
     alert.addButton("OK",textColor: UIColor.white) {
-            if let tabVC = vc.parent as? TabBarViewController {
-                tabVC.selectTab(at: 1)
-            }
+        if let tabVC = vc.parent as? TabBarViewController {
+            tabVC.selectTab(at: 1)
         }
+    }
     alert.showWarning(title, subTitle: message,closeButtonTitle: nil,colorStyle: 0x007BFF)
 }

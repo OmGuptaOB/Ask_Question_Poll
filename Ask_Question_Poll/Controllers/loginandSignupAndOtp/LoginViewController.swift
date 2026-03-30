@@ -120,12 +120,9 @@ class LoginViewController: UIViewController {
         
     }
     
-    
-    
     @IBAction func BtnForgotPassword(_ sender: Any) {
         forgotTapped()
     }
-    
     
     @IBAction func btnSignUp(_ sender: Any) {
         signUpTapped()

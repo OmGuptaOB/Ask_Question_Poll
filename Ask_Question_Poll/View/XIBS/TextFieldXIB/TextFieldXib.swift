@@ -16,7 +16,6 @@ class TextFieldXib: NibView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
 
     override func layoutSubviews() {

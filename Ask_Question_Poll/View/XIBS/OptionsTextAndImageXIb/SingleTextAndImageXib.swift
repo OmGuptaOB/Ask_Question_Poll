@@ -32,7 +32,6 @@ class SingleTextAndImageXib: NibView {
     
     func setupOptionImagePicker() {
         optionImagePicker.isHidden = true // hidden by default
-        
         optionImagePicker.onImageSelected = { [weak self] image in
             guard let self = self else { return }
             // Set selected image as background
@@ -99,8 +98,6 @@ class SingleTextAndImageXib: NibView {
         let topInset = max(0, (totalHeight - contentHeight) / 2)
         textView.contentInset = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)
     }
-    
-    
 }
 
 extension SingleTextAndImageXib: UITextViewDelegate {

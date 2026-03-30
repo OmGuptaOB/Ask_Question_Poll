@@ -20,14 +20,14 @@ class QuestionsPageViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         if questions.isEmpty || UserDefaultsManager.isQuestionAdded {
-                fetchQuestions()
-            }
+            fetchQuestions()
+        }
     }
     
     override func viewDidLayoutSubviews() {
-            super.viewDidLayoutSubviews()
-            collectionView.collectionViewLayout.invalidateLayout()
-        }
+        super.viewDidLayoutSubviews()
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
     
     func setupCollectionView() {
         collectionView.dataSource = self

@@ -30,28 +30,28 @@ class AllQuestionListViewController: UIViewController {
         }
     }
     func fetchQuestions() {
-            loader = showLoading(message: "Loading questions...")
-            
-            APIManager.shared.getAllQuestions { [weak self] response, error in
-                DispatchQueue.main.async {
-                    self?.loader?.close()
-                    if let error = error {
-                        showError(error)
-                        return
-                    }
-                    if response?.code == 200 {
-                        UserDefaultsManager.isQuestionAdded = false
-                        let flat = response?.data?.result ?? []
-                        print("Flat count: \(flat.count)")
-                        
-                        self?.questions = flat
-                        self?.tableView.reloadData()
-                    } else {
-                        showError(response?.message ?? "Failed to load questions")
-                    }
+        loader = showLoading(message: "Loading questions...")
+        
+        APIManager.shared.getAllQuestions { [weak self] response, error in
+            DispatchQueue.main.async {
+                self?.loader?.close()
+                if let error = error {
+                    showError(error)
+                    return
+                }
+                if response?.code == 200 {
+                    UserDefaultsManager.isQuestionAdded = false
+                    let flat = response?.data?.result ?? []
+                    print("Flat count: \(flat.count)")
+                    
+                    self?.questions = flat
+                    self?.tableView.reloadData()
+                } else {
+                    showError(response?.message ?? "Failed to load questions")
                 }
             }
         }
+    }
 }
 extension AllQuestionListViewController: UITableViewDataSource, UITableViewDelegate {
     

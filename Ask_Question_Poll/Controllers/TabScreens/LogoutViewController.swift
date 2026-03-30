@@ -43,12 +43,12 @@ class LogoutViewController: UIViewController {
     
     func navigateToLogin(){
         self.navigationController?.popToRootViewController(animated: true)
-                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let loginVC = LoginStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                let nav = UINavigationController(rootViewController: loginVC)
-                nav.navigationBar.isHidden = false
+        let nav = UINavigationController(rootViewController: loginVC)
+        nav.navigationBar.isHidden = false
         appDelegate.window?.rootViewController = nav
-                appDelegate.window?.makeKeyAndVisible()
-    
+        appDelegate.window?.makeKeyAndVisible()
+        
     }
 }

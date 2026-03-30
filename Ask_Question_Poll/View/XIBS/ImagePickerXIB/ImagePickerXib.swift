@@ -57,11 +57,11 @@ class ImagePickerXib: NibView {
                 self.topViewController()?.present(errorAlert, animated: true)
             }
         }))
-        
+        //gallery option
         alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
             self.openPicker(sourceType: .photoLibrary)
         }))
-        
+        //cancel optiion
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
         if let popover = alert.popoverPresentationController {
