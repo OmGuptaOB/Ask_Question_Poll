@@ -11,20 +11,17 @@ class NibView: UIView {
     var view: UIView!
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         // Setup view from .xib file
         xibSetup()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
         // Setup view from .xib file
         xibSetup()
     }
 }
 private extension NibView {
-    
     func xibSetup() {
         backgroundColor = UIColor.clear
         view = loadNib()
@@ -32,16 +29,9 @@ private extension NibView {
         view.frame = bounds
         // Adding custom subview on top of our view
         addSubview(view)
-        
         view.translatesAutoresizingMaskIntoConstraints = false
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[childView]|",
-                                                      options: [],
-                                                      metrics: nil,
-                                                      views: ["childView": view]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[childView]|",
-                                                      options: [],
-                                                      metrics: nil,
-                                                      views: ["childView": view]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[childView]|",options: [], metrics: nil,views: ["childView": view]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[childView]|",options: [],metrics: nil,views: ["childView": view]))
     }
 }
 extension UIView {
@@ -53,7 +43,6 @@ extension UIView {
         return nib.instantiate(withOwner: self, options: nil).first as! UIView
     }
 }
-
 extension UIView {
     var firstResponder: UIView? {
         guard !isFirstResponder else { return self }

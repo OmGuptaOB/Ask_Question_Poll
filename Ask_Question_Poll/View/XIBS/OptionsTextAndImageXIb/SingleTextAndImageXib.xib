@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SingleTextAndImageXib" customModule="Ask_Question_Poll" customModuleProvider="target">
+            <connections>
+                <outlet property="OptionNumberTitle" destination="T9S-Or-TDj" id="8Eu-b2-aHV"/>
+                <outlet property="optionCharacterLimit" destination="CTr-r9-ASK" id="6pP-yM-ekH"/>
+                <outlet property="optionImagePicker" destination="3LT-dv-uI2" id="kdi-WA-ynX"/>
+                <outlet property="option_bg_image" destination="izD-pI-arK" id="plg-a3-UE1"/>
+                <outlet property="optiontextView" destination="i5p-9o-hfm" id="Ib8-7r-hhl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="192" height="110"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXn-jO-Nyd">
+                    <rect key="frame" x="0.0" y="0.0" width="192" height="110"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="option_button" translatesAutoresizingMaskIntoConstraints="NO" id="izD-pI-arK" userLabel="option_bg_image">
+                            <rect key="frame" x="0.0" y="0.0" width="192" height="110"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3LT-dv-uI2" customClass="ImagePickerXib" customModule="Ask_Question_Poll" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="192" height="110"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="30 characters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTr-r9-ASK">
+                            <rect key="frame" x="53.999999999999993" y="55.333333333333336" width="84.333333333333314" height="23.666666666666664"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPTION 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9S-Or-TDj">
+                            <rect key="frame" x="58.999999999999993" y="35" width="74.333333333333314" height="20.333333333333329"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20.329999999999998" id="WFY-um-c0e"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="i5p-9o-hfm">
+                            <rect key="frame" x="10" y="0.0" width="172" height="110"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="i5p-9o-hfm" firstAttribute="top" secondItem="lXn-jO-Nyd" secondAttribute="top" id="1QZ-Gh-bp6"/>
+                        <constraint firstItem="T9S-Or-TDj" firstAttribute="top" secondItem="lXn-jO-Nyd" secondAttribute="top" constant="35" id="3ei-1V-a6b"/>
+                        <constraint firstAttribute="trailing" secondItem="izD-pI-arK" secondAttribute="trailing" id="3j6-Ei-0M9"/>
+                        <constraint firstAttribute="bottom" secondItem="CTr-r9-ASK" secondAttribute="bottom" constant="31" id="4Gs-iB-mhc"/>
+                        <constraint firstItem="3LT-dv-uI2" firstAttribute="leading" secondItem="lXn-jO-Nyd" secondAttribute="leading" id="BGL-z7-YII"/>
+                        <constraint firstItem="izD-pI-arK" firstAttribute="top" secondItem="lXn-jO-Nyd" secondAttribute="top" id="Nrt-SK-9Bd"/>
+                        <constraint firstAttribute="bottom" secondItem="izD-pI-arK" secondAttribute="bottom" id="T3K-k0-5fT"/>
+                        <constraint firstItem="CTr-r9-ASK" firstAttribute="centerX" secondItem="lXn-jO-Nyd" secondAttribute="centerX" id="TUg-He-WHm"/>
+                        <constraint firstAttribute="bottom" secondItem="3LT-dv-uI2" secondAttribute="bottom" id="dbW-ei-Gb3"/>
+                        <constraint firstAttribute="trailing" secondItem="i5p-9o-hfm" secondAttribute="trailing" constant="10" id="eez-40-AMs"/>
+                        <constraint firstItem="CTr-r9-ASK" firstAttribute="top" secondItem="T9S-Or-TDj" secondAttribute="bottom" id="f0n-pr-7bw"/>
+                        <constraint firstAttribute="trailing" secondItem="3LT-dv-uI2" secondAttribute="trailing" id="m4m-3q-2hj"/>
+                        <constraint firstItem="3LT-dv-uI2" firstAttribute="top" secondItem="lXn-jO-Nyd" secondAttribute="top" id="n1A-Z8-RDb"/>
+                        <constraint firstItem="T9S-Or-TDj" firstAttribute="centerX" secondItem="lXn-jO-Nyd" secondAttribute="centerX" id="nQ8-zd-CXS"/>
+                        <constraint firstItem="i5p-9o-hfm" firstAttribute="leading" secondItem="lXn-jO-Nyd" secondAttribute="leading" constant="10" id="oRD-GM-mZS"/>
+                        <constraint firstItem="izD-pI-arK" firstAttribute="leading" secondItem="lXn-jO-Nyd" secondAttribute="leading" id="ofE-fC-ipy"/>
+                        <constraint firstAttribute="bottom" secondItem="i5p-9o-hfm" secondAttribute="bottom" id="tnp-am-tYu"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="lXn-jO-Nyd" secondAttribute="bottom" id="13h-WO-G0u"/>
+                <constraint firstAttribute="trailing" secondItem="lXn-jO-Nyd" secondAttribute="trailing" id="M5T-Al-S0Y"/>
+                <constraint firstItem="lXn-jO-Nyd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QTe-Ga-Vq4"/>
+                <constraint firstItem="lXn-jO-Nyd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="b0W-Te-0lx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="64.122137404580144" y="1289.7887323943662"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="option_button" width="528" height="232"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

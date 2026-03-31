@@ -1,0 +1,294 @@
+//
+//  OtpInputViewController.swift
+//  Ask_Question_Poll
+//
+//  Created by OBMac-13 on 20/03/26.
+//
+
+import UIKit
+import SCLAlertView
+
+enum OTPScreenMode {
+    case signUpOTP              // OTP only
+    case forgotPasswordEmail    // Email only
+    case forgotPasswordOTP      // OTP only
+    case resetPassword          // New Password + Confirm Password
+}
+
+class OtpInputViewController: UIViewController {
+    @IBOutlet weak var firstTextField: TextFieldXib!
+    @IBOutlet weak var btnEnterOTpView: ButtonXib!
+    @IBOutlet weak var secondTextField: TextFieldXib!
+    @IBOutlet weak var stackView: UIStackView!
+    
+    var screenMode: OTPScreenMode = .signUpOTP
+    var userRegTempId: Int?
+    var forgotPasswordEmail: String?
+    var resetToken:String?
+    var loader: SCLAlertViewResponder?
+    var loginEmail : String?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupDefaultNav()
+        configureScreen()
+    }
+    
+    func configureScreen() {
+        switch screenMode {
+            
+        case .signUpOTP:
+            showFields(first: true, second: false)
+            setupFirstField(title: "otp", placeholder: "Enter OTP", keyboard: .numberPad, secure: false,prefilledEmail: "")
+            setupButton(title: "ok", action: #selector(verifySignUpOTP))
+            
+        case .forgotPasswordEmail:
+            showFields(first: true, second: false)
+            setupFirstField(title: "email", placeholder: "Enter Email", keyboard: .emailAddress, secure: false,prefilledEmail: loginEmail)
+            setupButton(title: "next", action: #selector(verifyForgotEmail))
+            
+        case .forgotPasswordOTP:
+            showFields(first: true, second: false)
+            setupFirstField(title: "otp", placeholder: "Enter OTP", keyboard: .numberPad, secure: false, prefilledEmail: "")
+            setupButton(title: "ok", action: #selector(verifyForgotOTP))
+            
+        case .resetPassword:
+            showFields(first: true, second: true)
+            setupFirstField(title: "new password", placeholder: "Enter new password", keyboard: .default, secure: true,prefilledEmail: "")
+            setupSecondField(title: "confirm password", placeholder: "Enter confirm password", keyboard: .default, secure: true)
+            setupButton(title: "save", action: #selector(saveNewPassword))
+        }
+    }
+    
+    func showFields(first: Bool, second: Bool) {
+        firstTextField.isHidden  = !first
+        secondTextField.isHidden = !second
+        stackView.layoutIfNeeded()
+    }
+    
+    func setupFirstField(title: String, placeholder: String, keyboard: UIKeyboardType, secure: Bool,prefilledEmail: String?) {
+        firstTextField.textFieldTitle.text = title
+        firstTextField.textField.text = prefilledEmail
+        firstTextField.textFieldTitleImage.isHidden = true
+        firstTextField.textField.placeholder = placeholder
+        firstTextField.textField.keyboardType = keyboard
+        firstTextField.textField.isSecureTextEntry = secure
+//        firstTextField.textField.text = ""
+        firstTextField.textField.delegate = self
+    }
+    
+    func setupSecondField(title: String, placeholder: String, keyboard: UIKeyboardType, secure: Bool) {
+        secondTextField.textFieldTitle.text  = title
+        secondTextField.textFieldTitleImage.isHidden = true
+        secondTextField.textField.placeholder = placeholder
+        secondTextField.textField.keyboardType = keyboard
+        secondTextField.textField.isSecureTextEntry = secure
+        secondTextField.textField.text = ""
+        secondTextField.textField.delegate = self
+    }
+    
+    func setupButton(title: String, action: Selector) {
+        btnEnterOTpView.btnCustomClick.removeTarget(nil, action: nil, for: .allEvents)
+        btnEnterOTpView.btnCustomLabel.setupButtonLabel(title: title)
+        btnEnterOTpView.btnCustomClick.addTarget(self, action: action, for: .touchUpInside)
+    }
+    
+    @objc func verifySignUpOTP() {
+        let otp = firstTextField.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        
+        if otp.isEmpty {
+            showError("Please Enter OTP")
+            return
+        }
+        
+        guard let otpInt = Int(otp) else {
+            showError("Please Enter Valid OTP")
+            return
+        }
+        
+        guard let tempId = userRegTempId else {
+            showError("Something went wrong. Please sign up again.")
+            return
+        }
+        
+        loader = showLoading(message: "")
+        
+        let request = OTPRequestModel(
+            user_reg_temp_id: "\(tempId)",
+            token: otpInt
+        )
+        
+        APIManager.shared.verifyUser(request: request) { [weak self] response,error, isSuccess in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.loader?.close()
+                
+                if let error = error {
+                    showError(error)
+                    return
+                }
+                
+                if isSuccess {
+                    self.navigateToLogin()
+                } else {
+                    showError(response?.message ?? "OTP Verification Failed")
+                }
+            }
+        }
+    }
+    
+    
+    @objc func verifyForgotEmail() {
+        let email = firstTextField.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        
+        if email.isEmpty { showError("Please Enter Email"); return }
+        
+        if !email.isValidEmail { showError("Please Enter Valid Email"); return }
+        
+                loader = showLoading(message: "")
+//        loader = SCLAlertView().showWait("Please wait", subTitle: "Sending OTP...", colorStyle: 0xFCCF1C)
+        
+        APIManager.shared.forgotPassword(email: email) { [weak self] response,error, isSuccess in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.loader?.close()
+                if let error = error {
+                    showError(error)
+                    return
+                }
+                
+                if isSuccess{
+                    self.forgotPasswordEmail = email
+                    self.screenMode = .forgotPasswordOTP
+                    self.configureScreen()
+                    showSuccess(response?.message ?? "Check your email for the OTP")
+                } else {
+                    showError(response?.message ?? "Failed to send OTP")
+                }
+            }
+        }
+    }
+    
+    // ─── Action 3: Forgot Password — Verify OTP ──────────────────
+    
+    @objc func verifyForgotOTP() {
+        let otp = firstTextField.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        
+        if otp.isEmpty { showError("Please Enter OTP"); return }
+        guard let otpInt = Int(otp) else { showError("Please Enter Valid OTP"); return }
+        guard let email = forgotPasswordEmail else { showError("Something went wrong."); return }
+        
+        //        loader = showLoading(message: "Verifying OTP...")
+        loader = SCLAlertView().showWait("Please wait", subTitle: "Verifying OTP...", colorStyle: 0xFCCF1C)
+        
+        APIManager.shared.verifyForgotOTP(email: email, otp: otpInt) { [weak self] response,error, isSuccess in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.loader?.close()
+                if let error = error { showError(error); return }
+                
+                if isSuccess {
+                    // Save reset token for use in reset password screen
+                    self.resetToken = response?.data?.token ?? ""
+                    self.screenMode = .resetPassword
+                    self.configureScreen()
+                } else {
+                    showError(response?.message ?? "OTP Verification Failed")
+                }
+            }
+        }
+    }
+    
+    
+    @objc func saveNewPassword() {
+        let password  = firstTextField.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let cpassword = secondTextField.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        
+        if password.isEmpty && cpassword.isEmpty { showError("Please Enter Password and Confirm Password"); return }
+        if password.isEmpty{
+            showError("Please Enter New Password")
+            return
+        }
+        if cpassword.isEmpty{
+            showError("Please Enter Confirm Password")
+            return
+        }
+        
+        if !password.isValidPassword {
+            showError("Password must have 8+ chars, upper, lower, number & special character")
+            return
+        }
+        
+        if password != cpassword {
+            showError("Password Does Not Match")
+            return
+        }
+        
+        guard let email = forgotPasswordEmail,
+              let token = resetToken else {
+            showError("Something went wrong. Please try again.")
+            return
+        }
+        
+        loader = showLoading(message: "")
+        //        loader = SCLAlertView().showWait("Please wait", subTitle: "Saving new password...", colorStyle: 0xFCCF1C)
+        
+        APIManager.shared.resetPassword(email: email, token: token, password: password) { [weak self] response,error, isSuccess in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.loader?.close()
+                if let error = error { showError(error); return }
+                
+                if isSuccess {
+                    showSuccess(response?.message ?? "Password Reset Successfully")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
+                } else {
+                    showError(response?.message ?? "Reset Password Failed")
+                }
+            }
+        }
+    }
+    
+    
+    private func navigateToLogin() {
+        showSuccess("Success", subTitle: "Account verified! Please login.")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
+}
+
+extension OtpInputViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField,shouldChangeCharactersIn range: NSRange,replacementString string: String) -> Bool {
+        let currentText = (textField.text ?? "") as NSString
+        let newText = currentText.replacingCharacters(in: range, with: string)
+        switch screenMode {
+        case .forgotPasswordEmail,.resetPassword:
+            return true  // no restriction on email field
+        case .signUpOTP, .forgotPasswordOTP:
+            return string.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
+            && newText.count <= 4
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if screenMode == .resetPassword && textField == firstTextField.textField {
+            secondTextField.textField.becomeFirstResponder()
+            return true
+        }
+        
+        textField.resignFirstResponder()
+        switch screenMode {
+        case .signUpOTP: verifySignUpOTP()
+        case .forgotPasswordEmail: verifyForgotEmail()
+        case .forgotPasswordOTP: verifyForgotOTP()
+        case .resetPassword: saveNewPassword()
+        }
+        return true
+        
+    }
+}

@@ -9,5 +9,6 @@ target 'Ask_Question_Poll' do
   pod 'SCLAlertView'
   pod 'Alamofire'
   pod 'ObjectMapper'
+  pod 'SDWebImage'
 
 end
