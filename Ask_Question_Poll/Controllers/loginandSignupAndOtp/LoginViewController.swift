@@ -41,7 +41,18 @@ class LoginViewController: UIViewController {
         forgotPasswordView.backgroundColor = .clear
         btnLoginview.backgroundColor = .clear
         signUpBtnView.backgroundColor = .clear
-    }
+        
+        let button = UIButton(type: .roundedRect)
+           button.frame = CGRect(x: 50, y: 100, width: 100, height: 30)
+           button.setTitle("Test Crash", for: [])
+           button.addTarget(self, action: #selector(self.crashButtonTapped(_:)), for: .touchUpInside)
+           view.addSubview(button)
+       }
+
+       @IBAction func crashButtonTapped(_ sender: AnyObject) {
+           let numbers = [0]
+           let _ = numbers[1]
+       }
     
     func setupforgotPassword(){
         labelForgotPassword.setupTitle(size: 20,underline: true)
@@ -101,22 +112,22 @@ class LoginViewController: UIViewController {
                 
                 self.loader?.close()
                 //use to debug response
-//                print("Code: \(String(describing: response?.code))")       // ← what code comes back?
-//                        print("Message: \(String(describing: response?.message))") // ← what message?
-//                        print("Data: \(String(describing: response?.data))")
+                // print("Code: \(String(describing: response?.code))")       // what code comes back?
+                // print("Message: \(String(describing: response?.message))") // what message?
+                // print("Data: \(String(describing: response?.data))")
                 if let error = error {
                     showError(error)
                     return
                 }
                 if isSuccess {
                     if let token = response?.data?.token {
-                            UserDefaultsManager.shared.saveLoginData(token: token)
-                            print("Token saved: \(token)")
-                        }
+                        UserDefaultsManager.shared.saveLoginData(token: token)
+                        print("Token saved: \(token)")
+                    }
                     showSuccess(response?.message ?? "Login Successful")
                     self.navigateToHome()
                 } else {
-                   showError(error ?? "Login Failed")
+                    showError(error ?? "Login Failed")
                 }
             }
             

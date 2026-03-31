@@ -78,7 +78,7 @@ class SelectFromPickerXIb: NibView {
             return
         }
         
-        let font = UIFont(name: "Atarian", size: 13,type: .DEFAULT) ?? UIFont.systemFont(ofSize: 13)
+        let font = UIFont(name: "Atarian", size: 13,type: .DEFAULT)
         let attributedText = NSMutableAttributedString()
         
         attributedText.append(NSAttributedString(

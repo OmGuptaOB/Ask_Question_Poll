@@ -24,7 +24,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5S-7U-LZd">
                     <rect key="frame" x="0.0" y="32.666666666666657" width="336" height="47.333333333333343"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sRq-O8-zdg">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sRq-O8-zdg" customClass="NoSelectTextField" customModule="Ask_Question_Poll" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="336" height="47.333333333333336"/>
                             <color key="backgroundColor" white="1" alpha="0.6542090941011236" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

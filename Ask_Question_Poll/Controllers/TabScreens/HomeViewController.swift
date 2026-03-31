@@ -31,7 +31,6 @@ class HomeViewController: UIViewController{
     @IBOutlet weak var labelDescription: UILabel!
     @IBOutlet weak var optionsLabel: UILabel!
     @IBOutlet weak var labelPrefrences: UILabel!
-//    @IBOutlet weak var optionsView: OptionsTextandImageXib!
     
     @IBOutlet weak var optionsOneView: SingleTextAndImageXib!
     @IBOutlet weak var optionsTwoView: SingleTextAndImageXib!
