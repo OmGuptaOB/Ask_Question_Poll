@@ -56,7 +56,6 @@
 		2ED3B59B2F74F1CE00836787 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3B59A2F74F1C500836787 /* Extension.swift */; };
 		2ED3B5A02F750BFC00836787 /* QuestionsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3B59F2F750BFC00836787 /* QuestionsPageViewController.swift */; };
 		2ED3B5A22F753C4700836787 /* QuestionContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED3B5A12F753C4700836787 /* QuestionContainerCell.swift */; };
-		2ED3B5A42F75411000836787 /* QuestionContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ED3B5A32F75411000836787 /* QuestionContainerCell.xib */; };
 		2ED611142F7A8C8B00817FD8 /* RequestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED611132F7A8C8B00817FD8 /* RequestModels.swift */; };
 		2ED611162F7A8E1300817FD8 /* ResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED611152F7A8E0D00817FD8 /* ResponseModels.swift */; };
 		728DBF079E467657D9FB15F8 /* Pods_Ask_Question_Poll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C94A5ADB093B7C933AE6D22 /* Pods_Ask_Question_Poll.framework */; };
@@ -114,7 +113,6 @@
 		2ED3B59A2F74F1C500836787 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		2ED3B59F2F750BFC00836787 /* QuestionsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsPageViewController.swift; sourceTree = "<group>"; };
 		2ED3B5A12F753C4700836787 /* QuestionContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionContainerCell.swift; sourceTree = "<group>"; };
-		2ED3B5A32F75411000836787 /* QuestionContainerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionContainerCell.xib; sourceTree = "<group>"; };
 		2ED611132F7A8C8B00817FD8 /* RequestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModels.swift; sourceTree = "<group>"; };
 		2ED611152F7A8E0D00817FD8 /* ResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModels.swift; sourceTree = "<group>"; };
 		8C94A5ADB093B7C933AE6D22 /* Pods_Ask_Question_Poll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ask_Question_Poll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,7 +218,6 @@
 		2EC01DA72F764032002A0D13 /* QuestionContainerCell */ = {
 			isa = PBXGroup;
 			children = (
-				2ED3B5A32F75411000836787 /* QuestionContainerCell.xib */,
 				2ED3B5A12F753C4700836787 /* QuestionContainerCell.swift */,
 			);
 			path = QuestionContainerCell;
@@ -495,7 +492,6 @@
 				2E96B1902F71152B00B8CBFA /* SingleTextAndImageXib.xib in Resources */,
 				2E9D612B2F6AD99600D0FEB0 /* ButtonXib.xib in Resources */,
 				2ED10A212F6A67890033DA96 /* Contents.json in Resources */,
-				2ED3B5A42F75411000836787 /* QuestionContainerCell.xib in Resources */,
 				2E96B1972F7137E300B8CBFA /* SignUpStoryboard.storyboard in Resources */,
 				2E96B1952F71374200B8CBFA /* LoginStoryboard.storyboard in Resources */,
 				2EAD4E582F6BF506007C2B3C /* ImagePickerXib.xib in Resources */,
